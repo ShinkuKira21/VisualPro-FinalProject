@@ -392,3 +392,6 @@ FodyWeavers.xsd
 *.log
 *.aux
 *.gz
+*.blg
+*.bbl
+Documentation/Proposal/cleanup.bat
