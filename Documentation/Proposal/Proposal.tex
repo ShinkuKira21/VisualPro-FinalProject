@@ -139,8 +139,9 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
       \subsection{Markup Languages}
       \label{subsec:lr-markupLanguages}
         \textbf{What is a Markup Language?}
-          After studying Markup Languages: Theory and Practice Scope Statement~\cite{noauthor_markup_1999} Journal Article, page 46 by and Learning XML (Extensible Markup Language)~\cite{ray_learning_nodate} Book, Chapter 2 (Markup and Core Concepts), Erik T. Ray, page 49, a few points were selected to explain what is a markup language.
-        \textbf{What purpose does a Markup Language serve?}
+          After studying Markup Languages: Theory and Practice Scope Statement~\cite{noauthor_markup_1999} Journal Article, page 46 by and Learning XML (Extensible Markup Language), Erik T. Ray's~\cite{ray_learning_nodate} Book, Chapter 2 (Markup and Core Concepts), page 49, a few points were selected to explain what is a markup language. A markup language is essentially a script, which consists of tags and attributes. 
+
+          From Erik T. Ray's~\cite{ray_learning_nodate} Book, "Just as skeletons give us vertebrates shape and structure, markup does the same for text." This quote implies that markup languages offer structures, principally for designs, layouts and arrangement responsibilities. Due to the nature of Markup Languages with the ease of adding tags and attributes, Markup Languages will do the heavy lifting of setting available libraries and syntax for each language.
 
         \textbf{How will Extensible Markup Language (XML) support custom languages in this project?}
 
@@ -151,15 +152,27 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
         To achieve the aims mentioned in section~(a reference in aims and objectives), sub-section~(a reference in arms). In order to meet the aims during the production process of the project, the following objectives is a must. These objectives are as follows:-
         \begin{itemize}
           \item Project planning (section:~\ref{sec: resourcesPlanning} Resources and Planning, sub-section:~\ref{subsec:rp-planningChart} Planning Chart, page~\pageref{subsec:rp-planningChart}).
-          \item Create prototypes (Existing libraries to make this possible.{Site here}).
-          \item Create front-end to work with existing libraries.
-          \item Create back-end to communicate with front-end and generate code based on values the user enters.
+          \item Create prototypes (Existing \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/tree/main/Experience}{programs}~\cite{patch_programming_2021} and \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/tree/main/Libraries}{libraries}~\cite{patch_libraries_2021} to make this possible.).
+          \item Create a frontend to work with existing libraries.
+          \item Create a backend to communicate with the frontend and generate code based on values the user enters.
         \end{itemize}
       
     \section{Project Design}
       \subsection{Outline of Project Process}
+        Outline of the project process:-
+        \begin{itemize}
+          \item Design and produce a frontend to dock the backend libraries.
+          \item Convert existing libraries and programs to Dynamic-Link Library (DLL) archives that work with the frontend.
+          \item Create a LanguageCompiler (similarly to \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/tree/main/Experience}{Programming Planner}~\cite{patch_programming_2021}) but with custom languages (XML).
+          \item Design and create an XML script that tells the backend of what languages are available. The script must be understandable by the user.
+          \item Use C \_declspec(dllexport) to export entry points within the DLL libraries.
+        \end{itemize}
+        
       \subsection{Data Collection}
+        Survey data will not ask for the personal details of the surveyed as it is not applicable data. When using the software, VisualPro, user data is not needed to operate this application. However, if the software is enhanced, author information may happen to be recorded in the future.
+
       \subsection{Risks and Limitations}
+        
       \subsection{Ethical Issues}
     \section{Resources and Planning}
     \label{sec: resourcesPlanning}
@@ -169,6 +182,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
         \textbf{Human Resources}
 
         \textbf{Other Resources}
+
       \subsection{Planning Chart}
       \label{subsec:rp-planningChart}
         After planning the schedule to 400 hours to fit in the 28$^{\text{th}}$ of April 2022 deadline, the schedule finishes on the 07${\text{th}}$ of April 2022, giving leeway of 21 days. 
@@ -176,7 +190,6 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
         Schedule of VisualPro:~\href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Project/VisualPro.mpp?raw=true}{Microsoft Project Schedule}~\cite{patch_visualpro_2021}.
         
         Evidence of~\href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Project/Plan.docx?raw=true}{Microsoft Project Schedule}~\cite{patch_visualpro_2021-1}.
-
 
       %SUBSECTION LANDSCAPE
       \begin{landscape}
@@ -206,7 +219,10 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
       List of terminologies used in this document:-
       \begin{itemize}
         \item Graphical User Interface (GUI).
+        \item Extensible Markup Language (XML).
+        \item Dynamic-Link Library (DLL).
       \end{itemize}
+
     \section{Conclusion}
     
 	\nocite{*}
