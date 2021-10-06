@@ -125,7 +125,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
       \subsection{Sections}
       The VisualPro Proposal document includes a Literature Review, Aims and Objective, Project Design, Resources and Planning and Reference List.
 
-      The Literature Review section contains segments of academic books and journals related to the project proposal. Within the extensive research, hand-picked articles and journals to show what technologies are required to make the idea plausible, narrowing down the project's association towards the author's study area.
+      The Literature Review section contains segments of academic books and journals related to the project proposal. Within the extensive research, hand-picked articles and journals to show what technologies are required to make the idea plausible, narrowing down the project's association towards the Author's study area.
       
       After the Literature Review section, the Aims and Objectives section will give the reader an idea of how the final product will impact society and its user base.
       
@@ -165,7 +165,8 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
           \item Convert existing libraries and programs to Dynamic-Link Library (DLL) archives that work with the frontend.
           \item Create a LanguageCompiler (similarly to \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/tree/main/Experience}{Programming Planner}~\cite{patch_programming_2021}) but with custom languages (XML).
           \item Design and create an XML script that tells the backend of what languages are available. The script must be understandable by the user.
-          \item Use C \_declspec(dllexport) to export entry points within the DLL libraries.
+          \item Use C \textit{\_declspec(dllexport)}~\cite{microsoft_exporting_2019} to export entry points within the DLL libraries.
+          \item After doing research, C\# language, .NET Framework~\cite{microsoft_what_nodate} fits to sculpt the frontend. This frontend selection fits more into the Author's study area and career plans. Use C\#'s DllImportAttribute~\cite{microsoft_dllimportattribute_nodate} class to import C/C++ DLL archives.
         \end{itemize}
         
       \subsection{Data Collection}
@@ -177,14 +178,15 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
         Limitations of the software will include the following due to time frame issues:-
         \begin{itemize}
           \item Code Logic (inc. Loop and Conditional Logic.) -\\
-            The software will have the implementation space to allow this in further development. Unfortunately, only multiple languages, the structure including parent-child logic and the frontend, can be covered to the time frame.
+            The software will have the implementation space to allow this in further development. Unfortunately, only multiple languages, the structure the code including parent-child logic and the frontend, can be covered to the time frame.
           \item Nested Logic -\\
             Again, this will use very similar logic to the Parent-Child syntax for classes, functions and variables. However, these will ideally fit the time frame when the code logic feature implements in the   software.
         \end{itemize}
         When creating the backend and frontend of this software, reusable functions are a must. Without reusable functions, the schedule will get delayed. Reusable functions also enable the developer's working on VisualPro the ability to implement features agile and precise. 
         
       \subsection{Ethical Issues}
-        
+        The software proposes an increase in productivity. However, screen time still matters, and the user needs to rest when feeling strained in front of the screen. The idea of VisualPad is to improve the work environment for many different fields in a comfortable, peaceful and healthy manner. 
+
     \section{Resources and Planning}
     \label{sec: resourcesPlanning}
       \subsection{Resources Required}
@@ -236,7 +238,6 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
     \section{Conclusion}
     
-	\nocite{*}
 	\renewcommand\refname{\section{Reference List}}
 	\small{\bibliographystyle{IEEEtran}
     \bibliography{ref}}
