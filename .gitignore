@@ -395,3 +395,4 @@ FodyWeavers.xsd
 *.blg
 *.bbl
 Documentation/Proposal/cleanup.bat
+*.synctex(busy)

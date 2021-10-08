@@ -92,9 +92,9 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
     
     \tableofcontents
 	  \vspace{.5cm}
-    %\newpage
 	
     \begin{abstract}
+    \label{abstract}
       This document provides the proposal of the Independent Project. After doing in-depth research and planning, the working title for this project is VisualPro.
 
       Hypothesis: If visual scripting can write structure and logic of any desired language the user wishes, will this:-
@@ -102,13 +102,13 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
           \item A: produce a more productive and better work environment.
           \item B: help newcomers code in any language without knowing different syntax per language.
         \end{itemize}
-       
     \end{abstract}
 
     \begin{IEEEkeywords}
         Visual Programming, Proposal, Research.
     \end{IEEEkeywords}
   
+    \newpage
     \section{Introduction}
       VisualPro aims to be a lightweight visual programming pad, which includes the following features:-
       \begin{itemize}
@@ -125,25 +125,54 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
       \subsection{Sections}
       The VisualPro Proposal document includes a Literature Review, Aims and Objective, Project Design, Resources and Planning and Reference List.
 
-      The Literature Review section contains segments of academic books and journals related to the project proposal. Within the extensive research, hand-picked articles and journals to show what technologies are required to make the idea plausible, narrowing down the project's association towards the Author's study area.
+      The Literature Review section contains segments of academic books and journals related to the project proposal. Within the extensive research, hand-picked books and journals to show what technologies are required to make the idea plausible, narrowing down the project's association towards the Author's study area.
       
       After the Literature Review section, the Aims and Objectives section will give the reader an idea of how the final product will impact society and its user base.
       
       The third section, Project Design, describes the outline of the project process, data collection, risks and limitations and ethical issues. These are essential points that decide if the project breaks any laws or pushes too many boundaries in today's society.
       
-      The Resources and Planning section include two sub-sections; Resources Required and Planning Chart. Resources Required sub-section involves Physical Resources \textit{(if any hardware and equipment are required)}, Human Resources \textit{(if any staff are required)} and Other Resources \textit{(if any software or other categories not been mentioned are required)}. The planning Chart sub-section displays the tasks and time frame within a Gantt Chart, constructed by Microsoft Project~\cite{microsoft_compare_nodate}.
+      The Resources and Planning section include two sub-sections; Resources Required and Planning Chart. Resources Required sub-section involves Physical Resources \textit{(if any hardware and equipment are required)}, Human Resources \textit{(if any staff are required)} and Other Resources \textit{(if any software or other categories not been mentioned are required)}. The Planning Chart sub-section displays the tasks and time frame within a Gantt Chart, constructed by Microsoft Project~\cite{microsoft_compare_nodate}.
+
     \section{Literature Review}
     \label{sec:literatureReview}
-      \subsection{Productivity}
-      \subsection{Visual Scripting}
+      \subsection{Productivity and Visual Scripting}
+        Multiple books are necessary to capture this question, ``If visual scripting can write structure and logic of any desired language the user wishes, will this produce a more productive and better work environment''. The research also helps understand why visual scripting or interpreted programming languages/scripts are more popular than compiled programming languages and how productivity expands with new access to different tools.
+
+        Productivity, specifically within the software engineering field, Rethinking Productivity in Software Engineering Book states, “Productivity is a challenging concept to define, describe, and measure for any knowledge work that involves nonroutine creative tasks. Software development is a prime example of knowledge work, as it too often involves poorly defined tasks relying on extensive collaborative and creative endeavors. As in other areas of knowledge work, defining productivity in software development has been a challenge facing both researchers and practitioners who may want to understand and improve it by introducing new tools or processes.” When reading further into the chapter, the following points evaluate how we should think about productivity:-
+
+        \begin{itemize}
+          \item “Velocity: How fast works gets done.”
+          \item “Quality: How well works gets done.”
+          \item “Satisfaction: How satisfying the work is.”
+        \end{itemize}
+
+        After thinking about this, VisualPro, in theory, should increase the rapidity of the individual’s work. Suppose VisualPro changes the way Visual Scripting works today, making it lightweight and understandable compared to existing Visual Scripting (For example, Unreal Engine's Blueprints~\cite{unreal_engine_introduction_nodate}), with the ability to generate any desired code. In that case, the quality and satisfaction of the developer amplify.
+
+        To compare the theory to conclude, Hypothesis A and B, page~\pageref{abstract}, two books, G. K. Behara’s~\cite{behara_why_nodate} Book, “Why Python is Popular for Machine Learning Implementations?” and A. M. Winn and T. J. Smedley’s~\cite{winn_multimedia_1998} Book, “Multimedia Workshop: Exploring the Benefits of a Visual Scripting Language” helps decide the decision.
+
+        \begin{center}
+           A: produce a more productive and better work environment.
+           B: help newcomers code in any language without knowing different syntax per language.
+        \end{center}
+        
+        A. M. Winn and T. J. Smedley’s~\cite{winn_multimedia_1998} Book, section 3.2, ``The graphical user-interface'',  suggests that Multimedia Workshop (MMW) Visual Scripting is excellent for junior and experienced developers, ``...MMW was carefully designed for easy and natural use...''. The Author’s of this Book mentions that a poor graphical user interface could ``...hinder an assessment of the usefulness of a visual scripting language''. To prove hypothesis B effective on newcomers is true, on condition the software is executed correctly and is not complicated or chunky when designing software. This project requires an easy drag and drop method with a simple layout to meet hypothesis B’s aim.
+
       \subsection{Markup Languages}
       \label{subsec:lr-markupLanguages}
-        \textbf{What is a Markup Language?}
+        \textbf{What is a Markup Language?}\\
           After studying Markup Languages: Theory and Practice Scope Statement~\cite{noauthor_markup_1999} Journal Article, page 46 by and Learning XML (Extensible Markup Language), Erik T. Ray's~\cite{ray_learning_nodate} Book, Chapter 2 (Markup and Core Concepts), page 49, a few points were selected to explain what is a markup language. A markup language is essentially a script, which consists of tags and attributes. 
 
-          From Erik T. Ray's~\cite{ray_learning_nodate} Book, "Just as skeletons give us vertebrates shape and structure, markup does the same for text." This quote implies that markup languages offer structures, principally for designs, layouts and arrangement responsibilities. Due to the nature of Markup Languages with the ease of adding tags and attributes, Markup Languages will do the heavy lifting of setting available libraries and syntax for each language.
+          From Erik T. Ray's~\cite{ray_learning_nodate} Book, ``Just as skeletons give us vertebrates shape and structure, markup does the same for text.'' This quote implies that markup languages offer structures, principally for designs, layouts and arrangement responsibilities. Due to the nature of Markup Languages with the ease of adding tags and attributes, Markup Languages will do the heavy lifting of setting available libraries and syntax for each language.
 
-        \textbf{How will Extensible Markup Language (XML) support custom languages in this project?}
+        \textbf{How will Extensible Markup Language (XML) support custom languages in this project?}\\
+          According to G. Costa and R. Ortale~\cite{costa_machine_2018}, Machine learning techniques for XML (co-)clustering by structure and-constrained phrases Book, Chapter 2.1, ``\textit{An \textbf{XML tree} is a rooted, labeled, tree \textbf{t = (V$^{\text{t}}$,r$^{\text{t}}$,E$^{\text{t}}$,$\lambda^{\text{t}}$)} where:}
+          \begin{itemize}
+            \item \textbf{V$^{\text{t}} \subseteq \mathbb{N}$} is a set of nodes, with \textbf{r$^{\text{t}} \in \text{V}^{\text{t}}$} being the root of \textbf{t};
+            \item \textbf{E$^{\text{t}} \subseteq \text{V}^{\text{t}} \times \text{V}^{\text{t}}$} is a set of edges, catching parent-child relationships between nodes of \textbf{t};
+            \item \textbf{$\lambda \text{ : V}^{\text{t}} \rightarrow \sum $} is a labelling function, with $\sum$ being the domain of the node tags (or equivalently, labels).''
+          \end{itemize}
+
+          The facility of having nodes and attributes means we can expand the XML file with many different syntaxes for different opportunities. If nested nodes are within the parent nodes, then it will increase the performance time of execution. The library that reads through the XML document will only need to select the relevant sub-nodes listed under the parent node instead of reading through every possible node outcome. In theory, users can append languages by reading through the XML document quite efficiently, and the software would read through the XML document without any issues.
 
     \section{Aims and Objectives}
       \subsection{Aims}
@@ -231,13 +260,13 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
     \section{Terminology}
       List of terminologies used in this document:-
       \begin{itemize}
-        \item Graphical User Interface (GUI).
-        \item Extensible Markup Language (XML).
-        \item Dynamic-Link Library (DLL).
+        \item GUI - Graphical User Interface.
+        \item XML - Extensible Markup Language.
+        \item DLL - Dynamic-Link Library.
+        \item MMW - Multimedia Workshop.
       \end{itemize}
-
-    \section{Conclusion}
-    
+  
+  \nocite{*}
 	\renewcommand\refname{\section{Reference List}}
 	\small{\bibliographystyle{IEEEtran}
     \bibliography{ref}}
