@@ -47,8 +47,8 @@ namespace Example_Project
             this.grpBox_e1 = new System.Windows.Forms.GroupBox();
             this.grpBox_E2 = new System.Windows.Forms.GroupBox();
             this.grpBox_E3 = new System.Windows.Forms.GroupBox();
-            this.richTB_E3 = new System.Windows.Forms.RichTextBox();
             this.pcBox_E3 = new System.Windows.Forms.PictureBox();
+            this.richTB_E3 = new System.Windows.Forms.RichTextBox();
             this.grpBox_E3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBox_E3)).BeginInit();
             this.SuspendLayout();
@@ -202,7 +202,7 @@ namespace Example_Project
             this.grpBox_E2.Size = new System.Drawing.Size(176, 146);
             this.grpBox_E2.TabIndex = 16;
             this.grpBox_E2.TabStop = false;
-            this.grpBox_E2.Text = "DLL C Example 1";
+            this.grpBox_E2.Text = "DLL C Example 2";
             // 
             // grpBox_E3
             // 
@@ -213,16 +213,7 @@ namespace Example_Project
             this.grpBox_E3.Size = new System.Drawing.Size(238, 249);
             this.grpBox_E3.TabIndex = 17;
             this.grpBox_E3.TabStop = false;
-            this.grpBox_E3.Text = "DLL C++ Example 1";
-            // 
-            // richTB_E3
-            // 
-            this.richTB_E3.Location = new System.Drawing.Point(16, 19);
-            this.richTB_E3.Name = "richTB_E3";
-            this.richTB_E3.ReadOnly = true;
-            this.richTB_E3.Size = new System.Drawing.Size(216, 96);
-            this.richTB_E3.TabIndex = 0;
-            this.richTB_E3.Text = "Car Status";
+            this.grpBox_E3.Text = "DLL C++ Example 3";
             // 
             // pcBox_E3
             // 
@@ -236,6 +227,15 @@ namespace Example_Project
             this.pcBox_E3.Click += new System.EventHandler(this.pcBox_E3_Click);
             this.pcBox_E3.MouseLeave += new System.EventHandler(this.pcBox_E3_MouseLeave);
             this.pcBox_E3.MouseHover += new System.EventHandler(this.pcBox_E3_MouseHover);
+            // 
+            // richTB_E3
+            // 
+            this.richTB_E3.Location = new System.Drawing.Point(16, 19);
+            this.richTB_E3.Name = "richTB_E3";
+            this.richTB_E3.ReadOnly = true;
+            this.richTB_E3.Size = new System.Drawing.Size(216, 96);
+            this.richTB_E3.TabIndex = 0;
+            this.richTB_E3.Text = "Car Status";
             // 
             // Main
             // 

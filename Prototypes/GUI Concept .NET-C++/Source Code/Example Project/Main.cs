@@ -117,5 +117,10 @@ namespace Example_Project
         {
             DLL_Manager.DisposeCar(cppCar);
         }
+
+        private void grpBox_E3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
