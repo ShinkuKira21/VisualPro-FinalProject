@@ -123,5 +123,10 @@ namespace Example_Project
             Info info = new Info();
             info.Show();
         }
+
+        private void grpBox_E3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
