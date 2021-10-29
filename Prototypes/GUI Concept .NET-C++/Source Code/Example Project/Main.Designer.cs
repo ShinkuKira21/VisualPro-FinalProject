@@ -44,6 +44,13 @@ namespace Example_Project
             this.lblDLLE2_4 = new System.Windows.Forms.Label();
             this.lblDLLE2_6 = new System.Windows.Forms.Label();
             this.lblDLLE2_5 = new System.Windows.Forms.Label();
+            this.grpBox_e1 = new System.Windows.Forms.GroupBox();
+            this.grpBox_E2 = new System.Windows.Forms.GroupBox();
+            this.grpBox_E3 = new System.Windows.Forms.GroupBox();
+            this.richTB_E3 = new System.Windows.Forms.RichTextBox();
+            this.pcBox_E3 = new System.Windows.Forms.PictureBox();
+            this.grpBox_E3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBox_E3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDLLE1
@@ -52,7 +59,7 @@ namespace Example_Project
             this.btnDLLE1.Name = "btnDLLE1";
             this.btnDLLE1.Size = new System.Drawing.Size(75, 44);
             this.btnDLLE1.TabIndex = 0;
-            this.btnDLLE1.Text = "DLL Example 1";
+            this.btnDLLE1.Text = "Run";
             this.btnDLLE1.UseVisualStyleBackColor = true;
             this.btnDLLE1.Click += new System.EventHandler(this.btnDLLE1_Click);
             // 
@@ -77,7 +84,7 @@ namespace Example_Project
             // 
             // btnDLLE2
             // 
-            this.btnDLLE2.Location = new System.Drawing.Point(251, 81);
+            this.btnDLLE2.Location = new System.Drawing.Point(33, 199);
             this.btnDLLE2.Name = "btnDLLE2";
             this.btnDLLE2.Size = new System.Drawing.Size(75, 44);
             this.btnDLLE2.TabIndex = 3;
@@ -87,7 +94,7 @@ namespace Example_Project
             // 
             // tbDLLE2_1
             // 
-            this.tbDLLE2_1.Location = new System.Drawing.Point(269, 5);
+            this.tbDLLE2_1.Location = new System.Drawing.Point(51, 123);
             this.tbDLLE2_1.Name = "tbDLLE2_1";
             this.tbDLLE2_1.Size = new System.Drawing.Size(57, 20);
             this.tbDLLE2_1.TabIndex = 4;
@@ -96,7 +103,7 @@ namespace Example_Project
             // 
             // tbDLLE2_2
             // 
-            this.tbDLLE2_2.Location = new System.Drawing.Point(269, 30);
+            this.tbDLLE2_2.Location = new System.Drawing.Point(51, 148);
             this.tbDLLE2_2.Name = "tbDLLE2_2";
             this.tbDLLE2_2.Size = new System.Drawing.Size(57, 20);
             this.tbDLLE2_2.TabIndex = 5;
@@ -106,7 +113,7 @@ namespace Example_Project
             // lblDLLE2_1
             // 
             this.lblDLLE2_1.AutoSize = true;
-            this.lblDLLE2_1.Location = new System.Drawing.Point(248, 8);
+            this.lblDLLE2_1.Location = new System.Drawing.Point(30, 126);
             this.lblDLLE2_1.Name = "lblDLLE2_1";
             this.lblDLLE2_1.Size = new System.Drawing.Size(15, 13);
             this.lblDLLE2_1.TabIndex = 7;
@@ -115,7 +122,7 @@ namespace Example_Project
             // lblDLLE2_2
             // 
             this.lblDLLE2_2.AutoSize = true;
-            this.lblDLLE2_2.Location = new System.Drawing.Point(248, 33);
+            this.lblDLLE2_2.Location = new System.Drawing.Point(30, 151);
             this.lblDLLE2_2.Name = "lblDLLE2_2";
             this.lblDLLE2_2.Size = new System.Drawing.Size(15, 13);
             this.lblDLLE2_2.TabIndex = 8;
@@ -125,7 +132,7 @@ namespace Example_Project
             // 
             this.rbDLLE2_1.AutoSize = true;
             this.rbDLLE2_1.Checked = true;
-            this.rbDLLE2_1.Location = new System.Drawing.Point(342, 8);
+            this.rbDLLE2_1.Location = new System.Drawing.Point(123, 126);
             this.rbDLLE2_1.Name = "rbDLLE2_1";
             this.rbDLLE2_1.Size = new System.Drawing.Size(44, 17);
             this.rbDLLE2_1.TabIndex = 9;
@@ -136,7 +143,7 @@ namespace Example_Project
             // rbDLLE2_2
             // 
             this.rbDLLE2_2.AutoSize = true;
-            this.rbDLLE2_2.Location = new System.Drawing.Point(342, 33);
+            this.rbDLLE2_2.Location = new System.Drawing.Point(123, 151);
             this.rbDLLE2_2.Name = "rbDLLE2_2";
             this.rbDLLE2_2.Size = new System.Drawing.Size(65, 17);
             this.rbDLLE2_2.TabIndex = 10;
@@ -146,7 +153,7 @@ namespace Example_Project
             // lblDLLE2_3
             // 
             this.lblDLLE2_3.AutoSize = true;
-            this.lblDLLE2_3.Location = new System.Drawing.Point(248, 53);
+            this.lblDLLE2_3.Location = new System.Drawing.Point(30, 171);
             this.lblDLLE2_3.Name = "lblDLLE2_3";
             this.lblDLLE2_3.Size = new System.Drawing.Size(62, 13);
             this.lblDLLE2_3.TabIndex = 11;
@@ -155,7 +162,7 @@ namespace Example_Project
             // lblDLLE2_4
             // 
             this.lblDLLE2_4.AutoSize = true;
-            this.lblDLLE2_4.Location = new System.Drawing.Point(311, 53);
+            this.lblDLLE2_4.Location = new System.Drawing.Point(93, 171);
             this.lblDLLE2_4.Name = "lblDLLE2_4";
             this.lblDLLE2_4.Size = new System.Drawing.Size(13, 13);
             this.lblDLLE2_4.TabIndex = 12;
@@ -164,7 +171,7 @@ namespace Example_Project
             // lblDLLE2_6
             // 
             this.lblDLLE2_6.AutoSize = true;
-            this.lblDLLE2_6.Location = new System.Drawing.Point(311, 66);
+            this.lblDLLE2_6.Location = new System.Drawing.Point(93, 184);
             this.lblDLLE2_6.Name = "lblDLLE2_6";
             this.lblDLLE2_6.Size = new System.Drawing.Size(13, 13);
             this.lblDLLE2_6.TabIndex = 14;
@@ -173,17 +180,69 @@ namespace Example_Project
             // lblDLLE2_5
             // 
             this.lblDLLE2_5.AutoSize = true;
-            this.lblDLLE2_5.Location = new System.Drawing.Point(248, 66);
+            this.lblDLLE2_5.Location = new System.Drawing.Point(30, 184);
             this.lblDLLE2_5.Name = "lblDLLE2_5";
             this.lblDLLE2_5.Size = new System.Drawing.Size(57, 13);
             this.lblDLLE2_5.TabIndex = 13;
             this.lblDLLE2_5.Text = "C# Result:";
             // 
+            // grpBox_e1
+            // 
+            this.grpBox_e1.Location = new System.Drawing.Point(13, 3);
+            this.grpBox_e1.Name = "grpBox_e1";
+            this.grpBox_e1.Size = new System.Drawing.Size(173, 102);
+            this.grpBox_e1.TabIndex = 15;
+            this.grpBox_e1.TabStop = false;
+            this.grpBox_e1.Text = "DLL C Example 1";
+            // 
+            // grpBox_E2
+            // 
+            this.grpBox_E2.Location = new System.Drawing.Point(13, 106);
+            this.grpBox_E2.Name = "grpBox_E2";
+            this.grpBox_E2.Size = new System.Drawing.Size(176, 146);
+            this.grpBox_E2.TabIndex = 16;
+            this.grpBox_E2.TabStop = false;
+            this.grpBox_E2.Text = "DLL C Example 1";
+            // 
+            // grpBox_E3
+            // 
+            this.grpBox_E3.Controls.Add(this.pcBox_E3);
+            this.grpBox_E3.Controls.Add(this.richTB_E3);
+            this.grpBox_E3.Location = new System.Drawing.Point(193, 3);
+            this.grpBox_E3.Name = "grpBox_E3";
+            this.grpBox_E3.Size = new System.Drawing.Size(238, 249);
+            this.grpBox_E3.TabIndex = 17;
+            this.grpBox_E3.TabStop = false;
+            this.grpBox_E3.Text = "DLL C++ Example 1";
+            // 
+            // richTB_E3
+            // 
+            this.richTB_E3.Location = new System.Drawing.Point(16, 19);
+            this.richTB_E3.Name = "richTB_E3";
+            this.richTB_E3.ReadOnly = true;
+            this.richTB_E3.Size = new System.Drawing.Size(216, 96);
+            this.richTB_E3.TabIndex = 0;
+            this.richTB_E3.Text = "Car Status";
+            // 
+            // pcBox_E3
+            // 
+            this.pcBox_E3.BackgroundImage = global::Example_Project.Properties.Resources.off;
+            this.pcBox_E3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcBox_E3.Location = new System.Drawing.Point(16, 120);
+            this.pcBox_E3.Name = "pcBox_E3";
+            this.pcBox_E3.Size = new System.Drawing.Size(216, 129);
+            this.pcBox_E3.TabIndex = 1;
+            this.pcBox_E3.TabStop = false;
+            this.pcBox_E3.Click += new System.EventHandler(this.pcBox_E3_Click);
+            this.pcBox_E3.MouseLeave += new System.EventHandler(this.pcBox_E3_MouseLeave);
+            this.pcBox_E3.MouseHover += new System.EventHandler(this.pcBox_E3_MouseHover);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 137);
+            this.ClientSize = new System.Drawing.Size(434, 259);
+            this.Controls.Add(this.grpBox_E3);
             this.Controls.Add(this.lblDLLE2_6);
             this.Controls.Add(this.lblDLLE2_5);
             this.Controls.Add(this.lblDLLE2_4);
@@ -198,11 +257,16 @@ namespace Example_Project
             this.Controls.Add(this.lblDLLE1_2);
             this.Controls.Add(this.lblDLLE1_1);
             this.Controls.Add(this.btnDLLE1);
+            this.Controls.Add(this.grpBox_e1);
+            this.Controls.Add(this.grpBox_E2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
             this.Text = "Main Application";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
+            this.grpBox_E3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcBox_E3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +289,11 @@ namespace Example_Project
         private System.Windows.Forms.Label lblDLLE2_4;
         private System.Windows.Forms.Label lblDLLE2_6;
         private System.Windows.Forms.Label lblDLLE2_5;
+        private System.Windows.Forms.GroupBox grpBox_e1;
+        private System.Windows.Forms.GroupBox grpBox_E2;
+        private System.Windows.Forms.GroupBox grpBox_E3;
+        private System.Windows.Forms.PictureBox pcBox_E3;
+        private System.Windows.Forms.RichTextBox richTB_E3;
     }
 }
 
