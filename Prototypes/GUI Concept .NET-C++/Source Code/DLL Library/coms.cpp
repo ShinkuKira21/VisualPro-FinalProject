@@ -1,4 +1,5 @@
 #include "coms.h"
+#include <string>
 
 const char* Helloworld()
 { return "C++ says Helloworld"; }
@@ -9,3 +10,23 @@ double Calculator(double x, double y, bool opt)
 
 	return x - y;
 }
+
+// Car Class
+Car* InitialiseCar(const char* make, const char* model, const char* modelNumber)
+{
+	if (!std::string(make).empty() && !std::string(model).empty() && !std::string(modelNumber).empty())
+		return new Car(make, model, modelNumber);
+
+	return nullptr;
+}
+
+char* Ignition(Car* car, int currentMode)
+{
+	if (car != nullptr)
+		return Tools::StrToChar(car->ModeSelector(currentMode));
+
+	return nullptr;
+}
+
+void DisposeCar(Car* car)
+{ delete car; }
