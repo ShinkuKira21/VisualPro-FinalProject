@@ -13,16 +13,16 @@ namespace Example_Project
 {
     public partial class Main : Form
     {
-        private Car csCar;
-        private IntPtr cppCar;
-        private int lastActive;
+        private readonly Car _csCar;
+        private readonly IntPtr _cppCar;
+        private int _lastActive;
 
         public Main()
         {
             InitializeComponent();
-            lastActive = 0;
-            csCar = new Car("Nissan", "Micra", "NMIC826715212-091");
-            cppCar = DLL_Manager.InitialiseCar("Mercedes Benz", "C140", "MB-C140-98261");
+            _lastActive = 0;
+            _csCar = new Car("Nissan", "Micra", "NMIC826715212-091");
+            _cppCar = DLL_Manager.InitialiseCar("Mercedes Benz", "C140", "MB-C140-98261");
         }
 
         // C++ Communication - Example 1
@@ -57,65 +57,71 @@ namespace Example_Project
 
         private void pcBox_E3_MouseHover(object sender, EventArgs e)
         {
-            if (lastActive.Equals(0))
+            if (_lastActive.Equals(0))
             {
-                lastActive = 1;
+                _lastActive = 1;
                 this.pcBox_E3.BackgroundImage = Properties.Resources.ac;
 
                 richTB_E3.Text = "C++\n";
-                IntPtr cPointer = DLL_Manager.Ignition(cppCar, lastActive);
+                IntPtr cPointer = DLL_Manager.Ignition(_cppCar, _lastActive);
                 ;
                 richTB_E3.Text += Marshal.PtrToStringAnsi(cPointer);
                 DLL_Manager.DeleteCPointer(cPointer);
 
                 richTB_E3.Text += "\nC#\n";
-                richTB_E3.Text += csCar.ModeSelecter(lastActive);
+                richTB_E3.Text += _csCar.ModeSelecter(_lastActive);
             }
         }
 
         private void pcBox_E3_MouseLeave(object sender, EventArgs e)
         {
-            if (lastActive.Equals(1))
+            if (_lastActive.Equals(1))
             {
-                lastActive = 0;
+                _lastActive = 0;
                 this.pcBox_E3.BackgroundImage = Properties.Resources.off;
 
                 richTB_E3.Text = "C++\n";
-                IntPtr cPointer = DLL_Manager.Ignition(cppCar, lastActive);
+                IntPtr cPointer = DLL_Manager.Ignition(_cppCar, _lastActive);
                 richTB_E3.Text += Marshal.PtrToStringAnsi(cPointer);
                 DLL_Manager.DeleteCPointer(cPointer);
 
                 richTB_E3.Text += "\nC#\n";
-                richTB_E3.Text += csCar.ModeSelecter(lastActive);
+                richTB_E3.Text += _csCar.ModeSelecter(_lastActive);
             }
         }
 
         private void pcBox_E3_Click(object sender, EventArgs e)
         {
-            if (!lastActive.Equals(2))
+            if (!_lastActive.Equals(2))
             {
-                lastActive = 2;
+                _lastActive = 2;
                 this.pcBox_E3.BackgroundImage = Properties.Resources.ignition;
             }
             
             else
             {
-                lastActive = 0;
+                _lastActive = 0;
                 this.pcBox_E3.BackgroundImage = Properties.Resources.off;
             }
 
             richTB_E3.Text = "C++\n";
-            IntPtr cPointer = DLL_Manager.Ignition(cppCar, lastActive);
+            IntPtr cPointer = DLL_Manager.Ignition(_cppCar, _lastActive);
             richTB_E3.Text += Marshal.PtrToStringAnsi(cPointer);
             DLL_Manager.DeleteCPointer(cPointer);
 
             richTB_E3.Text += "\nC#\n";
-            richTB_E3.Text += csCar.ModeSelecter(lastActive);
+            richTB_E3.Text += _csCar.ModeSelecter(_lastActive);
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DLL_Manager.DisposeCar(cppCar);
+            DLL_Manager.DisposeCar(_cppCar);
+        }
+
+        private void Main_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            Info info = new Info();
+            info.Show();
         }
     }
 }
