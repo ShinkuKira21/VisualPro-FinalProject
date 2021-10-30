@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<VisualPro>
+	<language name="C#">
+        <libraries>
+            <library name="system" value="System"/>
+			<library name="system-collections-generic" value="System.Collections.Generic"/>
+			<library name="system-windows-forms" value="System.Windows.Forms"/>
+        </libraries>
+	</languages>
+</VisualPro> 
