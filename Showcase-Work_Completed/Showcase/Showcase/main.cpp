@@ -11,20 +11,21 @@ Functions func;
 
 void ExistingLibraries();
 void ListTest();
+void FunctionsTest();
 void LibraryToolsTest();
 void XMLTest();
 
 int main(int argc, char* argv)
 {
 	int uc = 0;
-	while (uc < 3)
+	while (uc < 4)
 	{
 		std::cout << "Author: Edward Patch\n\n";
 		uc = (int)func.NumberInput("(1) Test Library_Tools::Decoder | (2) Test XML Functions\n(3) Explore Existing Libraries (not all available here) | (4) Exit\n\nSelection: ");
 
-		if (uc == 0) ExistingLibraries();
 		if (uc == 1) LibraryToolsTest();
 		if (uc == 2) XMLTest();
+		if (uc == 3) ExistingLibraries();
 
 		func.ClearSystem();
 	}
@@ -44,7 +45,7 @@ void ExistingLibraries()
 		uc = (int)func.NumberInput("(1) List | (2) Functions Library | (3) Back\n\nSelection: ");
 
 		if (uc == 1) ListTest();
-		if(uc == 2)
+		if (uc == 2) FunctionsTest();
 
 		func.ClearSystem();
 	}
