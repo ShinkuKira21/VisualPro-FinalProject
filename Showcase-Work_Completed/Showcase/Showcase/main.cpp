@@ -1,8 +1,16 @@
 #include "../Library_Tools/Public/Decoder.h"
 #include "../Decoder/Public/Decoder.h"
+#include "../List/Private/test-list.cpp"
+
+// Reference: https://www.softwaretestinghelp.com/cpp-sleep/
+#include <cstdlib>
+#include <chrono>
+#include <thread>
 
 Functions func;
 
+void ExistingLibraries();
+void ListTest();
 void LibraryToolsTest();
 void XMLTest();
 
@@ -11,8 +19,10 @@ int main(int argc, char* argv)
 	int uc = 0;
 	while (uc < 3)
 	{
-		uc = (int)func.NumberInput("(1): Test Library_Tools::Decoder | (2) Test XML Functions\n(3) Exit\n\nSelection: ");
+		std::cout << "Author: Edward Patch\n\n";
+		uc = (int)func.NumberInput("(1) Test Library_Tools::Decoder | (2) Test XML Functions\n(3) Explore Existing Libraries (not all available here) | (4) Exit\n\nSelection: ");
 
+		if (uc == 0) ExistingLibraries();
 		if (uc == 1) LibraryToolsTest();
 		if (uc == 2) XMLTest();
 
@@ -21,6 +31,70 @@ int main(int argc, char* argv)
 	
 
 	return 0;
+}
+
+void ExistingLibraries()
+{
+	func.ClearSystem();
+
+	int uc = 0;
+	while (uc < 3)
+	{
+		std::cout << "Author: Edward Patch\n\n";
+		uc = (int)func.NumberInput("(1) List | (2) Functions Library | (3) Back\n\nSelection: ");
+
+		if (uc == 1) ListTest();
+		if(uc == 2)
+
+		func.ClearSystem();
+	}
+	
+}
+
+void ListTest()
+{
+	func.ClearSystem();
+
+	std::cout << "Author: Edward Patch\n\n";
+
+	std::cout << func.ColorText("\t\tHistory: When was the List library made and why?\n The library was made originally in Java Native Interface (JNI).\n The library helped load products within the Android Application and keep track of the consumer basket.\n\tApplication Information: Stay Safe (Module: HND Year 2 | Changemakers)\n\n", 35, 40);
+
+	std::cout << func.ColorText("What is the purpose of this library within Programming Planner?\n", 33, 40);
+	std::cout << "\n The purpose of the library is to keep track of objects,\n which are dragged onto the drag area within the C# .NET Application.\n";
+	std::cout << " During planning, it was thought out to keep track of what classes, functions and variables were added to the program.\n\n";
+
+	std::cout << "Instructions: Feel free to experiment with add, remove, find and other features within the list.\n All functions are tested from last year's module." << std::endl << std::endl;
+
+	func.TextInput("Ready to test? (Press Enter)");
+	
+	func.ClearSystem();
+
+	std::string str = "\n\n\t\t\tLoading Masterpiece (Please wait!)";
+	for (int i = 0; i < 7; i++)
+	{
+		if (i == 4) str = "\n\n\t\t\tLoading Masterpiece (Please wait!:D)";
+		std::cout << str;
+		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+		func.ClearSystem();
+		str += '.';
+	}
+	
+	// starts list library.
+	Test_List::StartProgram();
+}
+
+void FunctionsTest()
+{
+	func.ClearSystem();
+
+	std::cout << "Author: Edward Patch\n\n";
+
+	std::cout << func.ColorText("\t\tHistory: When was the Functions library made and why?\n The library was made originally in C/C++.\n The library was started on HND Year 1 (3 years ago) and expanded overtime.\n The library is cross-platform for Windows and Linux.\n\tApplication Information: For no particular software (comes in handy all the time) (HND Year 1 | Personal Time)\n\n", 35, 40);
+
+	std::cout << func.ColorText("What is the purpose of this library within Programming Planner?\n", 33, 40);
+	std::cout << "\n The functions library play a bigger part in the C++ side of things, but could be used to process data.\n\n";
+
+	func.PauseSystem();
 }
 
 void LibraryToolsTest()
@@ -69,7 +143,7 @@ void LibraryToolsTest()
 		if (str == "exit") break;
 		start = str[0];
 
-		str = func.TextInput("Type End Character (or) enter 'exit' to exit: ");
+		str = func.TextInput("Type End Character: ");
 		end = str[0];
 		
 		if (!(word = dc.FindSubStr(list, start, end, 0)).empty())
@@ -144,6 +218,7 @@ void XMLTest()
 	std::cout << " This program demonstrates a XML Library which extends the RapidXML library.\n";
 	std::cout << "The objective of this library is to allow dynamic languages to be added within the software,\n making the existing Programming Planner Improved a better software.";
 	std::cout << "\nThe program will demonstrate each function offered by XML Tools.\n\n";
+	std::cout << func.ColorText("Can this code within the showcase code be reused in a way?\n Perhaps, however it's probably better to recreate the code.\n This code is for demonstration purposes.", 36, 40) << std::endl;
 
 	func.PauseSystem();
 	func.ClearSystem();
