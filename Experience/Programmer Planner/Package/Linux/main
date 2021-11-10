@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int Ignition(int fuel, int batteryStatus);
+int Accelerator(int fuel, int batteryStatus);
+
+int main(int argc, char** argv)
+{
+  int fuel;
+  int batteryStatus;
+
+  return 0;
+}
+
+int Ignition(int fuel, int batteryStatus)
+{
+
+}
+
+int Accelerator(int fuel, int batteryStatus)
+{
+
+}
+
+
