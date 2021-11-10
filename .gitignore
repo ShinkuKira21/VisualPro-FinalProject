@@ -388,7 +388,6 @@ FodyWeavers.xsd
 *.sln.iml
 
 *.toc
-*.out
 *.log
 *.aux
 *.gz
