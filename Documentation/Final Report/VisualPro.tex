@@ -1,0 +1,208 @@
+%Custom Functions
+\newcommand{\CompanyName}{TT} % update later
+
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+%\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+
+\usepackage{pdflscape}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Please add the following required packages to your document preamble:
+\usepackage{multirow}
+\usepackage[numbers]{natbib}
+
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+	urlcolor=cyan
+}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=single,
+  language=C++,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers = none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2
+}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\fancypagestyle{fancylandscape}{
+\fancyhf{} %Clears the header/footer
+\fancyfoot{% Footer
+\makebox[\textwidth][r]{% Right
+  \rlap{\hspace{.75cm}% Push out of margin by \footskip
+    \smash{% Remove vertical height
+      \raisebox{4.87in}{% Raise vertically
+        \rotatebox{90}{Page \thepage\ of \pageref{LastPage}}}}}}}% Rotate counter-clockwise
+\renewcommand{\headrulewidth}{0pt}% No header rule
+\renewcommand{\footrulewidth}{0pt}% No footer rule
+}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\fancyfoot[c]{Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+
+	\title{VisualPro}
+
+	\author{\IEEEauthorblockN{1\textsuperscript{st} Given Edward Patch}
+	\IEEEauthorblockA{\textit{Software Engineer Student (of BSc Year 3)} \\
+    \textit{Independent Project}\\
+    \textit{University of Wales Trinity St. Davids (of Mike Dacey)}\\
+    Swansea, Wales \\
+    Student ID: 1801492}}
+
+     \maketitle
+    
+    \thispagestyle{plain}
+    \pagestyle{plain}
+    
+    \tableofcontents
+	  %\vspace{.5cm}
+    \newpage
+    \begin{abstract}
+    
+    \end{abstract}
+
+    \begin{IEEEkeywords}
+        Visual Programming, Visual Scripting, Planner
+    \end{IEEEkeywords}
+
+    \section{Introduction}
+
+    \section{Literature Review}
+      The Literature Review section covers the Pre-Planning, which shows the steps and the level of thought that went into deciding VisualPro's purpose and the existing software and prototypes. Some Notebook Planning may not make sense as some foreseeable problems were thought and planned in ahead of time.
+
+      \subsection{Pre-Planning}
+        \subsubsection{HTML Design} The figure~\ref{fig:htmlDesign} shows a HyperText Markup Language (HTML) Design of how the User Interface should look. The Empty Column is where the user drops elements like Classes, Functions or Variables. Buttons on the right can be dragged and dropped on the Empty Column to the left. The functionality of the drop should create a new container, giving the user acknowledgement there's a new parent or sub-element with room for configuration and another drag and drop container within the class or function. 
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/HTML_Design"}.jpg}
+          \caption{HTML Design - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/HTML_Design.jpg}{Original Image}}
+          \label{fig:htmlDesign}
+        \end{figure}
+
+        \subsubsection{Notebook Page 1-2} Figure~\ref{fig:nb-1} contains numerous ideas. Page 1 contains a heading, `Personal Assistant', which indicates the author wanted to make a personal assistant at first. After planning this, the author wanted a type of Artificial Intelligence (AI), which knew the basic syntax of different languages and would write or advise the user when typing. This process is very similar to TabNine (ref here).
+
+        The second page of this figure, shows a few different examples of IF statement syntax from languages to find a `dynamic' common rather than keep it static like the previous software. The sketch below shows a name for the software and a example of how the language selection would look on UI.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP1"}.jpg}
+          \caption{Notebook Plan Page 1-2 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP1.jpg}{Original Image}}
+          \label{fig:nb-1}
+        \end{figure}
+
+        \subsubsection{Notebook Page 2-3} The Figure~\ref{fig:nb-2} displays two pages of how the Visual Scripting could look. The top page shows the tools on the left, such as Logical, Structure and Scoping tools. On the right, it should show a list of current variables, functions and classes in a hierarchy style. The middle of the application is the work area.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP2"}.jpg}
+          \caption{Notebook Plan Page 3-4 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP2.jpg}{Original Image}}
+          \label{fig:nb-2}
+        \end{figure}
+
+        \subsubsection{Notebook Page 5-6} The Figure~\ref{fig:nb-3} gives the planning of how the syntax for most programming and scripting languages. The plan points out patterns and tries to identify their names for the Extensible Markup Language (XML) and backend to comprehend. This piece of planning helped excel the development of the program's dynamic side to allow the addition of new languages to the software.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP3"}.jpg}
+          \caption{Notebook Plan Page 5-6 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP3.jpg}{Original Image}}
+          \label{fig:nb-3}
+        \end{figure}
+
+        \subsubsection{Notebook Page 7-8} The figure~\ref{fig:nb-4} demonstrates how the XML would possibly look. The table shows N (Node), A (Attribute) and the Meaning. To explain what is going on, Node |0| is the header node (holds library data such as \textbf{system} or \textbf{iostream}), holds three attributes. Attribute |0| holds `Type', which is the purpose, Attribute |1| holds the `Name', which is the library's name. Attribute |2| holds the `Syntax Value', which in C\# it is \textit{using ;} and in C++, the value is \textit{\#include} <>.
+
+        According to the second node |1| holds information for structure or classes in languages. This node contains three attributes. Attribute |0| holds `Name of Struct \textit{(or)} Class', which contains the user-defined name they have created inside VisualPro. Attribute |2| holds the `Properties' like the member of the struct/class. Attribute |3| holds the syntax value, the open and close case of a struct/class and layout within the struct/class.
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP4"}.jpg}
+          \caption{Notebook Plan Page 7-8 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP4.jpg}{Original Image}}
+          \label{fig:nb-4}
+        \end{figure}
+
+        \subsubsection{Notebook Page 9-10} The figure~\ref{fig:nb-5} answers how the loops and logical statements work in the LanguageCompiler library. This planning shows how the XML nodes and the Planner List should work together. In theory, the Planner List, of what the user populates with the program's use, combines with the XML document with the chosen language.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP5"}.jpg}
+          \caption{Notebook Plan Page 9-10`' - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP5.jpg}{Original Image}}
+          \label{fig:nb-5}
+        \end{figure}
+
+        \subsubsection{Notebook Page 11} The figure~\ref{fig:nb-6} displays how the function node should work. This miniature theory is to help the developer understand how the XML document should work in a programmatical sense. This again helped when it comes to the prototypes further in this document.
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP6"}.jpg}
+          \caption{Notebook Plan Page 11`' - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP6.jpg}{Original Image}}
+          \label{fig:nb-6}
+        \end{figure}
+
+        \subsubsection{Notebook Page 12-13}
+        A predicted problem is as follows:
+          \center{Description:\\ How will the program know if where to put a sub-child and how will it?}
+          \center{Answer:\\ The planner would hold it's parent and sub identity, and the Triangle (30 Code) is used to tell the software where to put the child. The triangle will only appear of classes or functions that have children. This means that the program will focus on parents, close the tags, then rescan to put the children in. The problem before is that in theory, it would be hard to tell the program to remember when and where to close tags if it got too deep.}
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP7"}.jpg}
+          \caption{Notebook Plan Page 12-13`' - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP7.jpg}{Original Image}}
+          \label{fig:nb-7}
+        \end{figure}
+      \subsection{Surveying}
+        
+    \section{Prototypes}
+      \subsection{Design and Implementation}
+
+      \subsection{Test Plan}
+
+      \subsection{Recorded Problems}
+
+      \subsection{Unit Testing}
+
+    \section{Terminology}
+      List of terminologies used in this document:-
+      \begin{itemize}
+        \item HTML - HyperText Markup Language.
+        \item AI - Artificial Intelligence.
+        \item XML - Extensible Markup Language.
+      \end{itemize}
+  
+    \section{Appendices}
+
+  \nocite{*}
+	\renewcommand\refname{\section{Reference List}}
+	\small{\bibliographystyle{IEEEtran}
+    \bibliography{ref}}
+\end{document}
