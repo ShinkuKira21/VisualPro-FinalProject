@@ -21,12 +21,18 @@
     <ClInclude Include="Car.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SaveFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="coms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Car.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

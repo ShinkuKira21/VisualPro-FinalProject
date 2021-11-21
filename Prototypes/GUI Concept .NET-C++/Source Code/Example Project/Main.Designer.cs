@@ -49,6 +49,10 @@ namespace Example_Project
             this.grpBox_E3 = new System.Windows.Forms.GroupBox();
             this.pcBox_E3 = new System.Windows.Forms.PictureBox();
             this.richTB_E3 = new System.Windows.Forms.RichTextBox();
+            this.dialog_saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.richTB_E4 = new System.Windows.Forms.RichTextBox();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.grpBox_E3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBox_E3)).BeginInit();
             this.SuspendLayout();
@@ -237,11 +241,49 @@ namespace Example_Project
             this.richTB_E3.TabIndex = 0;
             this.richTB_E3.Text = "Car Status";
             // 
+            // dialog_saveFile
+            // 
+            this.dialog_saveFile.DefaultExt = "txt";
+            this.dialog_saveFile.FileName = "example";
+            this.dialog_saveFile.Filter = "All Files|*.*|Text Files|*.txt";
+            this.dialog_saveFile.Title = "Save Dialog";
+            // 
+            // richTB_E4
+            // 
+            this.richTB_E4.Location = new System.Drawing.Point(437, 9);
+            this.richTB_E4.Name = "richTB_E4";
+            this.richTB_E4.Size = new System.Drawing.Size(223, 204);
+            this.richTB_E4.TabIndex = 18;
+            this.richTB_E4.Text = "DLL C++ Example 4";
+            this.richTB_E4.Click += new System.EventHandler(this.richTB_E4_Click);
+            // 
+            // btn_save
+            // 
+            this.btn_save.Location = new System.Drawing.Point(585, 216);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(75, 36);
+            this.btn_save.TabIndex = 19;
+            this.btn_save.Text = "Save File\r\nwith C++";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(437, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 26);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Information: Save Dialog is\r\npowered by .NET Framework.";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 259);
+            this.ClientSize = new System.Drawing.Size(663, 258);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.richTB_E4);
             this.Controls.Add(this.grpBox_E3);
             this.Controls.Add(this.lblDLLE2_6);
             this.Controls.Add(this.lblDLLE2_5);
@@ -294,6 +336,10 @@ namespace Example_Project
         private System.Windows.Forms.GroupBox grpBox_E3;
         private System.Windows.Forms.PictureBox pcBox_E3;
         private System.Windows.Forms.RichTextBox richTB_E3;
+        private System.Windows.Forms.SaveFileDialog dialog_saveFile;
+        private System.Windows.Forms.RichTextBox richTB_E4;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Label label1;
     }
 }
 

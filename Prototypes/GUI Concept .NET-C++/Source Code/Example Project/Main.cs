@@ -118,9 +118,21 @@ namespace Example_Project
             DLL_Manager.DisposeCar(cppCar);
         }
 
-        private void grpBox_E3_Enter(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
         {
+            string filePath = "";
 
+            if (richTB_E4.Text != null && dialog_saveFile.ShowDialog() == DialogResult.OK)
+            {
+                filePath = System.IO.Path.GetFullPath(dialog_saveFile.FileName);
+
+                DLL_Manager.Save(richTB_E4.Text, filePath);
+            }
+        }
+
+        private void richTB_E4_Click(object sender, EventArgs e)
+        {
+            if (richTB_E4.Text == "DLL C++ Example 4") richTB_E4.Text = "";
         }
     }
 }

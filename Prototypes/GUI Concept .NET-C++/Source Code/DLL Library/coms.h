@@ -1,6 +1,6 @@
 #pragma once
-#include <string>
 #include "Car.h"
+#include "SaveFile.h"
 
 extern "C" _declspec(dllexport) const char* Helloworld();
 
@@ -12,3 +12,6 @@ extern "C" _declspec(dllexport) Car* InitialiseCar(const char* make, const char*
 extern "C" _declspec(dllexport) char* Ignition(Car* car, int currentMode);
 
 extern "C" _declspec(dllexport) void DisposeCar(Car* car);
+
+// SaveFile Class
+extern "C" _declspec(dllexport) void Save(const char* data, const char* fileDirectory);

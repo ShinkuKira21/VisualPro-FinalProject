@@ -1,0 +1,436 @@
+%Custom Functions
+\newcommand{\CompanyName}{TT} % update later
+
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+%\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+
+\usepackage{pdflscape}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Please add the following required packages to your document preamble:
+\usepackage{multirow}
+\usepackage[numbers]{natbib}
+
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+	urlcolor=cyan
+}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=single,
+  language=C++,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers = none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2
+}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\fancypagestyle{fancylandscape}{
+\fancyhf{} %Clears the header/footer
+\fancyfoot{% Footer
+\makebox[\textwidth][r]{% Right
+  \rlap{\hspace{.75cm}% Push out of margin by \footskip
+    \smash{% Remove vertical height
+      \raisebox{4.87in}{% Raise vertically
+        \rotatebox{90}{Page \thepage\ of \pageref{LastPage}}}}}}}% Rotate counter-clockwise
+\renewcommand{\headrulewidth}{0pt}% No header rule
+\renewcommand{\footrulewidth}{0pt}% No footer rule
+}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\fancyfoot[c]{Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+
+	\title{VisualPro - Research Paper}
+
+	\author{\IEEEauthorblockN{1\textsuperscript{st} Given Edward Patch}
+	\IEEEauthorblockA{\textit{Software Engineer Student (of BSc Year 3)} \\
+    \textit{Independent Project}\\
+    \textit{University of Wales Trinity St. Davids (of Mike Dacey)}\\
+    Swansea, Wales \\
+    Student ID: 1801492}}
+
+     \maketitle
+    
+    \thispagestyle{plain}
+    \pagestyle{plain}
+    
+    \tableofcontents
+	  %\vspace{.5cm}
+    \newpage
+    \begin{abstract}
+       The Research Paper gathers displays the pre-planning and designs of Programming Planner and VisualPro. 
+    \end{abstract}
+
+    \begin{IEEEkeywords}
+        Visual Programming, Visual Scripting, Planner
+    \end{IEEEkeywords}
+
+    \section{Introduction}
+        This text embraces the planning of the literature review and is not the final revised version. The Literature Review narrates the Pre-Planning and Survey used to determine how the final product should resemble. 
+        
+    \section{Literature Review}
+      The Literature Review section covers the Pre-Planning, which shows the steps and the level of thought that went into deciding VisualPro's purpose and the existing software and prototypes. Some Notebook Planning may not make sense as some foreseeable problems were thought and planned in ahead of time.
+
+      \subsection{Pre-Planning}
+        \subsubsection{HTML Design} Figure~\ref{fig:htmlDesign} shows a HyperText Markup Language (HTML) Design of how the User Interface should look. The Empty Column is where the user drops elements like Classes, Functions or Variables. Buttons on the right can be dragged and dropped on the Empty Column to the left. The functionality of the drop should create a new container, giving the user acknowledgement there's a new parent or sub-element with room for configuration and another drag and drop container within the class or function. 
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/HTML_Design"}.jpg}
+          \caption{HTML Design - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/HTML_Design.jpg}{Original Image}}
+          \label{fig:htmlDesign}
+        \end{figure}
+
+        \subsubsection{Notebook Page 1-2} Figure~\ref{fig:nb-1} contains numerous ideas. Page 1 contains a heading, 'Personal Assistant', which indicates the thought process of a personal assistant before the Visual Programming Scripting program progressed. After planning this, it became apparent to use a type of Artificial Intelligence (AI), which knew the basic syntax of different languages and would write or advise the user when typing. This process is very similar to TabNine (ref here).
+
+        The second page of this figure, shows a few different examples of IF statement syntax from languages to find a `dynamic' common rather than keep it static like the previous software. The sketch below shows a name for the software and a example of how the language selection would look on UI.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP1"}.jpg}
+          \caption{Notebook Plan Page 1-2 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP1.jpg}{Original Image}}
+          \label{fig:nb-1}
+        \end{figure}
+
+        \subsubsection{Notebook Page 2-3} Figure~\ref{fig:nb-2} displays two pages of how the Visual Scripting could look. The top page shows the tools on the left, such as Logical, Structure and Scoping tools. On the right, it should show a list of current variables, functions and classes in a hierarchy style. The middle of the application is the work area.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP2"}.jpg}
+          \caption{Notebook Plan Page 3-4 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP2.jpg}{Original Image}}
+          \label{fig:nb-2}
+        \end{figure}
+
+        \subsubsection{Notebook Page 5-6} Figure~\ref{fig:nb-3} gives the planning of how the syntax for most programming and scripting languages. The plan points out patterns and tries to identify their names for the Extensible Markup Language (XML) and backend to comprehend. This piece of planning helped excel the development of the program's dynamic side to allow the addition of new languages to the software.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP3"}.jpg}
+          \caption{Notebook Plan Page 5-6 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP3.jpg}{Original Image}}
+          \label{fig:nb-3}
+        \end{figure}
+
+        \subsubsection{Notebook Page 7-8} Figure~\ref{fig:nb-4} demonstrates how the XML would possibly look. The table shows N (Node), A (Attribute) and the Meaning. To explain what is going on, Node |0| is the header node (holds library data such as \textbf{system} or \textbf{iostream}), holds three attributes. Attribute |0| holds `Type', which is the purpose, Attribute |1| holds the `Name', which is the library's name. Attribute |2| holds the `Syntax Value', which in C\# it is \textit{using ;} and in C++, the value is \textit{\#include $<>$} .
+
+        According to the second node |1| holds information for structure or classes in languages. This node contains three attributes. Attribute |0| holds `Name of Struct \textit{(or)} Class', which contains the user-defined name they have created inside VisualPro. Attribute |2| holds the `Properties' like the member of the struct/class. Attribute |3| holds the syntax value, the open and close case of a struct/class and layout within the struct/class.
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP4"}.jpg}
+          \caption{Notebook Plan Page 7-8 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP4.jpg}{Original Image}}
+          \label{fig:nb-4}
+        \end{figure}
+
+        \subsubsection{Notebook Page 9-10} Figure~\ref{fig:nb-5} answers how the loops and logical statements work in the LanguageCompiler library. This planning shows how the XML nodes and the Planner List should work together. In theory, the Planner List, of what the user populates with the program's use, combines with the XML document with the chosen language.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP5"}.jpg}
+          \caption{Notebook Plan Page 9-10 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP5.jpg}{Original Image}}
+          \label{fig:nb-5}
+        \end{figure}
+
+        \subsubsection{Notebook Page 11} Figure~\ref{fig:nb-6} displays how the function node should work. This miniature theory is to help the developer understand how the XML document should work in a programmatical sense. This again helped when it comes to the prototypes further in this document.
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP6"}.jpg}
+          \caption{Notebook Plan Page 11 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP6.jpg}{Original Image}}
+          \label{fig:nb-6}
+        \end{figure}
+
+        \subsubsection{Notebook Page 12-13} igure~\ref{fig:nb-7} shows a predicted problem is as follows:
+        \begin{center}
+          \textbf{Description:}\\ How will the program know where to put a sub-child and how will it?
+        
+          \textbf{Answer:}\\ The planner would hold its parent and sub identity, and the Triangle (30 Code) symbol tells the software where to put the child. The Triangle symbol will only appear of classes or functions that have children. This means that the program will focus on parents, close the tags, then rescan to put the children in the code. The problem before is that it would be hard to tell the program to remember when and where to close tags if it got too deep in theory.
+        \end{center}
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP7"}.jpg}
+          \caption{Notebook Plan Page 12-13 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP7.jpg}{Original Image}}
+          \label{fig:nb-7}
+        \end{figure}
+
+      \subsection{Surveying}
+        \subsubsection{Survey Question 1} According to the chart~\ref{fig:q-1}, \textit{87.5\%} chose `Programming Planner Improved', and \textit{12.5\%} chose `None of the Above' to the question, `As a developer, which program worked for you?'. This data suggests that most of the responses preferred `Programming Planner Improved' out of eight.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q1"}.png}
+          \caption{Survey Question 1 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q1.png}{Original Image}}
+          \label{fig:q-1}
+        \end{figure}
+
+        \subsubsection{Survey Question 2} Figure~\ref{fig:q-2} asks the question, `If the last option on the previous question is ticked, then explain why?'. Four responses replied with:-
+        \begin{itemize}
+          \item `More flexibility' -\\
+                  This response could mean two things: the Programming Planner Improved is more flexible than the first program or that both programs would benefit from more flexibility.
+          \item `Both work' -\\
+                  This response indicates that both software works.
+          \item `The option to choose the desired programming language at the end of the programming' -
+                  A surveyee liked the option in Programming Planner Improved to select different programming languages.
+          \item `Because it had more options and had example code at the end of planning' -
+                  This answer describes that the Programming Planner Improved offered more options, such as argument selection and code language.
+        \end{itemize}
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q2"}.png}
+          \caption{Survey Question 2 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q2.png}{Original Image}}
+          \label{fig:q-2}
+        \end{figure}
+
+        \newpage
+        \subsubsection{Survey Question 3} Figure~\ref{fig:q-3} asks the question to Surveyee's, `Did the tutorial at the beginning of Programming Planner Improved help navigate around the application?'. This question tries to find out if the application is hard to use overall. The responses were 87.5\% for yes, and 12.5\% for no. Even though the most of the responses chose yes, the application may still be hard to use if, theoretically, one out of eight users found the user experience frustrating or confusing.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q3"}.png}
+          \caption{Survey Question 3 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q3.png}{Original Image}}
+          \label{fig:q-3}
+        \end{figure}
+
+        \subsubsection{Survey Question 4} Figure~\ref{fig:q-4}, `What makes the Programming Planner Improved better than the previous product?' checkbox question, offered five qualities. These are:-
+        \begin{itemize}
+          \item \textbf{Ease of Use} - Aimed to find out how easy the application is easy to use. 50\% of the responses think it was easier to use than the previous product. This feedback could mean to things, the first product was similar and consequently did not improve the application in this quality or that the product needs to improve in this area.
+          \item \textbf{Performance} - To see if the audience could notice any performance difference. This quality is vital as a Graphical User Interface (GUI) can somewhat be `chunky'. The responses were 0\% out of the responses; though this may seem negative, it is sometimes hard to notice the difference between console and desktop applications.
+          \item \textbf{Extra Features} - The quality, `Extra Features`, displays if the extra features in the new application stood out and improved the previous application. The responses were 62.5\%, which indicates that the extra features did stand out and made the application better.
+          \item \textbf{File Structure} - The quality, `File Structure' of the second application is revised and stores the saved file in a directory other than the ROOT directory. 25\% of the responses chose this option, which means that the File Structure did not impact the application as effectively as the `Extra Features' quality.
+        \end{itemize}
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q4"}.png}
+          \caption{Survey Question 4 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q4.png}{Original Image}}
+          \label{fig:q-4}
+        \end{figure}
+
+        \subsubsection{Survey Question 5} Figure~\ref{fig:q-5} asks the Surveyee's, `Explain your answer' to the last question. This question will tell what the Surveyee's felt when answering the last question. The responses are as follows:
+        \begin{itemize}
+          \item `More features allowed for a wider range of approaches' - This specific feedback suggests that it is better to add more functionality in the Graphical User Interface application to allow for more usability.
+          \item `More languages and was easier to use. Very impressed' - This response implies that the idea of a dynamic language interface to allow users to add more languages will increase User Experience.
+          \item `Easier to use, the better' - Visual Scripting already is complicated when looking at the Unreal Engine's Visual Scripting interface. If it is possible to create a lightweight Visual Scripting pad to allow a programmer to create code snippets, it could bring more developers into the field and increase production time already in the field.
+          \item `Have not used the previous version' - This suggests that the Surveyee only tested Programming Planner Improved.
+          \item `Allowed me to create a function structure and save it. Seemed difficult to follow (variables weren' numbered)' - According to this response, the user found it difficult to follow through and should be something to think about when making the GUI application.
+          \item `Easy, helpful and understandable' - This response shows that the user found the software easy to use, helpful and understanding during their experience.
+          \item `The extra features added to the improved version of the program improve used experience by adding expanded usability' - The response suggests that again the extra functionality helped improve the user experience, in Programmer Planner Improved.
+          \item `It just had extra features and seemed more useful' - Which implies that the user found the extra features more comfortable and useful to use.
+        \end{itemize}
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q5"}.png}
+          \caption{Survey Question 5 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q5.png}{Original Image}}
+          \label{fig:q-5}
+        \end{figure}
+
+        \newpage
+        \subsubsection{Survey Question 6} Figure~\ref{fig:q-6} asks the Surveyee, `How would you rate the user experience (overall)?'. The question tries to aim for an idea of how the user experience of the two products. On a scale of one (Stressful) to ten (Relaxing), 62.5\% of the responses went with option eight, 37.5\% of the responses went with option seven. These figures show that the user experience has room for improvement. When designing and implementing the GUI product, it is important to think about the User Interface and User Experience.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q6"}.png}
+          \caption{Survey Question 6 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q6.png}{Original Image}}
+          \label{fig:q-6}
+        \end{figure}
+        
+        \subsubsection{Survey Question 7} Figure~\ref{fig:q-7} asks the question, `How useful is Programming Planner for beginners?'. This question is done on a scale of one (Complicated) to five (Useful). The feedback is ranged from one to five and suggests that beginners may find this platform hard work. The responses are as follows:
+        \begin{itemize}
+          \item \textbf{One} - 25\% responses. These respondents reckon that Programming Planner is complicated for beginners.
+          \item \textbf{Three} - 12.5\% responses. These respondents thought that Programming Planner is a little complicated for beginners.
+          \item \textbf{Five} - 50\% responses. These respondents figure that Programming Planner is close to Useful for beginners.
+          \item \textbf{Six} - 12.5\% responses. These respondents consider that Programming Planner is Useful for beginners. 
+        \end{itemize}
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q7"}.png}
+          \caption{Survey Question 7 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q7.png}{Original Image}}
+          \label{fig:q-7}
+        \end{figure}
+        
+        \subsubsection{Survey Question 8} Question~\ref{fig:q-8} `Did this help create a structure of your favourite language faster than standard methods?'. 75\% of responses said Yes, 12.5\% of responses said `Would not recommend to new programmer as they will not learn the basics' and 12.5\% said `I have not used other methods'. This chart suggests that the majority found this software to be faster than their standard methods.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q8"}.png}
+          \caption{Survey Question 8 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q8.png}{Original Image}}
+          \label{fig:q-8}
+        \end{figure}
+
+        \subsubsection{Survey Question 9} - Question~\ref{fig:q-9} `What features would you wish Programming Planner to offer?'. This question attempts to determine if the user has any requests about the software they have used. These were the responses:-
+        \begin{itemize}
+          \item `When I wanted only one function on the variable creation it asked if it works with other functions but I didn't have any other functions' - This suggestion shows that the user was confused with the way the program asked the user if the variable was a argument or a standard variable.
+          \item `The target audience for this program will have little coding experience, and may forget what is required of a function, variable, etc. Adding examples to each page may be a good idea to reduce confusing.' - This suggestion shows that a help page or tips pop up on creating an element within the GUI program will help beginners use this software.
+          \item `A set of pre made open source programs that could be quickly accessed' - Perhaps, the program could offer a GitHub repository import, which will examine the code and visualise it for the user.
+          \item `Would be better with visualisation if writing a longer program' - The response could mean two things. It could mean that the user wanted to have an ability to overview the code within the console application, or it could mean that the user would have preferred a GUI work area.
+          \item `A GUI' - This response means that the user would have preferred a GUI product rather than a console application.
+          \item `Allow sudo code comments to be added to the function' - In the GUI application, it could have the ability for the user to enter comments.
+          \item `Calculator?' - This response did not seem useful to add in to the future software, as popup calculators are available in most operating systems.
+        \end{itemize}
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q9"}.png}
+          \caption{Survey Question 9 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q9.png}{Original Image}}
+          \label{fig:q-9}
+        \end{figure}
+
+        \subsubsection{Survey Question 10} Figure~\ref{fig:q-10} ask `Would a Graphical User Interface uplift the user experience?' as a multiple-choice question. The 100\% chose the yes choice. This feedback implies that they would like a GUI to work with over a console application out of the eight responses.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q10"}.png}
+          \caption{Survey Question 10 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q10.png}{Original Image}}
+          \label{fig:q-10}
+        \end{figure}
+
+        \subsubsection{Survey Question 11} A grid question asked `According to you, how should the features of the Graphical User Interface have to work?'. The following options are: `Clickable', `Drag and Drop', `Drop Down Menu' and `Text Filled'. The details are `Structure Elements', `Logic Elements', `Select Languages and Save' and `Sub Elements'. After overlooking the table~\ref{fig:q-11} `Structure Elements' looks like it favoured Drag and Drop the most by four responses. The Drag and Drop were also voted for the `Logic Elements' by five responses. The `Select Languages and Save' preferred the Drop Down Menu by six responses, and lastly, the `Sub Elements' liked the idea if it was Text Filled.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q11"}.png}
+          \caption{Survey Question 11 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q11.png}{Original Image}}
+          \label{fig:q-11}
+        \end{figure}
+
+        \subsubsection{Survey Question 12} This grid asks the participants, `How would you prefer to access the software?'. The options are `Windows Operating System', `Linux Operating System', `ChromeOS/Android' and `iOS'. The details are `Computer, Laptop or Tablet Devices', `Web Application', `Mobile Devices'. For the first column, the responses favour the Windows Operating System by eight. The second column, Windows Operating System, is also preferred by eight. The last column, ChromeOS, is the six responses favourites, and iOS is preferred by four. After reviewing this, the application aims for the Windows Operating System to get the most attention. Programming Planner and Programming Planner Improved works for both Windows and Linux Operating Systems.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q12"}.png}
+          \caption{Survey Question 12 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q12.png}{Original Image}}
+          \label{fig:q-12}
+        \end{figure}
+
+        \newpage
+        \subsubsection{Survey Question 13} Figure~\ref{fig:q-13} a question, `Any comment?' follows the last questions. The only response was `No'.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q13"}.png}
+          \caption{Survey Question 13 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q13.png}{Original Image}}
+          \label{fig:q-13}
+        \end{figure}
+
+        \subsubsection{Survey Question 14-15} Figures~\ref{fig:q-14} and~\ref{fig:q-15} shows two questions, `How complicated is Visual Scripting? (Reference to Unreal Engine for an example).' Furthermore, `How complicated is Website Builders?' these questions portray how existing Visual Scripting Web Builders are successful, and if it is possible to do a service that is easier to use, similar to a web builder. The question is on a scale of one (Piece of Cake) to five (Complicated). The feedback from the first question:-
+        \begin{itemize}
+          \item Three - 37.5\% of the responses. This indicates that this percentage of the participants find Visual Scripting moderately easy.
+          \item Four - 50\% of the responses. This displays that 50\% of the participants find Visual Scripting a bit more complicated than the 37.5\%.
+          \item Five - 12.5\% of the responses find Visual Scripting tough.
+        \end{itemize}
+
+        The feedback from the second question:-
+        \begin{itemize}
+          \item One - 25\% of the responses find Web Builders a `Piece of Cake'.
+          \item Two - 50\% of the responses find Web Builders more or less easy.
+          \item Three - 25\% of the responses find Web Builders moderately easy.
+        \end{itemize}
+
+        These findings will change the research perspective to look more into the Web Builder layouts, functionality and user interface to work out the GUI of the product.
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q14"}.png}
+          \caption{Survey Question 14 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q14.png}{Original Image}}
+          \label{fig:q-14}
+        \end{figure}
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q15"}.png}
+          \caption{Survey Question 15 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q15.png}{Original Image}}
+          \label{fig:q-15}
+        \end{figure}
+
+        \newpage
+        \subsubsection{Survey Question 16} Question~\ref{fig:q-16}, `If Programming Planner had an easy-to-use drag and drop feature without input and output relationships, then will this improve Visual Scripting overall?', the question paints a picture from the participants to see if the relationships in Visual Scripting that is similar to Entity-Relationship Diagrams if they cause a problem. All eight responses replied back with yes.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q16"}.png}
+          \caption{Survey Question 16 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q16.png}{Original Image}}
+          \label{fig:q-16}
+        \end{figure}
+
+        \subsubsection{Survey Question 17} Similar to the previous question to paint an image from what the participants want to see, `Would Visual Scripting be better if it allowed users to add any language they wish and generate any language with one click of a button?'. According to the figure~\ref{fig:q-17}, all of the eight responses responded with yes.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q17"}.png}
+          \caption{Survey Question 17 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q17.png}{Original Image}}
+          \label{fig:q-17}
+        \end{figure}
+
+        \newpage
+        \subsubsection{Survey Question 18} To squeeze more information from the participants, a question, `What was the reason for your selection?' was asked and made compulsory. The responses are as follows:-
+        \begin{itemize}
+          \item `Would be easier to write programs (for some people)'
+          \item `A feature such as this would greatly reduce the production times involved in program development.'
+          \item `save time and allow users to focus on the details'
+          \item `I would like to code in any language I choose if that option was applicable.'
+          \item `Useful feature'
+          \item `Makes it more visual'
+          \item `Again, the easier to use, and the more features, the better'
+          \item `More accessibility'
+        \end{itemize}
+
+        After reading the feedback, a few points are to address. The current software already makes it easier to write code for some people, so it is imperative that the new software does not distract but improve the capability of writing software. The command-line may benefit users as it keeps developers in a similar environment they are probably already using. Another point to address is this question, `Will the GUI software get too heavy with too many features making it no longer lightweight?'. The best thing about having Dynamic-Link Libraries is that developers can incorporate into Java Android, iOS, Web Applications and, but not limited to, Visual Studio Code Extensions. The backend can open a `can of worms' to allow different interfaces to the top of the backend, like digital notebooks or other ideas. Anyone who develops on top of the backend can make any interfaces or even new scripting languages. This idea, in turn, will enable others to make it easier to use Visual Scripting and Languages to Write. For example, Python or JavaScript has the potential of being converted into C++ and vice-versa.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q18"}.png}
+          \caption{Survey Question 18 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q18.png}{Original Image}}
+          \label{fig:q-18}
+        \end{figure}
+
+        \subsubsection{Survey Question 19} Final question which asked the participant, `Would you like to leave any extra feedback?', which hopefully gets any extra feedback that the survey missed out. Six responses, excluding two including the response `No', are displayed below:-
+        \begin{itemize}
+          \item `Introducing both drag and drop, as well as text filled features will appeal to both beginners and experienced programmers.' - The reply suggests that both Drag and Drop menus and Text Filled features will appeal to both programmers than just one of the methods used. Another idea this program opens up is creating snippets that can work in Visual Studio Extension, giving the user more flexible tools for development.
+          \item `A training manaul along with some begginer tutorials would really help new users get to grips with the software' - A training manual or documentation would benefit both the console and GUI applications.
+          \item `Command-line is hard on eyes when using. Not very good for Visual Scripting in general.' - The best thing about the console application is that it already has a language compiler, which plays a massive part to give the GUI application a backend. However, this response backs up the reasoning why the frontend matters in this project.
+          \item `Nothing besides a nice GUI' - Many Visual Scripting is done in GUI applications, so it was unusual for a console application to have achieved a similar result. 
+        \end{itemize}
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q19"}.png}
+          \caption{Survey Question 19 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q19.png}{Original Image}}
+          \label{fig:q-19}
+        \end{figure}
+
+    \section{Terminology}
+      List of terminologies used in this document:-
+      \begin{itemize}
+        \item HTML - HyperText Markup Language.
+        \item AI - Artificial Intelligence.
+        \item XML - Extensible Markup Language.
+        \item GUI - Graphical User Interface.
+      \end{itemize}
+
+    \nocite{*}
+	\renewcommand\refname{\section{Reference List}}
+	\small{\bibliographystyle{IEEEtran}
+    \bibliography{ref}}
+\end{document}

@@ -1,5 +1,4 @@
 #include "coms.h"
-#include <string>
 
 const char* Helloworld()
 { return "C++ says Helloworld"; }
@@ -30,3 +29,10 @@ char* Ignition(Car* car, int currentMode)
 
 void DisposeCar(Car* car)
 { delete car; }
+
+// SaveFile Class
+void Save(const char* data, const char* fileDirectory)
+{ 
+	if(data != nullptr && fileDirectory != nullptr)
+		SaveFile file(data, fileDirectory); 
+}

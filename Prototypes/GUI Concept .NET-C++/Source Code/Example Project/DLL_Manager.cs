@@ -13,6 +13,8 @@ namespace Example_Project
         static public extern double Calculator(double x, double y, bool opt);
 
         [DllImport("DLL_Library", CallingConvention = CallingConvention.Cdecl)]
+
+        // Car Class
         static public extern IntPtr InitialiseCar([MarshalAs(UnmanagedType.AnsiBStr)] string make,
             [MarshalAs(UnmanagedType.AnsiBStr)] string model, [MarshalAs(UnmanagedType.AnsiBStr)] string modelNumber);
 
@@ -24,5 +26,9 @@ namespace Example_Project
 
         [DllImport("DLL_Library", CallingConvention = CallingConvention.Cdecl)]
         static public extern void DisposeCar(IntPtr car);
+
+        // Save Class
+        [DllImport("DLL_Library", CallingConvention = CallingConvention.Cdecl)]
+        static public extern void Save([MarshalAs(UnmanagedType.AnsiBStr)] string data, [MarshalAs(UnmanagedType.AnsiBStr)] string fileDirectory);
     }
 }
