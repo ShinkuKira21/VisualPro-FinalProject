@@ -91,8 +91,8 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
     \pagestyle{plain}
     
     \tableofcontents
-	  %\vspace{.5cm}
-    \newpage
+	  \vspace{.5cm}
+    %\newpage
     \begin{abstract}
     
     \end{abstract}
@@ -104,7 +104,58 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
     \section{Introduction}
 
     \section{Literature Review}
-      The Literature Review section covers the Pre-Planning, which shows the steps and the level of thought that went into deciding VisualPro's purpose and the existing software and prototypes. Some Notebook Planning may not make sense as some foreseeable problems were thought and planned in ahead of time.
+      \subsection{Productivity and Visual Scripting}
+      Multiple books are necessary to capture this question, ``If visual scripting can write structure and logic of any desired language the user wishes, will this produce a more productive and better work environment''. The research also helps understand why visual scripting or interpreted programming languages/scripts are more popular than compiled programming languages and how productivity expands with new access to different tools.
+
+      Productivity, specifically within the software engineering field, Rethinking Productivity in Software Engineering Book states, ``Productivity is a challenging concept to define, describe, and measure for any knowledge work that involves nonroutine creative tasks. Software development is a prime example of knowledge work, as it too often involves poorly defined tasks relying on extensive collaborative and creative endeavors. As in other areas of knowledge work, defining productivity in software development has been a challenge facing both researchers and practitioners who may want to understand and improve it by introducing new tools or processes.'' When reading further into the chapter, the following points evaluate how we should think about productivity:-
+
+      \begin{itemize}
+        \item ``Velocity: How fast works gets done.''
+        \item ``Quality: How well works gets done.''
+        \item ``Satisfaction: How satisfying the work is.''
+      \end{itemize}
+
+      After thinking about this, VisualPro, in theory, should increase the rapidity of the individual’s work. Suppose VisualPro changes the way Visual Scripting works today, making it lightweight and understandable compared to existing Visual Scripting (For example, Unreal Engine's Blueprints~\cite{unreal_engine_introduction_nodate}), with the ability to generate any desired code. In that case, the quality and satisfaction of the developer amplify.
+
+      To compare the theory to conclude, \textbf{Hypothesis A} and \textbf{B}, page~\pageref{abstract}, two books, Dr. C. Sadowski and Dr. Thomas Zimmerman's~\cite{dr_caitlin_sadowski_rethinking_2019} Book, ``Rethinking Productivity in Software Engineering'', and A. M. Winn and T. J. Smedley’s~\cite{winn_multimedia_1998} Book, ``Multimedia Workshop: Exploring the Benefits of a Visual Scripting Language'', helps decide the decision.
+
+      \begin{center}
+        A: produce a more productive and better work environment.
+        B: help novices code in any language without knowing different syntax per language.
+      \end{center}
+      
+      After examining Chapter 1, ``Are Slower Programmers Just More Careful?''~\cite{dr_caitlin_sadowski_rethinking_2019}, figure 1-3 is shown. The dialogue suggested that $O$ symbols represent ``...dynamically typed scripting'' and $\mathbf{X}$ symbols represent ``...statically typed programs'' within the graph. The author was trying to show that script languages might produce productivity, as they require fewer lines of code, but programming languages offer more efficient execution time. In order to complete the analysis of \textbf{Hypothesis A}, it is essential to understand that the proposed idea should act as a script but generate a programming language whilst making an easy-to-use environment. This statement, including the figure shown, with the points mentioned, concludes that \textbf{Hypothesis A} is true if administered accurately.
+
+      A. M. Winn and T. J. Smedley’s~\cite{winn_multimedia_1998} Book, section 3.2, ``The graphical user-interface'',  suggests that Multimedia Workshop (MMW) Visual Scripting is excellent for junior and experienced developers, ``...MMW was carefully designed for easy and natural use...''. The Author’s of this Book mentions that a poor graphical user interface could ``...hinder an assessment of the usefulness of a visual scripting language''. To prove \textbf{Hypothesis B} effective on novices stands true on condition the software is executed correctly and is not complicated or chunky when designing software. This project requires an easy drag and drop method with a simple layout to meet \textbf{Hypothesis B}’s aim.
+
+    \subsection{Markup Languages}
+    \label{subsec:lr-markupLanguages}
+      \textbf{What is a Markup Language?}\\
+      A markup language is essentially a script, which consists of tags and attributes as Erik T. Ray's~\cite{ray_learning_nodate} Book implies in Chapter 2 (Markup and Core Concepts), page 49, ``Just as skeletons give us vertebrates shape and structure, markup does the same for text.'' This quote implies that markup languages offer structures, principally for designs, layouts and arrangement responsibilities. Due to the nature of Markup Languages with the ease of adding tags and attributes, Markup Languages will do the heavy lifting of setting available libraries and syntax for each language.
+
+      \textbf{How will Extensible Markup Language (XML) support custom languages in this project?}\\
+        According to G. Costa and R. Ortale~\cite{costa_machine_2018}, Machine learning techniques for XML (co-)clustering by structure and-constrained phrases Book, Chapter 2.1, ``\textit{An \textbf{XML tree} is a rooted, labeled, tree \textbf{t = (V$^{\text{t}}$,r$^{\text{t}}$,E$^{\text{t}}$,$\lambda^{\text{t}}$)} where:}
+        \begin{itemize}
+          \item \textbf{V$^{\text{t}} \subseteq \mathbb{N}$} is a set of nodes, with \textbf{r$^{\text{t}} \in \text{V}^{\text{t}}$} being the root of \textbf{t};
+          \item \textbf{E$^{\text{t}} \subseteq \text{V}^{\text{t}} \times \text{V}^{\text{t}}$} is a set of edges, catching parent-child relationships between nodes of \textbf{t};
+          \item \textbf{$\lambda \text{ : V}^{\text{t}} \rightarrow \sum $} is a labelling function, with $\sum$ being the domain of the node tags (or equivalently, labels).''
+        \end{itemize}
+
+        The facility of having nodes and attributes means we can expand the XML file with many different syntaxes for different opportunities. If nested nodes are within the parent nodes, then it will increase the performance time of execution. The library that reads through the XML document will only need to select the relevant sub-nodes listed under the parent node instead of reading through every possible node outcome. In theory, users can append languages by reading through the XML document quite efficiently, and the software would read through the XML document without any issues.
+
+    \section{Methods of Testing the Final Product}
+          
+    \section{Prototypes}
+      \subsection{Design and Implementation}
+
+      \subsection{Test Plan}
+
+      \subsection{Recorded Problems}
+
+      \subsection{Unit Testing}
+
+    \section{Design and Implementation}
+      The Design and Implementation section covers the Pre-Planning, which shows the steps and the level of thought that went into deciding VisualPro's purpose and the existing software and prototypes. Some Notebook Planning may not make sense as some foreseeable problems were thought and planned in ahead of time.
 
       \subsection{Pre-Planning}
         \subsubsection{HTML Design} Figure~\ref{fig:htmlDesign} shows a HyperText Markup Language (HTML) Design of how the User Interface should look. The Empty Column is where the user drops elements like Classes, Functions or Variables. Buttons on the right can be dragged and dropped on the Empty Column to the left. The functionality of the drop should create a new container, giving the user acknowledgement there's a new parent or sub-element with room for configuration and another drag and drop container within the class or function. 
@@ -147,7 +198,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
         \begin{figure}[h]
           \centering
-          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP4"}.jpg}
+          \includegraphics[width=0.75\columnwidth]{{"../../Showcase-Work_Completed/PrePlanning (Whole Idea)/NP4"}.jpg}
           \caption{Notebook Plan Page 7-8 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/PrePlanning\%20(Whole\%20Idea)/NP4.jpg}{Original Image}}
           \label{fig:nb-4}
         \end{figure}
@@ -211,7 +262,6 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
           \label{fig:q-2}
         \end{figure}
 
-        \newpage
         \subsubsection{Survey Question 3} Figure~\ref{fig:q-3} asks the question to Surveyee's, `Did the tutorial at the beginning of Programming Planner Improved help navigate around the application?'. This question tries to find out if the application is hard to use overall. The responses were 87.5\% for yes, and 12.5\% for no. Even though the most of the responses chose yes, the application may still be hard to use if, theoretically, one out of eight users found the user experience frustrating or confusing.
         \begin{figure}[h]
           \centering
@@ -253,7 +303,6 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
           \label{fig:q-5}
         \end{figure}
 
-        \newpage
         \subsubsection{Survey Question 6} Figure~\ref{fig:q-6} asks the Surveyee, `How would you rate the user experience (overall)?'. The question tries to aim for an idea of how the user experience of the two products. On a scale of one (Stressful) to ten (Relaxing), 62.5\% of the responses went with option eight, 37.5\% of the responses went with option seven. These figures show that the user experience has room for improvement. When designing and implementing the GUI product, it is important to think about the User Interface and User Experience.
         \begin{figure}[h]
           \centering
@@ -327,11 +376,10 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
           \label{fig:q-12}
         \end{figure}
 
-        \newpage
         \subsubsection{Survey Question 13} Figure~\ref{fig:q-13} a question, `Any comment?' follows the last questions. The only response was `No'.
         \begin{figure}[h]
           \centering
-          \includegraphics[width=0.85\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q13"}.png}
+          \includegraphics[width=0.65\columnwidth]{{"../../Showcase-Work_Completed/Surveying/q13"}.png}
           \caption{Survey Question 13 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q13.png}{Original Image}}
           \label{fig:q-13}
         \end{figure}
@@ -366,7 +414,6 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
           \label{fig:q-15}
         \end{figure}
 
-        \newpage
         \subsubsection{Survey Question 16} Question~\ref{fig:q-16}, `If Programming Planner had an easy-to-use drag and drop feature without input and output relationships, then will this improve Visual Scripting overall?', the question paints a picture from the participants to see if the relationships in Visual Scripting that is similar to Entity-Relationship Diagrams if they cause a problem. All eight responses replied back with yes.
         \begin{figure}[h]
           \centering
@@ -383,7 +430,6 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
           \label{fig:q-17}
         \end{figure}
 
-        \newpage
         \subsubsection{Survey Question 18} To squeeze more information from the participants, a question, `What was the reason for your selection?' was asked and made compulsory. The responses are as follows:-
         \begin{itemize}
           \item `Would be easier to write programs (for some people)'
@@ -422,11 +468,22 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
       \subsection{Further Research}
         \subsubsection{Current Libraries}
           From GitHub Repositories, a list of Visual Scripting libraries are listed:-
+          \begin{itemize}
+            \item Language: GDScript - Author:~\href{https://github.com/swarnimarun}{Swarnimarun} - Respository:~\href{https://github.com/swarnimarun/visual-scripting-node-library}{Visual Scripting Node Library}.
+            \item Language: Python - Author:~\href{https://github.com/leon-thomm}{leon-thomm} - Respository:~\href{https://github.com/leon-thomm/Ryven}{Ryven}.
+            \item Language: C\# - Unity Game Engine - Author~\href{https://github.com/ConstellationLanguage}{ConstellationLanguage} - Respository:~\href{https://github.com/ConstellationLanguage/Constellation}{Constellation}.
+            \item Language: Web Scripting - Author:~\href{https://github.com/ericabouaf}{ericabouaf} - Respository:~\href{https://github.com/ericabouaf/webhookit}{webhookit}.
+            \item Language: Web Scripting - Author:~\href{https://github.com/WebCabin}{WebCabin} - Respository:~\href{https://github.com/WebCabin/wcPlay}{wcPlay}.
+          \end{itemize}
 
-        \subsubsection{Web Builders and Visual Scripters}
+          These Visual Scripting software listed are identical to standard Game Engine Visual Scripting logic. Even though some are easy to use in the demos, a commonality between them is that they only allow users to control a live environment, whether it is a built-in game engine or an addition to an existing Game Engine, and they all seem to be game orientated. VisualPro aims to support different platforms, such as Web, Mobile, Software, Data Analytics, Games, and many others. This aim is possible due to the diversity of users, adding new languages by entering the desired language within the XML document; though, documentation to support users in adding new languages for the program to work correctly.
+
+        \subsubsection{Visual Scripters and Web Builders}
           A table of a few Web Builders and Visual Scripters is provided and tested. Visual Scripting Software~\ref{tab:comp-1}:-
           \begin{table}[htbp]
             \centering
+            \caption{Comparison of Visual Scripters}
+            \label{tab:comp-1}
             \resizebox{\columnwidth}{!}{%
             \begin{tabular}{cccc}
             \hline
@@ -436,21 +493,26 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
             \multicolumn{1}{c|}{Minecraft~\cite{mojang_minecraft_nodate}}       & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Game (Redstone)\\ Represents binary coding.\end{tabular}} & \multicolumn{1}{c|}{Beginner: 7-10 | Experience: 10}    & \begin{tabular}[c]{@{}c@{}}Even though Minecraft does not\\ create programming languages,\\ it shows that many ages who enjoy\\ logging onto Minecraft to make\\ Redstone functionality, passively\\ learn about Binary code.\end{tabular} \\ \hline
             \end{tabular}%
             }
-            \caption{Comparison of Visual Scripters}
-            \label{tab:comp-1}
             \end{table}
 
             After studying different Visual Scripting software, there is no portable Visual Scripting made for versatility. Both seem to only aim at Game Engines. Minecraft does not offer the ability for Visual Scripting. However, to bring attention to the Redstone feature in Minecraft. The feature is interesting for the audience, even to none-programmers, then could the backend be made into a Visual Scripting game or specific in-game blueprints/prefabs be placed into the environment, generating code, so that the user can create programs, whilst being interested. Redstone accomplishes Binary teaching with Redstone passively by using on and off instead of 1s and 0s. Unlike Visual Scripting, Unreal Engine has a `messy' look, especially when the game logic is more clunky and complex, whereas Unity seems to have a better order. The problem with Visual Scripting in both engines is that the performance of the code is slow compared to writing the code manually. Would this uplift each software market section if the VisualPro Scripting Pad software could generate code in the desired language with the most effective running time?
     
-    \section{Prototypes}
-      \subsection{Design and Implementation}
+            \begin{table}[htbp]
+              \centering
+              \caption{Comparison of Web Builders}
+              \label{tab:comp-2}
+              \resizebox{\columnwidth}{!}{%
+              \begin{tabular}{cccc}
+              \hline
+              \textbf{Name}                                                                   & \textbf{Description}             & \textbf{Difficulty: Hard (0-10) Easy}                  & \textbf{Explanation?}                                                                                                                                                                                                                  \\ \hline
+              \multicolumn{1}{c|}{WordPress}                                                  & \multicolumn{1}{c|}{Web Builder} & \multicolumn{1}{c|}{Beginner: 8-10 | Experience: 9-10} & \begin{tabular}[c]{@{}c@{}}WordPress offers many\\ themes and plugins\\ to the user base.\end{tabular}                                                                                                                                 \\ \hline
+              \multicolumn{1}{c|}{Wix}                                                        & \multicolumn{1}{c|}{Web Builder} & \multicolumn{1}{c|}{Beginner: 9-10 | Experience: 10}   & \begin{tabular}[c]{@{}c@{}}Wix is designed to help\\ buisnesses to design\\ webpages with no skill\\ required.\end{tabular}                                                                                                            \\ \hline
+              \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Bootstrap\\ Studio\end{tabular}} & \multicolumn{1}{c|}{Web Builder} & \multicolumn{1}{c|}{Beginner: 5-7 | Experience: 7-10}  & \begin{tabular}[c]{@{}c@{}}Bootstrap Studio is a\\ similar interface to\\ Adobe Dreamweaver.\\ It offers templates and\\ allowed websites to designed.\\ This interface is difficult with\\ no experience with Bootstrap.\end{tabular} \\ \hline
+              \end{tabular}%
+              }
+              \end{table}
 
-      \subsection{Test Plan}
-
-      \subsection{Recorded Problems}
-
-      \subsection{Unit Testing}
-
+              In one form, Web Builder's give an idea of what makes Visual Scripting easier. This concept is down to the research, design, and implementation of existing developers who had to look into individuals with no coding experience. If there is a correlation between designing a more straightforward Visual Scripting interface using methods that Web Builders introduced, it could update Visual Scripting and bring it into future software design. Perhaps, it could be a tool to visualise JavaScript so that users can build a website and add functionality, or create code snippets, for example, MelPy to animate 3D models within Autodesk Maya and other products, making Artists thrive more rather than relying on a Software Engineer to make their vision.
     \section{Terminology}
       List of terminologies used in this document:-
       \begin{itemize}
