@@ -1,5 +1,4 @@
-%Custom Functions
-\newcommand{\CompanyName}{TT} % update later
+ 
 
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
@@ -105,21 +104,58 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
     \section{Introduction}
 
     \section{Literature Review}
+    \label{sec:literatureReview}
       \subsection{User Interface and User Experience}
+      \label{subsec:userInterfaceUserExperience}
         Research for User Interface (UI) and User Experience (UX) analyse how a new developer would use the software with little to no coding experience and what difficulties the UI and UX design may encounter. Methods of outlining and testing the UI and UX are within the Design and Feedback~\ref{sec:designAndFeedback} section under subsection, Research Methodology~\ref{subsec:researchMethodology}, page~\pageref{subsec:researchMethodology}.
 
         \subsubsection{User Interface}
-          To get some ideas for the user interface, the Journal `Evaluation of a UML-Based Versus an IEC 61131-3-Based Software Engineering Approach for Teaching PLC Programming' writting by Birgit Vogel-Heuser, Martin Obermeier, Steven Braun, Kerstin Sommer, Fabian Jobst, and Karin Schweizer~\cite{vogel-heuser_evaluation_2013} and the Journal `Design Issues and First Experiences with a Visual Database Editor for the extended NF$^{2}$-Data Model', author(s):- K. K${\ddot{u}}$spert, J. Teuhola and L. Wegner~\cite{kuspert_design_1990}. These Journals cover Unified Modeling Language (UML). The UML concept is used in relationship diagrams in databases and Visual Scripting. 
+        \label{subsubsec:userInterface}
+          To get some ideas for the user interface, the Journal `Evaluation of a UML-Based Versus an IEC 61131-3-Based Software Engineering Approach for Teaching PLC Programming' writting by Birgit Vogel-Heuser, Martin Obermeier, Steven Braun, Kerstin Sommer, Fabian Jobst, and Karin Schweizer~\cite{vogel-heuser_evaluation_2013} and the Journal `Design Issues and First Experiences with a Visual Database Editor for the extended NF$^{2}$-Data Model', author(s):- K. K${\ddot{u}}$spert, J. Teuhola and L. Wegner~\cite{kuspert_design_1990}. These Journals cover Unified Modeling Language (UML). The UML concept is promdomity used in relationship diagrams in databases and Visual Scripting. 
+
+          The addition of UML tools for the frontend to create the Visual Scripting platform proves an excellent opportunity as there is plenty of UML Framework support. Some critical points based on an experiment from Birgit Vogel-Heuser's Journal Article~\cite{vogel-heuser_evaluation_2013} are listed.
+
+          \textbf{Experiment Hypothesis}\\
+          To gather the answer, `How effective is UML tools?', the hypothesis from Birgit's~\cite{vogel-heuser_evaluation_2013} Journal article, ``Students trained in OO modelling show an imporved modelling performance.''. 
         
-      \subsection{Learning Tools}
-        Research of obstacles and potentials help identify existing and future issues that VisualPro software could generate. The aim is for amateurs new to the development field and suggests existing problems that put the `brick wall' to learning programming and potentials of how VisualPro can solve these issues. This topic may reflect on the critical components of UI and UX previously mentioned.
-        \subsubsection{Obstacles}
-        \subsubsection{Potentials}
+          \textbf{Experiment Environment}\\
+          The experiment environment involves the following rules:-
+          \begin{itemize}
+            \item Software Engineering theme. - Any material created for the experiment to work, the experiment outline is set in a Software Engineering equivalent environment.
+            \item Training Assets and Problem-Solving Exercises. - A series of training materials and problem-solving exercises were created for the experiment to be fair.
+            \item Task Setting and Training. - The author focuses on Task Setting and Training, supported by Hierarchical Task Analysis.
+          \end{itemize}
+
+          \textbf{Experiment Results}\\
+            ``The data were analyzed using three methods. First, an analysis of variance (ANOVA) was applied to test differences between the variances of several groups in order to show whether their performance changed after the training approaches and whether their performance differed between classes due to expertise level differences. Then, correlations were computed as a measure of the relation between programming/modeling performances on different performance scales. Subsequently, differences in relations between the two software engineering approaches (see hypothesis 3) were shown by computing regression models for the programming performance for both approaches.'' - Birgit Vogel-Heuser~\cite{vogel-heuser_evaluation_2013}. To answer Hypothesis 1 set by Birgit Vogel-Heuser~\cite{vogel-heuser_evaluation_2013} `...analysis examined the within factor (before and after the training) and additionally two between factors (notation and expertise).''
+
+            The results gathered display that the training set for learning UML in a Software Engineering sense was highly effective. However, the Birgit Vogel-Heuser~\cite{vogel-heuser_evaluation_2013} states that `All participants learned from the training.' and backs it up by `...indicating that the -group had learned even more from the training because of their poor results before the training (see also Fig. 2) and their lack of prior knowledge.' This suggests that UML tools found in Visual Scripting, may not neccessary be hard for a beginner to learn, but without proper training, it may seem much more complicated. This conclusion could suggest that UML methods are not well documented and could indicate that UML may not be well maintained, look at section~\ref{subsubsec:maintenance}, page~\pageref{subsubsec:maintenance}.
+
+        \subsubsection{Maintenance}
+        \label{subsubsec:maintenance}
+          After learning that the individuals who participated in the experiment from section~\ref{subsubsec:userInterface}, page~\pageref{subsubsec:userInterface}, the question arose, `Was the UML documentation depreciated and how was the documentation withstanding on the development side?' it was vital to determine if UML tools are future-proof or will it prove expensive to maintain. To find out more of what the development documentation lacks of, the Journal written by Erik Arisholm, Lionel C. Briand, Siw Elisabeth Hove and Yvan Labiche, `The Impact of UML Documentation on Software Maintenance: An Experimental Evaluation' is chosen.
+        \subsubsection{User Experience}
+          \textbf{Difficulties of Teaching}\\
+            Within the Journal, written by Birgit Vogel-Heuser, Martin Obermeier, Steven Braun, Kerstin Sommer, Fabian Jobst, and Karin Schweizer~\cite{vogel-heuser_evaluation_2013}, `Evaluation of a UML-Based Versus an IEC 61131-3-Based Software Engineering Approach for Teaching PLC Programming', an experiment to test whether beginners excelled at object-orientated programming (OOP) or functional programming (FP). The quote follows:-
+
+            \begin{center}
+              ``Berges and Hubwieser investigated Computer Science
+              freshmen’s abilities to learn OO programming in two and a
+              half days with as little (human) instruction as possible [27].
+              Examining 300 students’ program code, they found that most
+              were able to write quite satisfying programs. They identified
+              two types of students: those who accept and apply the OO
+              concepts, and those who prefer to program in a more traditional
+              procedural way. They also tried to define the characteristics of
+              object orientation to evaluate measures for program quality,
+              e.g., one instance of a class is created.''~\cite{vogel-heuser_evaluation_2013}
+            \end{center}
+
+            This test suggests that after three hundred students were tested with little instruction from other peers, which opens an interesting fact that most of the three hundred students wrote acceptable code in both OOP and FP categories. The test's conclusion finds two types of students, and the students either found OOP or FP easier. After analysing this specific test, it seems that beginners may have different mindsets and thinking styles.
+   
         
       \subsection{Productivity and Visual Scripting}
-      Multiple books are necessary to capture this question, ``If visual scripting can write structure and logic of any desired language the user wishes, will this produce a more productive and better work environment''. The research also helps understand why visual scripting or interpreted programming languages/scripts are more popular than compiled programming languages and how productivity expands with new access to different tools.
-
-      Productivity, specifically within the software engineering field, Rethinking Productivity in Software Engineering Book states, ``Productivity is a challenging concept to define, describe, and measure for any knowledge work that involves nonroutine creative tasks. Software development is a prime example of knowledge work, as it too often involves poorly defined tasks relying on extensive collaborative and creative endeavors. As in other areas of knowledge work, defining productivity in software development has been a challenge facing both researchers and practitioners who may want to understand and improve it by introducing new tools or processes.'' When reading further into the chapter, the following points evaluate how we should think about productivity:-
+      Productivity, specifically within the software engineering field, Dr. Caitlin Sadowski's~\cite{dr_caitlin_sadowski_rethinking_2019}, `Rethinking Productivity in Software Engineering' Book states, ``Productivity is a challenging concept to define, describe, and measure for any knowledge work that involves nonroutine creative tasks. Software development is a prime example of knowledge work, as it too often involves poorly defined tasks relying on extensive collaborative and creative endeavors. As in other areas of knowledge work, defining productivity in software development has been a challenge facing both researchers and practitioners who may want to understand and improve it by introducing new tools or processes.'' When reading further into the chapter, the following points evaluate how we should think about productivity:-
 
       \begin{itemize}
         \item ``Velocity: How fast works gets done.''
@@ -135,54 +171,58 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
       \subsection{Research Methodology}
       \label{subsec:researchMethodology}
+        \subsection{Learning Tools}
+          Research of obstacles and potentials help identify existing and future issues that VisualPro software could generate. The aim is for amateurs new to the development field and suggests existing problems that put the `brick wall' to learning programming and potentials of how VisualPro can solve these issues. This topic may reflect on the critical components of UI and UX previously mentioned.
+          \subsubsection{Obstacles}
+          \subsubsection{Potentials}
         \subsection{Methods of Final Testing}
-        \subsubsection{Research of Libraries}
-          From GitHub Repositories, a list of Visual Scripting libraries are listed:-
-          \begin{itemize}
-            \item Language: GDScript - Author:~\href{https://github.com/swarnimarun}{Swarnimarun} - Respository:~\href{https://github.com/swarnimarun/visual-scripting-node-library}{Visual Scripting Node Library}.
-            \item Language: Python - Author:~\href{https://github.com/leon-thomm}{leon-thomm} - Respository:~\href{https://github.com/leon-thomm/Ryven}{Ryven}.
-            \item Language: C\# - Unity Game Engine - Author~\href{https://github.com/ConstellationLanguage}{ConstellationLanguage} - Respository:~\href{https://github.com/ConstellationLanguage/Constellation}{Constellation}.
-            \item Language: Web Scripting - Author:~\href{https://github.com/ericabouaf}{ericabouaf} - Respository:~\href{https://github.com/ericabouaf/webhookit}{webhookit}.
-            \item Language: Web Scripting - Author:~\href{https://github.com/WebCabin}{WebCabin} - Respository:~\href{https://github.com/WebCabin/wcPlay}{wcPlay}.
-          \end{itemize}
+          \subsubsection{Research of Libraries}
+            From GitHub Repositories, a list of Visual Scripting libraries are listed:-
+            \begin{itemize}
+              \item Language: GDScript - Author:~\href{https://github.com/swarnimarun}{Swarnimarun} - Respository:~\href{https://github.com/swarnimarun/visual-scripting-node-library}{Visual Scripting Node Library}.
+              \item Language: Python - Author:~\href{https://github.com/leon-thomm}{leon-thomm} - Respository:~\href{https://github.com/leon-thomm/Ryven}{Ryven}.
+              \item Language: C\# - Unity Game Engine - Author~\href{https://github.com/ConstellationLanguage}{ConstellationLanguage} - Respository:~\href{https://github.com/ConstellationLanguage/Constellation}{Constellation}.
+              \item Language: Web Scripting - Author:~\href{https://github.com/ericabouaf}{ericabouaf} - Respository:~\href{https://github.com/ericabouaf/webhookit}{webhookit}.
+              \item Language: Web Scripting - Author:~\href{https://github.com/WebCabin}{WebCabin} - Respository:~\href{https://github.com/WebCabin/wcPlay}{wcPlay}.
+            \end{itemize}
 
-          These Visual Scripting software listed are identical to standard Game Engine Visual Scripting logic. Even though some are easy to use in the demos, a commonality between them is that they only allow users to control a live environment, whether it is a built-in game engine or an addition to an existing Game Engine, and they all seem to be game orientated. VisualPro aims to support different platforms, such as Web, Mobile, Software, Data Analytics, Games, and many others. This aim is possible due to the diversity of users, adding new languages by entering the desired language within the XML document; though, documentation to support users in adding new languages for the program to work correctly.
+            These Visual Scripting software listed are identical to standard Game Engine Visual Scripting logic. Even though some are easy to use in the demos, a commonality between them is that they only allow users to control a live environment, whether it is a built-in game engine or an addition to an existing Game Engine, and they all seem to be game orientated. VisualPro aims to support different platforms, such as Web, Mobile, Software, Data Analytics, Games, and many others. This aim is possible due to the diversity of users, adding new languages by entering the desired language within the XML document; though, documentation to support users in adding new languages for the program to work correctly.
 
-        \subsubsection{Visual Scripters and Web Builders}
-          A table of a few Web Builders and Visual Scripters is provided and tested. Visual Scripting Software~\ref{tab:comp-1}:-
-          \begin{table}[htbp]
-            \centering
-            \caption{Comparison of Visual Scripters}
-            \label{tab:comp-1}
-            \resizebox{\columnwidth}{!}{%
-            \begin{tabular}{cccc}
-            \hline
-            \textbf{Name}                               & \textbf{Description}                                                                                     & \textbf{Difficulty: Hard (0-10) Easy}                   & \textbf{Explanation?}                                                                                                                                                                                                                      \\ \hline
-            \multicolumn{1}{c|}{Unreal Engine 5~\cite{unreal_engine_introduction_nodate}} & \multicolumn{1}{c|}{Game Engine (C++ Language)}                                                          & \multicolumn{1}{c|}{Beginner: 3-0 | Experience: 5-10}   & \begin{tabular}[c]{@{}c@{}}A beginner who does not \\ understand the principles of code \\ may struggle over time.\end{tabular}                                                                                                            \\ \hline
-            \multicolumn{1}{c|}{Unity Engine~\cite{unity_technologies_unity_nodate}}    & \multicolumn{1}{c|}{Game Engine (C\# Language)}                                                          & \multicolumn{1}{c|}{Beginner: 2 - 6 | Experience: 8-10} & \begin{tabular}[c]{@{}c@{}}With the documentation available\\ and the simplicity of the Unity\\ Visual Scripting design, it seems\\ beginner-friendly.\end{tabular}                                                                        \\ \hline
-            \multicolumn{1}{c|}{Minecraft~\cite{mojang_minecraft_nodate}}       & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Game (Redstone)\\ Represents binary coding.\end{tabular}} & \multicolumn{1}{c|}{Beginner: 7-10 | Experience: 10}    & \begin{tabular}[c]{@{}c@{}}Even though Minecraft does not\\ create programming languages,\\ it shows that many ages who enjoy\\ logging onto Minecraft to make\\ Redstone functionality, passively\\ learn about Binary code.\end{tabular} \\ \hline
-            \end{tabular}%
-            }
-            \end{table}
-
-            After studying different Visual Scripting software, there is no portable Visual Scripting made for versatility. Both seem to only aim at Game Engines. Minecraft does not offer the ability for Visual Scripting. However, to bring attention to the Redstone feature in Minecraft. The feature is interesting for the audience, even to none-programmers, then could the backend be made into a Visual Scripting game or specific in-game blueprints/prefabs be placed into the environment, generating code, so that the user can create programs, whilst being interested. Redstone accomplishes Binary teaching with Redstone passively by using on and off instead of 1s and 0s. Unlike Visual Scripting, Unreal Engine has a `messy' look, especially when the game logic is more clunky and complex, whereas Unity seems to have a better order. The problem with Visual Scripting in both engines is that the performance of the code is slow compared to writing the code manually. Would this uplift each software market section if the VisualPro Scripting Pad software could generate code in the desired language with the most effective running time?
-
+          \subsubsection{Visual Scripters and Web Builders}
+            A table of a few Web Builders and Visual Scripters is provided and tested. Visual Scripting Software~\ref{tab:comp-1}:-
             \begin{table}[htbp]
               \centering
-              \caption{Comparison of Web Builders}
-              \label{tab:comp-2}
+              \caption{Comparison of Visual Scripters}
+              \label{tab:comp-1}
               \resizebox{\columnwidth}{!}{%
               \begin{tabular}{cccc}
               \hline
-              \textbf{Name}                                                                   & \textbf{Description}             & \textbf{Difficulty: Hard (0-10) Easy}                  & \textbf{Explanation?}                                                                                                                                                                                                                  \\ \hline
-              \multicolumn{1}{c|}{WordPress}                                                  & \multicolumn{1}{c|}{Web Builder} & \multicolumn{1}{c|}{Beginner: 8-10 | Experience: 9-10} & \begin{tabular}[c]{@{}c@{}}WordPress offers many\\ themes and plugins\\ to the user base.\end{tabular}                                                                                                                                 \\ \hline
-              \multicolumn{1}{c|}{Wix}                                                        & \multicolumn{1}{c|}{Web Builder} & \multicolumn{1}{c|}{Beginner: 9-10 | Experience: 10}   & \begin{tabular}[c]{@{}c@{}}Wix is designed to help\\ buisnesses to design\\ webpages with no skill\\ required.\end{tabular}                                                                                                            \\ \hline
-              \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Bootstrap\\ Studio\end{tabular}} & \multicolumn{1}{c|}{Web Builder} & \multicolumn{1}{c|}{Beginner: 5-7 | Experience: 7-10}  & \begin{tabular}[c]{@{}c@{}}Bootstrap Studio is a\\ similar interface to\\ Adobe Dreamweaver.\\ It offers templates and\\ allowed websites to designed.\\ This interface is difficult with\\ no experience with Bootstrap.\end{tabular} \\ \hline
+              \textbf{Name}                               & \textbf{Description}                                                                                     & \textbf{Difficulty: Hard (0-10) Easy}                   & \textbf{Explanation?}                                                                                                                                                                                                                      \\ \hline
+              \multicolumn{1}{c|}{Unreal Engine 5~\cite{unreal_engine_introduction_nodate}} & \multicolumn{1}{c|}{Game Engine (C++ Language)}                                                          & \multicolumn{1}{c|}{Beginner: 3-0 | Experience: 5-10}   & \begin{tabular}[c]{@{}c@{}}A beginner who does not \\ understand the principles of code \\ may struggle over time.\end{tabular}                                                                                                            \\ \hline
+              \multicolumn{1}{c|}{Unity Engine~\cite{unity_technologies_unity_nodate}}    & \multicolumn{1}{c|}{Game Engine (C\# Language)}                                                          & \multicolumn{1}{c|}{Beginner: 2 - 6 | Experience: 8-10} & \begin{tabular}[c]{@{}c@{}}With the documentation available\\ and the simplicity of the Unity\\ Visual Scripting design, it seems\\ beginner-friendly.\end{tabular}                                                                        \\ \hline
+              \multicolumn{1}{c|}{Minecraft~\cite{mojang_minecraft_nodate}}       & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Game (Redstone)\\ Represents binary coding.\end{tabular}} & \multicolumn{1}{c|}{Beginner: 7-10 | Experience: 10}    & \begin{tabular}[c]{@{}c@{}}Even though Minecraft does not\\ create programming languages,\\ it shows that many ages who enjoy\\ logging onto Minecraft to make\\ Redstone functionality, passively\\ learn about Binary code.\end{tabular} \\ \hline
               \end{tabular}%
               }
               \end{table}
 
-              In one form, Web Builder's give an idea of what makes Visual Scripting easier. This concept is down to the research, design, and implementation of existing developers who had to look into individuals with no coding experience. If there is a correlation between designing a more straightforward Visual Scripting interface using methods that Web Builders introduced, it could update Visual Scripting and bring it into future software design. Perhaps, it could be a tool to visualise JavaScript so that users can build a website and add functionality, or create code snippets, for example, MelPy to animate 3D models within Autodesk Maya and other products, making Artists thrive more rather than relying on a Software Engineer to make their vision.
+              After studying different Visual Scripting software, there is no portable Visual Scripting made for versatility. Both seem to only aim at Game Engines. Minecraft does not offer the ability for Visual Scripting. However, to bring attention to the Redstone feature in Minecraft. The feature is interesting for the audience, even to none-programmers, then could the backend be made into a Visual Scripting game or specific in-game blueprints/prefabs be placed into the environment, generating code, so that the user can create programs, whilst being interested. Redstone accomplishes Binary teaching with Redstone passively by using on and off instead of 1s and 0s. Unlike Visual Scripting, Unreal Engine has a `messy' look, especially when the game logic is more clunky and complex, whereas Unity seems to have a better order. The problem with Visual Scripting in both engines is that the performance of the code is slow compared to writing the code manually. Would this uplift each software market section if the VisualPro Scripting Pad software could generate code in the desired language with the most effective running time?
+
+              \begin{table}[htbp]
+                \centering
+                \caption{Comparison of Web Builders}
+                \label{tab:comp-2}
+                \resizebox{\columnwidth}{!}{%
+                \begin{tabular}{cccc}
+                \hline
+                \textbf{Name}                                                                   & \textbf{Description}             & \textbf{Difficulty: Hard (0-10) Easy}                  & \textbf{Explanation?}                                                                                                                                                                                                                  \\ \hline
+                \multicolumn{1}{c|}{WordPress}                                                  & \multicolumn{1}{c|}{Web Builder} & \multicolumn{1}{c|}{Beginner: 8-10 | Experience: 9-10} & \begin{tabular}[c]{@{}c@{}}WordPress offers many\\ themes and plugins\\ to the user base.\end{tabular}                                                                                                                                 \\ \hline
+                \multicolumn{1}{c|}{Wix}                                                        & \multicolumn{1}{c|}{Web Builder} & \multicolumn{1}{c|}{Beginner: 9-10 | Experience: 10}   & \begin{tabular}[c]{@{}c@{}}Wix is designed to help\\ buisnesses to design\\ webpages with no skill\\ required.\end{tabular}                                                                                                            \\ \hline
+                \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Bootstrap\\ Studio\end{tabular}} & \multicolumn{1}{c|}{Web Builder} & \multicolumn{1}{c|}{Beginner: 5-7 | Experience: 7-10}  & \begin{tabular}[c]{@{}c@{}}Bootstrap Studio is a\\ similar interface to\\ Adobe Dreamweaver.\\ It offers templates and\\ allowed websites to designed.\\ This interface is difficult with\\ no experience with Bootstrap.\end{tabular} \\ \hline
+                \end{tabular}%
+                }
+                \end{table}
+
+                In one form, Web Builder's give an idea of what makes Visual Scripting easier. This concept is down to the research, design, and implementation of existing developers who had to look into individuals with no coding experience. If there is a correlation between designing a more straightforward Visual Scripting interface using methods that Web Builders introduced, it could update Visual Scripting and bring it into future software design. Perhaps, it could be a tool to visualise JavaScript so that users can build a website and add functionality, or create code snippets, for example, MelPy to animate 3D models within Autodesk Maya and other products, making Artists thrive more rather than relying on a Software Engineer to make their vision.
 
       \subsection{Pre-Planning}
         \subsubsection{HTML Design} Figure~\ref{fig:htmlDesign} shows a HyperText Markup Language (HTML) Design of how the User Interface (UI) should look. The Empty Column iyou're like always battling with flu or something >p should create a new container, giving the user acknowledgement there's a new parent or sub-element with room for configuration and another drag and drop container within the class or function. 
@@ -519,6 +559,8 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
         \item UI - User Interface.
         \item UX - User Experience.
         \item UML - Unified Modeling Languages.
+        \item OOP - Object-Orientated Programming.
+        \item FP - Functional Programming.
         \item HTML - HyperText Markup Language.
         \item AI - Artificial Intelligence.
         \item XML - Extensible Markup Language.
