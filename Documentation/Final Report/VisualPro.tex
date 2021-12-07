@@ -1,5 +1,3 @@
- 
-
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
@@ -76,11 +74,11 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \begin{document}
 
-	\title{VisualPro}
+	\title{VisualPro - Visual Scripting Technologies for the Tomorrow}
 
 	\author{\IEEEauthorblockN{1\textsuperscript{st} Given Edward Patch}
 	\IEEEauthorblockA{\textit{Software Engineer Student (of BSc Year 3)} \\
-    \textit{Independent Project}\\
+    \textit{Dissertation}\\
     \textit{University of Wales Trinity St. Davids (of Mike Dacey)}\\
     Swansea, Wales \\
     Student ID: 1801492}}
@@ -129,30 +127,22 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
           \textbf{Experiment Results}\\
             ``The data were analyzed using three methods. First, an analysis of variance (ANOVA) was applied to test differences between the variances of several groups in order to show whether their performance changed after the training approaches and whether their performance differed between classes due to expertise level differences. Then, correlations were computed as a measure of the relation between programming/modeling performances on different performance scales. Subsequently, differences in relations between the two software engineering approaches (see hypothesis 3) were shown by computing regression models for the programming performance for both approaches.'' - Birgit Vogel-Heuser~\cite{vogel-heuser_evaluation_2013}. To answer Hypothesis 1 set by Birgit Vogel-Heuser~\cite{vogel-heuser_evaluation_2013} `...analysis examined the within factor (before and after the training) and additionally two between factors (notation and expertise).''
 
-            The results gathered display that the training set for learning UML in a Software Engineering sense was highly effective. However, the Birgit Vogel-Heuser~\cite{vogel-heuser_evaluation_2013} states that `All participants learned from the training.' and backs it up by `...indicating that the -group had learned even more from the training because of their poor results before the training (see also Fig. 2) and their lack of prior knowledge.' This suggests that UML tools found in Visual Scripting, may not neccessary be hard for a beginner to learn, but without proper training, it may seem much more complicated. This conclusion could suggest that UML methods are not well documented and could indicate that UML may not be well maintained, look at section~\ref{subsubsec:maintenance}, page~\pageref{subsubsec:maintenance}.
+            The results gathered display that the training set for learning UML in a Software Engineering sense was highly effective. However, the Birgit Vogel-Heuser~\cite{vogel-heuser_evaluation_2013} states that `All participants learned from the training.' and backs it up by `...indicating that the -group had learned even more from the training because of their poor results before the training (see also Fig. 2) and their lack of prior knowledge.' This quotation suggests that UML tools found in Visual Scripting may not necessarily be complicated for beginners to learn, but they may seem more complex without proper training. This conclusion could suggest that UML methods are not well documented and could indicate that UML may not be well maintained, look at section~\ref{subsubsec:maintenance}, page~\pageref{subsubsec:maintenance}.
 
         \subsubsection{Maintenance}
         \label{subsubsec:maintenance}
-          After learning that the individuals who participated in the experiment from section~\ref{subsubsec:userInterface}, page~\pageref{subsubsec:userInterface}, the question arose, `Was the UML documentation depreciated and how was the documentation withstanding on the development side?' it was vital to determine if UML tools are future-proof or will it prove expensive to maintain. To find out more of what the development documentation lacks of, the Journal written by Erik Arisholm, Lionel C. Briand, Siw Elisabeth Hove and Yvan Labiche, `The Impact of UML Documentation on Software Maintenance: An Experimental Evaluation' is chosen.
+        The Journal by Erik Arisholm, Lionel C. Briand, Siw Elisabeth Hove and Yvan Labiche, `The Impact of UML Documentation on Software Maintenance: An Experimental Evaluation', addresses the lack of UML Documentation on both developer-side and client-side. After learning that the individuals who participated in the experiment from section~\ref{subsubsec:userInterface}, page~\pageref{subsubsec:userInterface}, the question arose, `Was the UML documentation depreciated and how was the documentation withstanding on the development side?' it was vital to determine if UML tools are future-proof or will it prove expensive to maintain. After Erik Arisholm performed tests found in the Journal, the author found that `UML documentation does not seem to provide an advantage when considering the additional time needed to modify models.' Furthermore, disregarding existing UML documentation seemed to correlate compared to the first test, thus suggesting that the UML documentation had the same effect as no UML documentation.
+
+        Things to note during this study, if the integration of UML tools within VisualPro, then expenses regarding finance, staff and resources for UML documentation for both developers and clients are necessary. However, the creation and maintenance of the software would require UML Development documentation. Yet, reverse engineering the UML libraries to create a detailed UML Development and UML Usability Documentation for both users before any development can begin on the software. This event is due to understanding how the UML tools operate and integrating the software properly to work in the future.
         \subsubsection{User Experience}
           \textbf{Difficulties of Teaching}\\
             Within the Journal, written by Birgit Vogel-Heuser, Martin Obermeier, Steven Braun, Kerstin Sommer, Fabian Jobst, and Karin Schweizer~\cite{vogel-heuser_evaluation_2013}, `Evaluation of a UML-Based Versus an IEC 61131-3-Based Software Engineering Approach for Teaching PLC Programming', an experiment to test whether beginners excelled at object-orientated programming (OOP) or functional programming (FP). The quote follows:-
 
             \begin{center}
-              ``Berges and Hubwieser investigated Computer Science
-              freshmen’s abilities to learn OO programming in two and a
-              half days with as little (human) instruction as possible [27].
-              Examining 300 students’ program code, they found that most
-              were able to write quite satisfying programs. They identified
-              two types of students: those who accept and apply the OO
-              concepts, and those who prefer to program in a more traditional
-              procedural way. They also tried to define the characteristics of
-              object orientation to evaluate measures for program quality,
-              e.g., one instance of a class is created.''~\cite{vogel-heuser_evaluation_2013}
+              \textit{``Berges and Hubwieser investigated Computer Science freshmen’s abilities to learn OO programming in two and a half days with as little (human) instruction as possible [27]. Examining 300 students’ program code, they found that most were able to write quite satisfying programs. They identified two types of students: those who accept and apply the OO concepts, and those who prefer to program in a more traditional procedural way. They also tried to define the characteristics of object orientation to evaluate measures for program quality, e.g., one instance of a class is created.''}~\cite{vogel-heuser_evaluation_2013}
             \end{center}
 
-            This test suggests that after three hundred students were tested with little instruction from other peers, which opens an interesting fact that most of the three hundred students wrote acceptable code in both OOP and FP categories. The test's conclusion finds two types of students, and the students either found OOP or FP easier. After analysing this specific test, it seems that beginners may have different mindsets and thinking styles.
-   
+            This test suggests that after three hundred students were tested with little instruction from other peers, which opens an interesting fact that most of the three hundred students wrote acceptable code in both OOP and FP categories. The test's conclusion finds two types of students, and the students either found OOP or FP easier. After analysing this specific test, beginners may have different mindsets and thinking styles.
         
       \subsection{Productivity and Visual Scripting}
       Productivity, specifically within the software engineering field, Dr. Caitlin Sadowski's~\cite{dr_caitlin_sadowski_rethinking_2019}, `Rethinking Productivity in Software Engineering' Book states, ``Productivity is a challenging concept to define, describe, and measure for any knowledge work that involves nonroutine creative tasks. Software development is a prime example of knowledge work, as it too often involves poorly defined tasks relying on extensive collaborative and creative endeavors. As in other areas of knowledge work, defining productivity in software development has been a challenge facing both researchers and practitioners who may want to understand and improve it by introducing new tools or processes.'' When reading further into the chapter, the following points evaluate how we should think about productivity:-
@@ -167,16 +157,30 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
     \section{Design and Feedback}
     \label{sec:designAndFeedback}
-      The Design and Feedback section covers the Research Methodology and the Pre-Planning, which shows the steps and the level of thought that went into deciding VisualPro's purpose and the existing software and prototypes. Some Notebook Planning may not make sense as some foreseeable problems were thought and planned in ahead of time.
+      The Design and Feedback section covers the Research Methodology and the Pre-Planning, which shows the steps and the level of thought that went into deciding VisualPro's purpose and the existing software and prototypes. Some Notebook Planning may not make sense as some foreseeable problems were thought and planned ahead of time.
 
       \subsection{Research Methodology}
       \label{subsec:researchMethodology}
-        \subsection{Learning Tools}
-          Research of obstacles and potentials help identify existing and future issues that VisualPro software could generate. The aim is for amateurs new to the development field and suggests existing problems that put the `brick wall' to learning programming and potentials of how VisualPro can solve these issues. This topic may reflect on the critical components of UI and UX previously mentioned.
-          \subsubsection{Obstacles}
-          \subsubsection{Potentials}
-        \subsection{Methods of Final Testing}
-          \subsubsection{Research of Libraries}
+        \subsubsection{Learning Tools}
+          Research of obstacles and potentials help identify existing and future issues that VisualPro software could generate. The aim is for amateurs new to the development field and suggests existing problems that put a `brick wall' in learning programming and potentials of how VisualPro can solve these issues. This topic may reflect on the critical components of UI and UX previously mentioned.
+          \textbf{Obstacles}\\
+          \textbf{Potentials}\\
+
+        \subsubsection{User Interface Methods}
+          \textbf{Unicode Markup Language}\\
+            Whilst observing the book, `Using UML: software engineering with objects and components, by Pooley R J and Perdita Stevens\cite{pooley_r_j_using_2006}, it is important to think about why UML may make a good UI method. UML intends to meet the criteria of allowing Software Engineers to design a software platform and demonstrate it to their clients. At the same time, it gives a comprehensive plan instead of focusing on Pesudeo code, supported by the quotes, Pooley R J~\cite{pooley_r_j_using_2006} '...help to resolve misunderstandings' and `...developer's effort can be spent on work that requires their skills, not on routine work such as making a diagram using a drawing tool;'.  
+          \subsubsection{Node Tree}
+            Another method of creating the UI is a Node Tree that displays the objects in containers and links them together with arrows to display the object's relationship. A Visual Database Editor diagram in figure~\ref{fig:visualDBEditor} illustrated by K. K${\ddot{u}}$spert~\cite{kuspert_design_1990}. The node tree, in this case, is to construct a database structure design. Although, this could prove an easy-to-read method for Visual Scripting. Perhaps a mix of UML and Node Tree's could benefit from displaying relationships, for example:- \textit{Parents ${\to}$ Children}. In theory, VisualPro could potentially change Visual Scripting as it is today and demonstrate the power of the C++ Dynamic-Link Library (DLL), Programming Planner library can do.
+
+            \begin{figure}[h]
+              \centering
+              \includegraphics[width=\columnwidth]{Figures/VPDBEDIT.png}
+              \caption{Visual Database Editor Diagram~\cite{kuspert_design_1990}}
+              \label{fig:visualDBEditor}
+            \end{figure}
+
+        \subsubsection{Methods of Final Testing}
+          \textbf{Research of Libraries}\\
             From GitHub Repositories, a list of Visual Scripting libraries are listed:-
             \begin{itemize}
               \item Language: GDScript - Author:~\href{https://github.com/swarnimarun}{Swarnimarun} - Respository:~\href{https://github.com/swarnimarun/visual-scripting-node-library}{Visual Scripting Node Library}.
@@ -186,10 +190,10 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
               \item Language: Web Scripting - Author:~\href{https://github.com/WebCabin}{WebCabin} - Respository:~\href{https://github.com/WebCabin/wcPlay}{wcPlay}.
             \end{itemize}
 
-            These Visual Scripting software listed are identical to standard Game Engine Visual Scripting logic. Even though some are easy to use in the demos, a commonality between them is that they only allow users to control a live environment, whether it is a built-in game engine or an addition to an existing Game Engine, and they all seem to be game orientated. VisualPro aims to support different platforms, such as Web, Mobile, Software, Data Analytics, Games, and many others. This aim is possible due to the diversity of users, adding new languages by entering the desired language within the XML document; though, documentation to support users in adding new languages for the program to work correctly.
+            These Visual Scripting software listed are identical to standard Game Engine Visual Scripting logic. Even though some are easy to use in the demos, a commonality is that they only allow users to control a live environment, whether it is a built-in game engine or an addition to an existing Game Engine, and they are mainly game orientated. VisualPro aims to support different platforms, such as Web, Mobile, Software, Data Analytics and Games. This aim is possible due to the diversity of users, adding new languages by entering the desired language within the XML document; though, it requires documentation to support users in adding new languages for the program to work correctly.
 
-          \subsubsection{Visual Scripters and Web Builders}
-            A table of a few Web Builders and Visual Scripters is provided and tested. Visual Scripting Software~\ref{tab:comp-1}:-
+          \textbf{Visual Scripters and Web Builders}\\
+          A table of a few Web Builders and Visual Scripters demonstrates the difficulty of different platforms. Visual Scripting Software~\ref{tab:comp-1}:-
             \begin{table}[htbp]
               \centering
               \caption{Comparison of Visual Scripters}
@@ -205,7 +209,9 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
               }
               \end{table}
 
-              After studying different Visual Scripting software, there is no portable Visual Scripting made for versatility. Both seem to only aim at Game Engines. Minecraft does not offer the ability for Visual Scripting. However, to bring attention to the Redstone feature in Minecraft. The feature is interesting for the audience, even to none-programmers, then could the backend be made into a Visual Scripting game or specific in-game blueprints/prefabs be placed into the environment, generating code, so that the user can create programs, whilst being interested. Redstone accomplishes Binary teaching with Redstone passively by using on and off instead of 1s and 0s. Unlike Visual Scripting, Unreal Engine has a `messy' look, especially when the game logic is more clunky and complex, whereas Unity seems to have a better order. The problem with Visual Scripting in both engines is that the performance of the code is slow compared to writing the code manually. Would this uplift each software market section if the VisualPro Scripting Pad software could generate code in the desired language with the most effective running time?
+              After studying different Visual Scripting software, there is no portable Visual Scripting made for versatility. Both seem to only aim at Game Engines. Minecraft does not offer the ability for Visual Scripting. However, to bring attention to the Redstone feature in Minecraft, the feature is interesting for the audience, even to none-programmers. Could the VisualPro library be made into a Visual Scripting game, or specific in-game blueprints/prefabs be placed into the environment, generating code, so that the user can create programs whilst maintaining interest? Redstone accomplishes Binary teaching with Redstone passively by using on and off instead of 1s and 0s.
+
+              Visual Scripting, Unreal Engine has a `messy' look, especially when the game logic is more clunky and complex, whereas Unity seems to have a better order. The problem with Visual Scripting in both engines is that the performance of the code is slow compared to writing the code manually. Would this uplift the software market sections if the VisualPro Scripting Pad software could generate code in the desired language with the most effective running time?
 
               \begin{table}[htbp]
                 \centering
@@ -534,20 +540,6 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
     \section{Implementation}
       \subsection{Development Methodology}
-        \subsubsection{Markup Languages}
-        \label{subsec:lr-markupLanguages}
-          \textbf{What is a Markup Language?}\\
-          A markup language is essentially a script, which consists of tags and attributes as Erik T. Ray's~\cite{ray_learning_nodate} Book implies in Chapter 2 (Markup and Core Concepts), page 49, ``Just as skeletons give us vertebrates shape and structure, markup does the same for text.'' This quote implies that markup languages offer structures, principally for designs, layouts and arrangement responsibilities. Due to the nature of Markup Languages with the ease of adding tags and attributes, Markup Languages will do the heavy lifting of setting available libraries and syntax for each language.
-
-          \textbf{How will Extensible Markup Language (XML) support custom languages in this project?}\\
-            According to G. Costa and R. Ortale~\cite{costa_machine_2018}, Machine learning techniques for XML (co-)clustering by structure and-constrained phrases Book, Chapter 2.1, ``\textit{An \textbf{XML tree} is a rooted, labeled, tree \textbf{t = (V$^{\text{t}}$,r$^{\text{t}}$,E$^{\text{t}}$,$\lambda^{\text{t}}$)} where:}
-            \begin{itemize}
-              \item \textbf{V$^{\text{t}} \subseteq \mathbb{N}$} is a set of nodes, with \textbf{r$^{\text{t}} \in \text{V}^{\text{t}}$} being the root of \textbf{t};
-              \item \textbf{E$^{\text{t}} \subseteq \text{V}^{\text{t}} \times \text{V}^{\text{t}}$} is a set of edges, catching parent-child relationships between nodes of \textbf{t};
-              \item \textbf{$\lambda \text{ : V}^{\text{t}} \rightarrow \sum $} is a labelling function, with $\sum$ being the domain of the node tags (or equivalently, labels).''
-            \end{itemize}
-
-            The facility of having nodes and attributes means we can expand the XML file with many different syntaxes for different opportunities. If nested nodes are within the parent nodes, then it will increase the performance time of execution. The library that reads through the XML document will only need to select the relevant sub-nodes listed under the parent node instead of reading through every possible node outcome. In theory, users can append languages by reading through the XML document quite efficiently, and the software would read through the XML document without any issues.
 
     \section{Conclusion}
 
@@ -561,6 +553,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
         \item UML - Unified Modeling Languages.
         \item OOP - Object-Orientated Programming.
         \item FP - Functional Programming.
+        \item DLL - Dynamic-link Library.
         \item HTML - HyperText Markup Language.
         \item AI - Artificial Intelligence.
         \item XML - Extensible Markup Language.
@@ -568,7 +561,8 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
       \end{itemize}
 
     \section*{Acknowledgement}
-    Many thanks to the Supervisor, Mike Dacey, for guiding the VisualPro project with possibilities and for pointing out any discrepancies through the research, planning and implementation. Appreciation goes out to the survey participants, which helped better understand how VisualPro may impact consumers in the future. Having the support from these participants helped advance the UI and UX progress of VisualPro.
+    %Many thanks to the Supervisor, Mike Dacey, for guiding the VisualPro project with possibilities and for pointing out any discrepancies through the research, planning and implementation.
+    Appreciation goes out to the survey participants, which helped better understand how VisualPro may impact consumers in the future. Having the support from these participants helped advance the UI and UX progress of VisualPro.
 
   %\nocite{*}
 	\renewcommand\refname{\section{Reference List}}
