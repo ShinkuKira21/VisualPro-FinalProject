@@ -1,0 +1,160 @@
+%Custom Functions
+\newcommand{\CompanyName}{TT} % update later
+
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+%\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+
+\usepackage{pdflscape}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Please add the following required packages to your document preamble:
+\usepackage{multirow}
+\usepackage[numbers]{natbib}
+
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+	urlcolor=cyan
+}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=single,
+  language=C++,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers = none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\fancypagestyle{fancylandscape}{
+\fancyhf{} %Clears the header/footer
+\fancyfoot{% Footer
+\makebox[\textwidth][r]{% Right
+  \rlap{\hspace{.75cm}% Push out of margin by \footskip
+    \smash{% Remove vertical height
+      \raisebox{4.87in}{% Raise vertically
+        \rotatebox{90}{Page \thepage\ of \pageref{LastPage}}}}}}}% Rotate counter-clockwise
+\renewcommand{\headrulewidth}{0pt}% No header rule
+\renewcommand{\footrulewidth}{0pt}% No footer rule
+}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\fancyfoot[c]{Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+
+	\title{VisualPro - Proposal}
+
+	\author{\IEEEauthorblockN{1\textsuperscript{st} Given Edward Patch}
+	\IEEEauthorblockA{\textit{Software Engineer Student (of BSc Year 3)} \\
+    \textit{Independent Project}\\
+    \textit{University of Wales Trinity St. Davids (of Mike Dacey)}\\
+    Swansea, Wales \\
+    Student ID: 1801492}}
+
+     \maketitle
+    
+    \thispagestyle{plain}
+    \pagestyle{plain}
+    
+    \tableofcontents
+	  \vspace{.5cm}
+    %\newpage
+    \begin{abstract}
+      Documentation provides technical information to use the Programming Planner library. Technical information includes examples of executions and briefs the developer on using the library effectively.
+    \end{abstract}
+
+    \begin{IEEEkeywords}
+        Documentation, Programming Planner, Development
+    \end{IEEEkeywords}
+
+    \section{Introduction}
+      Programming Planner generates different languages based on the user input. A provided Extensible Markup Language (XML) file, available on the VisualPro's GitHub Repository~\href{#}{Add Link}. The documentation guides the developer of ways to import and call the Programming Planner's Dynamic-Link Library (DLL) packages with explanations of DLL injection points and displays a series of examples of the Programming Planner's capabilities.
+
+    \section{Importing the Library}
+      Libraries are available for each language—explaining how to connect to Programming Planner's DLL packages. A web link with example code is attached to understand how a DLL library loads into each language listed. It is essential to mention that DLL files will not work on a Linux system, and a Shared Object (SO) library is unavailable. If the language is not displayed in the list below, then search on a Search Engine `How to import a DLL file in \textit{languageName}'. The code block below shows a communication example with two functions; The first function displays the string `C++ says Helloworld', and the second function enables addition and subtraction from two numbers to support the examples in the following segments.
+
+      \begin{lstlisting}
+        extern "C" _declspec(dllexport) const char* Helloworld();
+
+        // opt == true(Addition) and opt == false(Subtraction) 
+        extern "C" _declspec(dllexport) double Calculator(double x, double y, bool opt);
+      \end{lstlisting}
+      \subsection{Language: C++}
+        One method to import a DLL library in C++ is to import the `windows.h' and `tchar.h' libraries. To load the DLL library, the macro \textit{LoadLibrary} and \textit{GetProcAddress} function found in `windows.h' include is required. The `tchar.h' library casts a \textit{const char*} datatype to a \textit{unicode} format. \textit{FreeLibrary} closes the DLL library and clears the memory from the `dll' variable name.
+        \begin{lstlisting}
+          #include <iostream>
+          #include <windows.h>
+          #include <tchar.h>
+          typedef const char* (*Helloworld_t)();
+          typedef double (*Calculator_t)(double x, double y, bool opt);
+
+          int main() {
+            auto dll = LoadLibrary(
+              _T("DLL_Library.dll"));
+            auto helloworld = (Helloworld_t)GetProcAddress(dll, "Helloworld");
+            auto calculator = (Calculator_t)GetProcAddress(dll, "Calculator");
+
+            if(dll) {
+              std::cout << helloworld() << "\n";
+              std::cout << "Add: " << calculator(7, 3, true) << " | Subtraction: " << calculator(7, 3, false);
+            } else std::cout << "Not Found";
+
+            FreeLibrary(dll);
+            return 0;  
+          }
+        \end{lstlisting}
+      \subsection{Language: C\#}
+      \subsection{Language: Java}
+      \subsection{Language: NodeJS}
+
+    \section{Communications}
+
+    \section{Library Examples}
+
+    \section{Terminology}
+      List of terminologies used in this document:-
+      \begin{itemize}
+        \item XML - Extensible Markup Language.
+        \item DLL - Dynamic-Link Library.
+        \item SO - Shared Object.
+        \item IDE - Integrated Development Environment.
+      \end{itemize}
+
+  \nocite{*}
+	\renewcommand\refname{\section{Reference List}}
+	\small{\bibliographystyle{IEEEtran}
+    \bibliography{ref}}
+\end{document}
