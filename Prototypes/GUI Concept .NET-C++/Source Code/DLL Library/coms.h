@@ -4,6 +4,7 @@
 
 extern "C" _declspec(dllexport) const char* Helloworld();
 
+// opt == true(Addition) and opt == false(Subtraction) 
 extern "C" _declspec(dllexport) double Calculator(double x, double y, bool opt);
 
 // Car Class
