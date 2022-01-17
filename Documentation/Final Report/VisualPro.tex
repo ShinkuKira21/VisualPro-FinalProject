@@ -364,6 +364,8 @@ hmargin=3cm
 			\begin{center}
 				\textit{``The data were analyzed using three methods. First, an analysis of variance (ANOVA) was applied to test differences between the variances of several groups in order to show whether their performance changed after the training approaches and whether their performance differed between classes due to expertise level differences. Then, correlations were computed as a measure of the relation between programming/modeling performances on different performance scales. Subsequently, differences in relations between the two software engineering approaches (see hypothesis 3) were shown by computing regression models for the programming performance for both approaches.''} - Birgit Vogel-Heuser~\cite{vogel-heuser_evaluation_2013}. 
 			\end{center}
+				
+		
 
 			The results gathered display that the training set for learning UML in a Software Engineering sense was highly effective. However, the Birgit Vogel-Heuser~\cite{vogel-heuser_evaluation_2013} states that `All participants learned from the training.' and backs it up by `...indicating that the -group had learned even more from the training because of their poor results before the training (see also Fig. 2) and their lack of prior knowledge.' This quotation suggests that UML tools found in Visual Scripting may not necessarily be complicated for beginners to learn, but they may seem more complex without proper training. This conclusion could suggest that UML methods are not well documented and could indicate that UML may not be well maintained, look at section~\ref{subsec:maintenance}, page~\pageref{subsec:maintenance}.
 
@@ -387,7 +389,7 @@ hmargin=3cm
 		As the principle of the product covers beginners' use of Visual Scripting to aid the users with the proficiency and capability to understand and further their logic building skills, it is vital to understand how usability is measured and evaluated. According to Dana Chisnell~\cite{chisnell_dana_handbook_2008} Usefulness, Efficiency, Effectiveness, Learnability and Satisfaction are six necessary components of how the usability tests should carry out. These selections establish how the target audience will interact with the software, and test if the target audience stays interested in the software without feeling any frustration towards the software. 
 		
 		VisualPro's end product needs to increase efficency of standard programming and Visual Scripting, as well as managing to keep effectiveness and usefulness. For example, based on Dana Chisnell~\cite{chisnell_dana_handbook_2008}, the software could achieve the `...system is easy to use, easy to learn...' and is `...satisfying to use...', the product will gain no interest and have limited use. This example backs up that wih too much focus of one topic, then it could end up being catestrophic. However, if the generates the information that it was made for and still keeps the target audience interested, it could change the Web and Software industry as we know today.
-		
+
 	\section{Productivity and Visual Scripting}
 		Productivity, specifically within the software engineering field, Dr. Caitlin Sadowski's~\cite{dr_caitlin_sadowski_rethinking_2019}, `Rethinking Productivity in Software Engineering' Book states, ``Productivity is a challenging concept to define, describe, and measure for any knowledge work that involves nonroutine creative tasks. Software development is a prime example of knowledge work, as it too often involves poorly defined tasks relying on extensive collaborative and creative endeavors. As in other areas of knowledge work, defining productivity in software development has been a challenge facing both researchers and practitioners who may want to understand and improve it by introducing new tools or processes.'' When reading further into the chapter, the following points evaluate how we should think about productivity:-
 
@@ -848,15 +850,59 @@ hmargin=3cm
 				\end{figure}
 			
 		\section{Evaluation of Feedback}
-
+			
 		\section{Designs}
-			\begin{figure}[H]
-				\ffigbox[\FBwidth] {
-				\caption[Survey Q-4]{}
-				\label{fig:q-4}
-				}
-				{\includegraphics[scale=0.45]{}
-			\end{figure}
+			\subsection{Main Layout}
+				\begin{figure}[H]
+					\ffigbox[\FBwidth] {
+					\caption[GUI Design ML-1]{Design Planning - Stage 1}
+					\label{fig:guiDesignML-1}
+					}
+					{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-1.jpg}}
+				\end{figure}
+
+				\begin{figure}[H]
+					\ffigbox[\FBwidth] {
+					\caption[GUI Design ML-2]{Design Planning - Stage 2}
+					\label{fig:guiDesignML-2}
+					}
+					{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-2-1.jpg}}
+				\end{figure}
+
+				A flaw of Classes', Functions and Variables' can be declared during development under the parent class. This problem meant that the class would be declared inside another class programmatically if the problem occurred under the current logic when the compilation happened. An example could be an \textit{`int variable = int variable;'}. The code syntax makes no sense, resulting in a compilation error.
+				\begin{figure}[H]
+					\ffigbox[\FBwidth] {
+					\caption[GUI Design ML-3]{Design Planning - Stage 3}
+					\label{fig:guiDesignML-3}
+					}
+					{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-4.jpg}}
+				\end{figure}
+
+				Figure~\ref{fig:guiDesignML-4} shows the implementation of the design using the designs shown beforehand. Rather than shortcutting relationships between each class, function and variables by nesting them, the final implementation prevents the user from dragging and dropping the same type of container onto another container. A property button appears on each container to control function arguments and relationships between classes, functions, and variables, opening up a dialogue containing a property sheet.
+				\begin{figure}[H]
+					\ffigbox[\FBwidth] {
+					\caption[GUI Design ML-4]{Design Planning - Stage 4}
+					\label{fig:guiDesignML-4}
+					}
+					{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-Latest.jpg}}
+				\end{figure}
+			
+			\subsection{Error Handling}
+				\begin{figure}[H]
+					\ffigbox[\FBwidth] {
+					\caption[GUI Design EH-1]{Error Handling}
+					\label{fig:guiDesignEH-1}
+					}
+					{\includegraphics[scale=0.75]{Figures/vp-designs/NET_Framework-GUI-ErrorDialog.jpg}}
+				\end{figure}
+			\subsection{Structure Containers}
+				\begin{figure}[H]
+					\ffigbox[\FBwidth] {
+					\caption[GUI Design SC-1]{Design Planning - Stage 1}
+					\label{fig:guiDesignSC-1}
+					}
+					{\includegraphics[scale=0.75]{Figures/vp-designs/NET_Framework-GUI-2.jpg}}
+				\end{figure}
 	\chapter{Development Methodology}
 
 	\chapter{Implementation}
