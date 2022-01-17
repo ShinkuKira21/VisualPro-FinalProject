@@ -22,12 +22,12 @@ namespace Tools
 	{ delete[] cPointer; }
 }
 
-__declspec(dllexport) struct CarStorage
+struct CarStorage
 {
 	std::string make, model, modelNumber;
 };
 
-_declspec(dllexport) class Car
+class Car
 {
 	CarStorage cs;
 	
