@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<VisualPro>
+	<language name="C">
+		<libraries>
+			<library name="io" value="iostream"/>
+			<library name="string" value="string"/>
+		</libraries>
+		
+		<syntax>
+			<headers>
+				<header type="header" name="libraries" value="#include \/"/>
+				<header type="header" name="c1" tags="lr"/>
+			</headers>
+			
+			<structs>
+				<struct type="struct" name="construction" value="struct name"/>
+				<struct type="struct" name="c2" o-value="{" c-close="};"/>
+			</structs>
+			
+			<functions>
+				<function type="function" name="construction" value="dt name"/>
+				<function type="function" name="args" separator="," o-value="(" c-value=")" value="dt name"/>
+				<function type="function" name="c2" o-value="{" c-value="}"/>
+			</functions>
+			
+			<variables>
+				<variable type="variable" name="construction" value="dt name"/>
+				<variable type="variable" name="c1" value=";"/>
+			</variables>
+		</syntax>
+	</language>
+	
+	<language name="C++">
+		<libraries>
+			<library name="io" value="iostream"/>
+			<library name="string" value="string"/>
+		</libraries>
+		
+		<syntax>
+			<headers>
+				<header type="header" name="libraries" value="#include \/"/>
+				<header type="header" name="c1" value="lr"/>
+			</headers>
+
+			<classes>
+				<class type="class" name="construction3" member="member:\n" value="class name"/>
+				<class type="class" name="c2" o-value="{" c-value="};"/>
+			</classes>
+			
+			<structs>
+				<struct type="struct" name="construction3" member="member:\n" value="struct name"/>
+				<struct type="struct" name="c2" o-value="{" c-value="};"/>
+			</structs>
+			
+			<functions>
+				<function type="function" name="construction" value="dt name"/>
+				<function type="function" name="args" separator="," o-value="(" c-value=")" value="dt name"/>
+				<function type="function" name="c2" o-value="{" c-value="}"/>
+			</functions>
+			
+			<variables>
+				<variable type="variable" name="construction" value="dt name"/>
+				<variable type="variable" name="c1" value=";"/>
+			</variables>
+		</syntax>
+	</language>
+	
+	<language name="C#">
+        <libraries>
+            <library name="system" value="System"/>
+        </libraries>
+
+        <syntax>
+			<headers>
+				<header type="header" name="libraries" value="using \"/>
+				<header type="header" name="c1" value=";"/>
+			</headers> 
+
+            <classes>
+	            <class type="class" name="construction3" member="member" value="member class name"/>
+                <class type="class" name="c2" o-value="{" c-value="}"/>
+            </classes>
+ 
+            <functions>
+	            <function type="function" name="construction" value="dt name"/>
+				<function type="function" name="args" separator="," o-value="(" c-value=")" value="dt name"/>
+				<function type="function" name="c2" o-value="{" c-value="}"/>
+            </functions>
+
+            <variables>
+	            <variable type="variable" name="construction" value="dt name"/>
+                <variable type="variable" name="c1" value=";"/>
+            </variables>
+        </syntax>
+    </language>
+</VisualPro> 
