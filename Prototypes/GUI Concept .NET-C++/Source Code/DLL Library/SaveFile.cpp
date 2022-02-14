@@ -6,4 +6,5 @@ SaveFile::SaveFile(std::string data, std::string fileDirectory)
 	
 	std::ofstream file(fileDirectory.c_str());
 	file << data;
+	file.close();
 }

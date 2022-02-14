@@ -21,7 +21,5 @@ int main()
 
 	FreeLibrary(dll);
 
-	
-
 	return 0;
 }
