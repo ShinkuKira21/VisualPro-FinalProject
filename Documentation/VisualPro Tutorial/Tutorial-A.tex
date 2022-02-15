@@ -1,0 +1,668 @@
+\documentclass[10pt]{article}  
+
+%%%%%%%% PREÁMBULO %%%%%%%%%%%%
+\usepackage[spanish]{babel} %Indica que escribiermos en español
+\usepackage[utf8]{inputenc} %Indica qué codificación se está usando ISO-8859-1(latin1)  o utf8  
+\usepackage{amsmath} % Comandos extras para matemáticas (cajas para ecuaciones,
+% etc)
+\usepackage{amssymb} % Simbolos matematicos (por lo tanto)
+\usepackage{graphicx} % Incluir imágenes en LaTeX
+\usepackage{color} % Para colorear texto
+\usepackage{subfigure} % subfiguras
+\usepackage{ulem}
+\usepackage{amsmath}%%Usar ecuaciones
+%%%%%%%%%%%%%CODIGO%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings} %Sirve para pegar codigo fuente de programas
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{%
+  \parbox{\textwidth}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}\vskip-4pt}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\lstset{frame=lrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep}
+%%%%%%%%%%%%%CODIGO%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{float} %Podemos usar el especificador [H] en las figuras para que se
+% queden donde queramos
+\usepackage{capt-of} % Permite usar etiquetas fuera de elementos flotantes
+% (etiquetas de figuras)
+\usepackage{enumerate} % enumerados
+\usepackage{sidecap} % Para poner el texto de las imágenes al lado
+	\sidecaptionvpos{figure}{c} % Para que el texto se alinie al centro vertical
+\usepackage{caption} % Para poder quitar numeracion de figuras
+\usepackage{commath} % funcionalidades extras para diferenciales, integrales,
+% etc (\od, \dif, etc)
+\usepackage{cancel} % para cancelar expresiones (\cancelto{0}{x})
+ 
+\usepackage{anysize} 					% Para personalizar el ancho de  los márgenes
+\marginsize{2cm}{2cm}{2cm}{2cm} % Izquierda, derecha, arriba, abajo
+
+\usepackage{appendix}
+\renewcommand{\appendixname}{Apéndices}
+\renewcommand{\appendixtocname}{Apéndices}
+\renewcommand{\appendixpagename}{Apéndices}
+
+%Para la creación de tablas
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage{makecell}
+
+
+
+%Para la creacion de cuadros de colores
+\usepackage{tcolorbox}
+\tcbuselibrary{listingsutf8}
+% Cuadro numerado para ejemplos de cuadros de colores
+\newtcolorbox[auto counter, number within=section]{example}[2][]
+{colback=red!5!white,colframe=red!75!black,
+fonttitle=\bfseries, title=Ejemplo~\thetcbcounter: #2,#1}
+
+% Para que las referencias sean hipervínculos a las figuras o ecuaciones y
+% aparezcan en color
+\usepackage[colorlinks=true,plainpages=true,citecolor=blue,linkcolor=blue]{hyperref}
+%\usepackage{hyperref} 
+% Para agregar encabezado y pie de página
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize UPIITA-IPN} %encabezado izquierda
+\fancyhead[R]{\footnotesize VP-T1}   % dereecha
+\fancyfoot[R]{\footnotesize Práctica 2}  % Pie derecha
+\fancyfoot[C]{\thepage}  % centro
+\fancyfoot[L]{\footnotesize Señales y Sistemas}  %izquierda
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+\usepackage{listings} % Para usar código fuente
+\definecolor{dkgreen}{rgb}{0,0.6,0} % Definimos colores para usar en el código
+\definecolor{gray}{rgb}{0.5,0.5,0.5} 
+% configuración para el lenguaje que queramos utilizar
+\lstset{language=Matlab,
+   keywords={break,case,catch,continue,else,elseif,end,for,function,
+      global,if,otherwise,persistent,return,switch,try,while},
+   basicstyle=\ttfamily,
+   keywordstyle=\color{blue},
+   commentstyle=\color{red},
+   stringstyle=\color{dkgreen},
+   numberstyle=\tiny\color{gray},
+   stepnumber=1,
+   numbersep=10pt,
+   backgroundcolor=\color{white},
+   tabsize=4,
+   showspaces=false,
+   breaklines=true,
+   showstringspaces=false}
+
+\newcommand{\sen}{\operatorname{\sen}}	% Definimos el comando \sen para el seno
+%en español
+%%%%%%%% TERMINA PREÁMBULO %%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+																					%%%
+\begin{center}																		%%%
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}									%%%\left
+ 																					%%%
+\begin{minipage}{0.48\textwidth} \begin{flushleft}
+\includegraphics[scale = 0.15]{Figures/Logo/UWTSD-Logo}
+\end{flushleft}\end{minipage}
+\begin{minipage}{0.48\textwidth} \begin{flushright}
+\includegraphics[scale = 0.4]{Figures/Logo/VP-Logo-Large}
+\end{flushright}\end{minipage}
+
+													 								%%%
+\vspace*{-1.5cm}								%%%
+																					%%%	
+\textsc{\huge Visual Pro\\ \vspace{5px} Tutorial: Global Scope}\\[1.5cm]	
+
+\textsc{\LARGE A beginners guide to Visual Scripting}\\[1.5cm]													%%%
+
+\textsc{\Large Creation of structure.}\\[0.5cm]
+
+    																				%%%
+ 			\vspace*{1cm}																		%%%
+																					%%%
+\HRule \\[0.4cm]																	%%%
+{ \huge \bfseries Señales y Sistemas}\\[0.4cm]	%%%
+ 																					%%%
+\HRule \\[1.5cm]																	%%%
+ 																				%%%
+																					%%%
+\begin{minipage}{0.4\textwidth}													%%%
+\begin{flushleft} \large															
+\textit{Autores:}\\
+Argaez Herrera Antonia Margarita\\
+Leguizamo Lara Daniela Denisse\\
+Rojas Solis Juan Carlos\\
+Grupo: 2TV1\\
+\end{flushleft}																		%%%
+\end{minipage}		
+																%%%
+\begin{minipage}{0.5\textwidth}		
+\vspace{-0.6cm}											%%%
+\begin{flushright} \large															%%%
+\textit{Profesor:} \\
+Dr. Rafael Martínez Martínez																%%%									
+\end{flushright}																	%%%
+\end{minipage}	
+\vspace*{1cm}
+
+\vspace{2cm} 																				
+\begin{center}																					
+{\large 10 de septiembre de 2019}																	%%%
+ 			\end{center}												  						
+\end{center}							 											
+																					
+\newpage																		
+%%%%%%%%%%%%%%%%%%%% TERMINA PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents 
+
+\newpage
+\section{Objetivo}
+Los objetivos de esta práctica son los siguientes:
+\begin{enumerate}
+    \item Conocer los componentes principales de \LaTeX
+    \item Crear un documento que será la guía para tus reportes de prácticas
+    \item Perder el miedo a aprender rápido
+    \item Motivarte a usar \LaTeX
+    \item Verificar algunas propiedades de convolución
+\end{enumerate}
+
+
+\newpage
+\section{Introducción}
+\subsection{¿Qué es la convolución?}
+La operación de convolución entre dos señales \textbf{$f(t)$} y \textbf{$x(t)$} genera una nueva señal \textbf{$g(t)$}, la operación se define como:
+
+\begin{equation*}
+		g(t) = f(t)*x(t) = \int_{-\infty}^{\infty} f(\tau)x(t-\tau)d\tau \hspace{3cm} \cite{IEEEreferencias:Ref2}
+\end{equation*}
+
+
+\subsubsection{Aplicaciones en Telemática}
+La convolución y las operaciones relacionadas se encuentran en muchas aplicaciones en ciencias, ingeniería y matemáticas. En el caso de telemática, las aplicaciones son las siguientes:
+
+\begin{itemize}
+    \item Procesamiento de imagenes\\
+    El procesamiento de imágenes en el dominio espacial es un área de estudio visualmente rica que se ocupa de las técnicas de manipulación de píxeles. Se realizan diferentes operaciones sobre las imágenes, que se tratan simplemente como matrices bidimensionales.
+    \item Procesamiento de audio\\
+    Los auditorios, salas de cine y otras construcciones similares dependen en gran medida del concepto de reverberación  porque mejora la calidad del sonido en gran medida.\\\\
+    El proceso en el que la reverberación se simula digitalmente se denomina técnicamente "reverberación de convolución". Con la reverberación de convolución, puede convolucionar la respuesta de impulso conocida de un área con la de un sonido deseado para simular el efecto de reverberación de un área en particular. 
+    \item Inteligencia artificial\\
+    Las redes neuronales son un área de inteligencia artificial que diseña circuitos imitando conexiones en un cerebro humano. La interconexión entre las neuronas dentro del cerebro se modela como la interconexión entre los nodos de múltiples capas que constituyen una red\cite{IEEEreferencias:Ref1}.
+\end{itemize}
+
+
+\newpage
+\section{Desarrollo}
+Se procederá a realizar la deducción de las formulas (11) y (12), además se verificará que en la formula (14) cuando ${ \omega \to 0}$ la fórmula (14) se reduce a la fórmula (5). 
+
+
+\begin{center}																		%%%
+  \centering
+  \begin{tabular}{|M{1.5cm}|M{3.5cm}|M{3cm}|M{7cm}|}
+    \hline
+                                                   \multicolumn{4}{|c|}{\textbf{Formulas de convolución}}                                   \\ \hline
+   
+    Número de formula       &       $f(t)$      &       $x(t)$       &       $f(t) * x(t)$         \\ \hline
+        5   &     $e^{\lambda t}u(t)$       &      $e^{\lambda t}u(t)$     &    \[te^{\lambda t}u(t)\]     \\ \hline 
+        11   &     $e^{-at}\cos(\beta t + \theta)u(t)$       &      $e^{\lambda t}u(t)$     &   \[\frac{-cos(\theta - \phi)e^{\lambda t}+e^{-at}\cos(\beta t + \theta - \phi)}{\sqrt{(a+\lambda)^{2}+\beta^2}}u(t)\]   \[\phi = \tan^{-1}\left( \frac{-\beta}{(a+\lambda)}\right) \]      \\ \hline 
+        12                   &  $e^{-at}\cos(\omega t)u(t)$           &     $e^{-at}\sin(\omega t)u(t)$                                 &      \[\frac{1}{2}te^{-at}\sin(\omega t)u(t)\]                                             \\  \hline
+        14                    & $e^{-at}\cos(\omega t)u(t)$          &       $e^{-at}\cos(\omega t)u(t)$                  &          \[\frac{1}{2 \omega}e^{-at}\sin(\omega t)u(t) + \frac{1}{2}te^{-at}\cos(\omega t)u(t) \]                                 \\ \hline
+     
+  \end{tabular}
+							  						
+\end{center}
+
+\clearpage
+\newpage
+\subsection{Fórmula 11}
+
+Para la deducción de esta formula, procedemos de la siguiente manera:\\
+
+\begin{equation*} 
+\begin{split}
+f(t)*x(t) & = \int_{-\infty}^{\infty} e^{-a\tau}\cos(\beta\tau + \theta)u(\tau)e^{\lambda(t-\tau)}u(t-\tau)d\tau \\
+ & = \int_{0}^{t} e^{-a\tau}\cos(\beta\tau + \theta)e^{\lambda(t-\tau)}d\tau \\
+ & = \int_{0}^{t} e^{-a\tau}\cos(\beta\tau + \theta)e^{(\lambda t -\lambda\tau)}d\tau \\
+\end{split}
+\end{equation*}
+
+La integral la vamos a resolver con ayuda de Octave o Matlab. El código que se utilizó es el siguiente:
+
+\begin{lstlisting}[language=Matlab,label=codigo11,caption=Código para calcular la integral de la formula 11]
+
+clear all;
+
+syms t tau lambda a beta theta;
+
+int1=int(exp(-a*tau)*cos(beta*tau+theta)*exp(lambda*t-lambda*tau),tau,0,t);
+
+simplify(int1)
+
+\end{lstlisting}
+El enlace para checar el codigo es el siguiente:\\
+\href{https://octave-online.net/bucket~AhHytqDAD3nwn16HbqRwaL}{Integral formula 11} \\
+
+El resultado de la integral es:
+
+\begin{equation*} 
+\begin{split}
+f(t)*x(t) & = \frac{e^{\lambda t}[a\cos(\theta)+\lambda\cos(\theta)-\beta\sin(\theta)]}{a^{2}+2a\lambda+\beta^{2}+\lambda^{2}}- \frac{e^{-at}[a\cos(\theta +\beta t) + \lambda\cos(\theta +\beta t) - \beta\sin(\theta +\beta t)]}{a^{2}+2a\lambda+\beta^{2}+\lambda^{2}}
+\end{split}
+\end{equation*}
+
+Simplificamos\\ \\
+\begin{equation*} 
+\begin{split}
+f(t)*x(t) & =  \frac{e^{\lambda t}[a\cos(\theta)+\lambda\cos(\theta)-\beta\sin(\theta)]-e^{-at}[a\cos(\theta +\beta t) + \lambda\cos(\theta +\beta t) - \beta\sin(\theta +\beta t)]}{a^{2}+2a\lambda+\beta^{2}+\lambda^{2}}\\ \\ \\
+& =  \frac{e^{\lambda t}[a\cos(\theta)+\lambda\cos(\theta)-\beta\sin(\theta)]-e^{-at}[a\cos(\theta +\beta t) + \lambda\cos(\theta +\beta t) - \beta\sin(\theta +\beta t)]}{(a+\lambda)^{2}+\beta^{2}}\\ \\ \\
+\end{split}
+\end{equation*}
+
+\begin{example}{Identidad trigonométrica}
+NOTA: Vamos a probar la identidad\\
+\begin{center}
+    $A\cos(\theta) + B\sin(\theta) = C\cos(\theta - \phi)$\\
+\end{center}
+Donde:
+\begin{center}
+    $C=\sqrt{A^{2}+B^{2}}$  \hspace{1cm} y \hspace{1cm} $\phi = \tan^{-1}(\frac{B}{A})$\\
+\end{center}
+\end{example}
+
+\newpage
+\begin{example}{Identidad trigonométrica}
+\begin{equation*} 
+\begin{split}
+A\cos(\theta) + B\sin(\theta)& = C\cos(\theta - \phi)\\
+& = C(\cos(\theta)\cos(\phi) + \sin(\theta)\sin(\phi))\\
+& = C(\cos(\phi)\cos(\theta)) + C(\sin(\phi)\sin(\theta))\\
+& = A\cos(\theta) + B\sin(\theta)\\
+\end{split}
+\end{equation*}
+\end{example}
+
+
+Ahora, por el momento solo vamos a trabajar con el numerador de la fraccion de la ecuacion. Vamos a factorizar
+
+\begin{equation*} 
+\begin{split}
+f(t)*x(t) & = \left( \frac{e^{-at}[-a\cos(\beta t+\theta)+\beta\sin(\beta t +\theta)-\lambda\cos(\beta t +\theta)]+e^{\lambda t}[a\cos(\theta)-\beta\sin(\theta)+\lambda\cos(\theta)]}{(a+\lambda)^{2}+\beta^{2}}\right) \\ \\ \\
+& = \left( \frac{e^{-at}[(-a-\lambda)\cos(\beta t + \theta)+\beta\sin(\beta t + \theta)]+e^{\lambda t}[(a+\lambda)\cos(\theta) - \beta\sin(\theta)]}{(a+\lambda)^{2}+\beta^{2}}\right)\\ \\ \\
+& = \left( \frac{e^{-at}[(-a-\lambda)\cos(\beta t + \theta)+\beta\sin(\beta t + \theta)]-e^{\lambda t}[-(a+\lambda)\cos(\theta) + \beta\sin(\theta)]}{(a+\lambda)^{2}+\beta^{2}}\right)\\ \\ \\
+& = \left( \frac{e^{-at}[(-a-\lambda)\cos(\beta t + \theta)+\beta\sin(\beta t + \theta)]-e^{\lambda t}[(-a-\lambda)\cos(\theta) + \beta\sin(\theta)]}{(a+\lambda)^{2}+\beta^{2}}\right)\\ \\ \\
+\end{split}
+\end{equation*}
+
+
+\begin{example}{Numerador de la ecuación}
+\begin{equation*} 
+\begin{split}
+(-a-\lambda)\cos(\beta t + \theta) + \beta\sin(\beta t + \theta)& = (\sqrt{(-a-\lambda)^{2}+\beta^{2}})(\cos(\beta t + \theta - \phi))\\
+(-a-\lambda)\cos(\theta) + \beta\sin(\theta)& = (\sqrt{(-a-\lambda)^{2}+\beta^{2}})(\cos(\theta - \phi))\\
+\end{split}
+\end{equation*}
+\end{example}
+
+Sustituyendo lo que nos dio en el numerador
+
+\begin{equation*} 
+\begin{split}
+f(t)*x(t) & =\left( \frac{e^{-at}[(-a-\lambda)\cos(\beta t + \theta)+\beta\sin(\beta t + \theta)]-e^{\lambda t}[(-a-\lambda)\cos(\theta) + \beta\sin(\theta)]}{(a+\lambda)^{2}+\beta^{2}}\right)\\ \\
+ & =\left( \frac{e^{-at}[(\sqrt{(-a-\lambda)^{2}+\beta^{2}})(\cos(\beta t + \theta - \phi))]-e^{\lambda t}[(\sqrt{(-a-\lambda)^{2}+\beta^{2}})(\cos(\theta - \phi))]}{(a+\lambda)^{2}+\beta^{2}}\right)\\ \\
+\end{split}
+\end{equation*}
+
+\newpage
+Factorizamos la raiz cuadrada
+
+\begin{equation*} 
+\begin{split}
+f(t)*x(t) & =\left(\sqrt{(-a-\lambda)^{2}+\beta^{2}})\right)\left( \frac{e^{-at}(\cos(\beta t + \theta - \phi))-e^{\lambda t}(\cos(\theta - \phi))}{(a+\lambda)^{2}+\beta^{2}}\right)\\ \\
+    & =\left(\sqrt{(a+\lambda)^{2}+\beta^{2}})\right)\left( \frac{e^{-at}(\cos(\beta t + \theta - \phi))-e^{\lambda t}(\cos(\theta - \phi))}{(a+\lambda)^{2}+\beta^{2}}\right)\\ \\
+    & =\left( \frac{e^{-at}(\cos(\beta t + \theta - \phi))-e^{\lambda t}(\cos(\theta - \phi))}{\sqrt{(a+\lambda)^{2}+\beta^{2}})}\right)\\ \\
+ f(t)*x(t)   & =\left( \frac{e^{-at}(\cos(\beta t + \theta - \phi))-e^{\lambda t}(\cos(\theta - \phi))}{\sqrt{(a+\lambda)^{2}+\beta^{2}})}\right)u(t)\\ \\
+\end{split}
+\end{equation*}
+
+Y $\phi$ queda asi:
+\begin{equation*} 
+\begin{split}
+\phi    & = \tan^{-1}\left(\frac{B}{A}\right)\\ \\
+        & = \tan^{-1}\left(\frac{\beta}{(-a-\lambda)}\right)\\ \\
+   \phi      & = \tan^{-1}\left(\frac{-\beta}{(a+\lambda)}\right)\\ \\
+\end{split}
+\end{equation*}
+
+Las simulaciones en Desmos se pueden consultar en el siguiente link:\\\\
+\href{https://www.desmos.com/calculator/aybhkho584}{Grafica Desmos formula 11} \\
+
+\newpage
+La grafica de Matlab es la siguiente:
+
+
+\clearpage
+\newpage
+\subsection{Fórmula 12}
+
+Para la deducción de esta formula, procedemos de la siguiente manera:\\
+
+\begin{equation*} 
+\begin{split}
+f(t)*x(t) & = \int_{-\infty}^{\infty} e^{-a\tau}\cos(\omega\tau)u(\tau)e^{-a(t-\tau)}\sin(\omega(t-\tau))u(t-\tau)d\tau \\
+ & = \int_{0}^{t} e^{-a\tau}\cos(\omega\tau)e^{-a(t-\tau)}\sin(\omega(t-\tau))d\tau \\
+ & = \int_{0}^{t} e^{-a\tau}\cos(\omega\tau)e^{(-at + a\tau)}\sin(\omega t-\omega\tau)d\tau \\
+\end{split}
+\end{equation*}
+
+Esta integral la vamos a resolver con ayuda de Octave o Matlab, el codigo que se ocupó fue el siguiente:\\
+
+\begin{lstlisting}[language=Matlab,label=codigo12,caption=Código para calcular la integral de la formula 12]
+
+clear all;
+
+syms t tau  a omega;
+
+int2=int(exp(-a*tau)*cos(omega*tau)*exp(-a*t+a*tau)*sin(omega*t-omega*tau),tau,0,t);
+
+simplify(int2)
+
+\end{lstlisting}
+
+El enlace para checar el codigo es el siguiente:\\
+\href{https://octave-online.net/bucket~YTL1gKfiwkX1urNf8w4hSP}{Integral formula 12} \\
+
+El resultado de la integral es:
+
+\begin{equation*} 
+\begin{split}
+f(t)*x(t) & = \frac{te^{-at}\sin(\omega t)}{2}\\ \\
+ & = \left(\frac{1}{2}\right)(te^{-at}\sin(\omega t))\\ \\
+f(t)*x(t) & = \left(\frac{1}{2}\right)(te^{-at}\sin(\omega t))u(t)\\ \\
+\end{split}
+\end{equation*}
+
+Las simulaciones en Desmos se pueden consultar en el siguiente link:\\\\
+\href{https://www.desmos.com/calculator/jlupnjrano}{Grafica Desmos formula 12} \\
+
+\newpage
+La grafica de Matlab es la siguiente:
+
+\clearpage
+\newpage
+\subsection{Fórmula 14}
+En esta formula nos piden verificar que cuando ${ \omega \to 0}$, la formula (14) es igual a la formula (5).
+
+\begin{equation*} 
+\begin{split}
+f(t)*x(t) & = \frac{1}{2 \omega}e^{-at}\sin(\omega t)u(t) + \frac{1}{2}te^{-at}\cos(\omega t)u(t)
+\end{split}
+\end{equation*}
+
+Como ${ \omega \to 0}$ aplicamos un limite
+
+\begin{equation*} 
+\begin{split}
+\lim_{\omega\to 0} f(t)*x(t) & = \lim_{\omega\to 0} \left(\frac{1}{2 \omega}e^{-at}\sin(\omega t) + \frac{1}{2}te^{-at}\cos(\omega t)\right)\\ \\
+& = \lim_{\omega\to 0} \left(\frac{1}{2 \omega}e^{-at}\sin(\omega t)\right) + \lim_{\omega\to 0} \left(\frac{1}{2}te^{-at}\cos(\omega t)\right)\\ \\
+& = \lim_{\omega\to 0} \left(\frac{1}{2 \omega}e^{-at}\sin(\omega t)\right) + \frac{1}{2}te^{-at}\\ \\
+& = \lim_{\omega\to 0} \left(\frac{1}{2}te^{-at}\cos(\omega t)\right) + \frac{1}{2}te^{-at}\\ \\
+& = \frac{1}{2}te^{-at} + \frac{1}{2}te^{-at}\\ \\
+& = te^{-at}\\ \\
+\end{split}
+\end{equation*}
+Para el primer limite aplicamos regla de L'Hôpital.\\ \\
+Entonces tenemos:
+
+\begin{equation*} 
+\begin{split}
+\lim_{\omega\to 0} f(t)*x(t) & = te^{\lambda t} \hspace{1cm} donde \hspace{1cm}\lambda = -a\\ \\
+\end{split}
+\end{equation*}
+
+Las simulaciones en Desmos se pueden consultar en el siguiente link:\\\\
+\href{https://www.desmos.com/calculator/tik6ny8ije}{Grafica Desmos formula 5} \\
+\href{https://www.desmos.com/calculator/b7d99bmipt}{Grafica Desmos formula 14} \\
+
+\newpage
+
+Vamos a mostrar la grafica de la formula 5
+
+\newpage
+
+Para graficar la formula 14 cuando ${ \omega \to 0}$, tomamos en cuenta que $\lambda = -a$.\\ Entonces la formula 14 nos quedaria de la siguiente manera:\\
+
+\begin{equation*} 
+\begin{split}
+f(t) & = e^{-at}\cos(\omega t)u(t)=e^{\lambda t}\cos(\omega t)u(t)\\ \\
+x(t) & = e^{-at}\cos(\omega t)u(t)=e^{\lambda t}\cos(\omega t)u(t)\\ \\
+f(t)*x(t) & = \frac{1}{2 \omega}e^{-at}\sin(\omega t)u(t) + \frac{1}{2}te^{-at}\cos(\omega t)u(t)\\ \\
+& = \frac{1}{2 \omega}e^{\lambda t}\sin(\omega t)u(t) + \frac{1}{2}te^{\lambda t}\cos(\omega t)u(t) \\ \\
+\end{split}
+\end{equation*}
+
+La grafica en Desmos se puede checar en el siguiente link:
+\href{https://www.desmos.com/calculator/k6znc7yyph}{Grafica Desmos formula 14 cuando ${ \omega \to 0}$} \\
+
+\clearpage
+\newpage
+\section{Conclusiones}
+\subsection{Para la parte de \LaTeX:}
+\subsubsection{¿Qué es \LaTeX y para que sirve?}
+
+Latex, es un sistema que ayuda al usuario a preparar un documento. Con él puedes preparar cualquier tipo de documento para presentarlo tanto en papel como en pantalla tales como manuscritos, cartas, artículos de revistas y tesis.\\ \\
+Existen procesadores de textos tales como Microsoft Word, la diferencia es la calidad profesional de los documentos que produce Latex. La calidad de imprenta de Latex pueden ser usados en areas como química, física, computación, biología, leyes, literatura, música y en cualquier otro tema el cuál usen simbologías.\\ \\
+Otra catacterística es que te permite separar el contenido y el formato del documento. Así tener la oportunidad de concentrarte en generar y escribir ideas en una parte y plasmar esas ideas en otra.\\ \\\cite{IEEEreferencias:Ref3}.
+
+\subsubsection{¿Qué alternativas a parte de Overleaf existen para producir documentos en \LaTeX?}
+\begin{itemize}
+    \item MiKTeX
+    \item Texmaker
+    \item TeXstudio
+    \item LyX
+\end{itemize}
+
+
+\subsection{Para la parte de convolución:}
+
+\subsubsection{¿Qué es la convolución de dos señales?}
+
+La operación de convolución entre dos señales \textbf{$f(t)$} y \textbf{$x(t)$} genera una nueva señal \textbf{$g(t)$}, la operación se define como:
+
+\begin{equation*}
+		g(t) = f(t)*x(t) = \int_{-\infty}^{\infty} f(\tau)x(t-\tau)d\tau \hspace{3cm} \cite{IEEEreferencias:Ref2}.
+\end{equation*}
+
+\subsubsection{Menciona algunas de las aplicaciones que tiene en Telemática}
+
+La convolución y las operaciones relacionadas se encuentran en muchas aplicaciones en ciencias, ingeniería y matemáticas. En el caso de telemática, las aplicaciones son las siguientes:
+
+\begin{itemize}
+    \item Procesamiento de imagenes\\
+    El procesamiento de imágenes en el dominio espacial es un área de estudio visualmente rica que se ocupa de las técnicas de manipulación de píxeles. Se realizan diferentes operaciones sobre las imágenes, que se tratan simplemente como matrices bidimensionales.
+    \item Procesamiento de audio\\
+    Los auditorios, salas de cine y otras construcciones similares dependen en gran medida del concepto de reverberación  porque mejora la calidad del sonido en gran medida.\\\\
+    El proceso en el que la reverberación se simula digitalmente se denomina técnicamente "reverberación de convolución". Con la reverberación de convolución, puede convolucionar la respuesta de impulso conocida de un área con la de un sonido deseado para simular el efecto de reverberación de un área en particular. 
+    \item Inteligencia artificial\\
+    Las redes neuronales son un área de inteligencia artificial que diseña circuitos imitando conexiones en un cerebro humano. La interconexión entre las neuronas dentro del cerebro se modela como la interconexión entre los nodos de múltiples capas que constituyen una red\cite{IEEEreferencias:Ref1}.
+\end{itemize}
+
+\subsubsection{¿Cuáles son las ventajas de hacer convolución de dos señales causales, de longitud infinita y que tengan una sola expresión?}
+
+La ventaja de generar señales causales por medio de la convolución es que la señal resultante es mas factible su realización y su comprensión para aquel que la va a leer.  
+
+
+\newpage
+\section{Apendice}
+Codigos que se ocuparon para graficar las formulas 5, 11, 12 y 14.
+
+Los codigos tambien se pueden checar en la siguiente liga:\\
+\href{https://octave-online.net/bucket~HNcktjiDzpR6CxYwKYz8Dz}{Codigos de graficas 5, 11, 12, y 14} \\
+
+\subsection{Codigos formula 5}
+
+\begin{lstlisting}[language=Matlab,label=grafica5,caption=Código para graficar la formula 5]
+%%Cierra todas las ventanas y limpia las variables almacenadas
+close all;
+clear all;
+
+%%Declaracion de variables y asignacion de valores
+lambda=0.2;
+t=0:0.001:100;
+
+%%Realizamos las operaciones
+f=exp(lambda.*t);
+x=exp(lambda.*t);
+convolucion=t.*exp(lambda.*t);;
+
+%%Graficamos
+plot(t,f,'red',t,x,'blue',t,convolucion,'black')
+
+%%Agregamos un titulo, le ponemos etiquetas a los ejes, agregamos una leyenda a la grafica, le ponemos cuadricula y le asignamos limites a los ejes x e y 
+title('Grafica de la formula 5');
+xlabel('t');
+ylabel('f(t)*x(t)');
+legend('f(t)','x(t)','f(t)*x(t)');
+grid on;
+xlim([0,15]);
+ylim([0,20]);
+\end{lstlisting}
+
+
+\newpage
+\subsection{Codigos formula 11}
+
+\begin{lstlisting}[language=Matlab,label=grafica11,caption=Código para graficar la formula 11]
+%%Cierra todas las ventanas y limpia las variables almacenadas
+close all;
+clear all;
+
+%%Declaracion de variables y asignacion de valores
+a=1;
+beta=0;
+theta=0;
+lambda=2;
+phi=atan((-beta)/(a+lambda));
+t=0:0.001:100;
+
+%%Realizamos las operaciones
+f=exp(-a*t).*cos(beta*t+theta);
+x=exp(lambda*t);
+convolucion=-(-cos(theta-phi).*exp(lambda*t)+exp(-a*t).*cos(beta*t+theta-phi))/(sqrt(((a+lambda)^2)+beta^2));
+
+%%Graficamos
+plot(t,f,'red',t,x,'blue',t,convolucion,'black')
+
+%%Agregamos un titulo, le ponemos etiquetas a los ejes, agregamos una leyenda a la grafica, le ponemos cuadricula y le asignamos limites a los ejes x e y 
+title('Grafica de la formula 11');
+xlabel('t');
+ylabel('f(t)*x(t)');
+legend('f(t)','x(t)','f(t)*x(t)');
+grid on;
+xlim([0,15]);
+ylim([-10,40]);
+\end{lstlisting}
+
+\newpage
+\subsection{Codigos formula 12}
+
+\begin{lstlisting}[language=Matlab,label=grafica12,caption=Código para graficar la formula 12]
+%%Cierra todas las ventanas y limpia las variables almacenadas
+close all;
+clear all;
+
+%%Declaracion de variables y asignacion de valores
+a=0.2;
+omega=1;
+t=0:0.001:100;
+
+%%Realizamos las operaciones
+f=exp(-a*t).*cos(omega*t);
+x=exp(-a*t).*sin(omega*t);
+convolucion=(1/2).*t.*exp(-a*t).*sin(omega*t);
+
+%%Graficamos
+plot(t,f,'red',t,x,'blue',t,convolucion,'black')
+
+%%Agregamos un titulo, le ponemos etiquetas a los ejes, agregamos una leyenda a la grafica, le ponemos cuadricula y le asignamos limites a los ejes x e y 
+title('Grafica de la formula 12');
+xlabel('t');
+ylabel('f(t)*x(t)');
+legend('f(t)','x(t)','f(t)*x(t)');
+grid on;
+xlim([0,15]);
+ylim([-2,2]);
+\end{lstlisting}
+
+\newpage
+\subsection{Codigos formula 14}
+
+\begin{lstlisting}[language=Matlab,label=grafica14,caption=Código para graficar la formula 14]
+%%Cierra todas las ventanas y limpia las variables almacenadas
+close all;
+clear all;
+
+%%Declaracion de variables y asignacion de valores
+a=0.2;
+omega=1;
+t=0:0.001:100;
+
+%%Realizamos las operaciones
+f=exp(-a*t).*cos(omega*t);
+x=exp(-a*t).*cos(omega*t);
+convolucion=(1/(2*omega)).*exp(-a*t).*sin(omega*t)+(1/2).*t.*exp(-a*t).*cos(omega*t);
+
+%%Graficamos
+plot(t,f,'red',t,x,'blue',t,convolucion,'black')
+
+%%Agregamos un titulo, le ponemos etiquetas a los ejes, agregamos una leyenda a la grafica, le ponemos cuadricula y le asignamos limites a los ejes x e y 
+title('Grafica de la formula 14');
+xlabel('t');
+ylabel('f(t)*x(t)');
+legend('f(t)','x(t)','f(t)*x(t)');
+grid on;
+xlim([0,15]);
+ylim([-2,2]);
+\end{lstlisting}
+
+
+\newpage
+\subsection{Codigos formula 14 cuando omega tiende a cero}
+
+\begin{lstlisting}[language=Matlab,label=grafica14omegacero,caption=Código para graficar la formula 14]
+%%Cierra todas las ventanas y limpia las variables almacenadas
+close all;
+clear all;
+
+%%Declaracion de variables y asignacion de valores
+lambda=0.2;
+omega=0.00000001;
+t=0:0.001:100;
+
+%%Realizamos las operaciones
+f=exp(lambda*t).*cos(omega*t);
+x=exp(lambda*t).*cos(omega*t);
+convolucion=(1/(2*omega)).*exp(lambda*t).*sin(omega*t)+(1/2).*t.*exp(lambda*t).*cos(omega*t);
+
+%%Graficamos
+plot(t,f,'red',t,x,'blue',t,convolucion,'black')
+
+%%Agregamos un titulo, le ponemos etiquetas a los ejes, agregamos una leyenda a la grafica, le ponemos cuadricula y le asignamos limites a los ejes x e y 
+title('Grafica de la formula 14 omega tiende a cero');
+xlabel('t');
+ylabel('f(t)*x(t)');
+legend('f(t)','x(t)','f(t)*x(t)');
+grid on;
+xlim([0,15]);
+ylim([0,20]);
+\end{lstlisting}
+
+%%%%%%% References %%%%%%%%
+\clearpage
+\nocite{*}
+\small{\bibliographystyle{IEEEtran}
+\bibliography{ref}}
+%%%%%%% References %%%%%%%%      
+\end{document}
