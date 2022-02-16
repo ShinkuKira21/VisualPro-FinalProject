@@ -1,0 +1,239 @@
+\documentclass[10pt]{article}  
+
+%%%%%%%% PREÁMBULO %%%%%%%%%%%%
+\usepackage[english]{babel} %Indica que escribiermos en español
+\usepackage[utf8]{inputenc} %Indica qué codificación se está usando ISO-8859-1(latin1)  o utf8  
+\usepackage{amsmath} % Comandos extras para matemáticas (cajas para ecuaciones,
+% etc)
+\usepackage{amssymb} % Simbolos matematicos (por lo tanto)
+\usepackage{graphicx} % Incluir imágenes en LaTeX
+\usepackage{color} % Para colorear texto
+\usepackage{subfigure} % subfiguras
+\usepackage{ulem}
+\usepackage{amsmath}%%Usar ecuaciones
+%%%%%%%%%%%%%CODIGO%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings} %Sirve para pegar codigo fuente de programas
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{%
+  \parbox{\textwidth}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}\vskip-4pt}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\lstset{frame=lrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep}
+%%%%%%%%%%%%%CODIGO%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{float} %Podemos usar el especificador [H] en las figuras para que se
+% queden donde queramos
+\usepackage{capt-of} % Permite usar etiquetas fuera de elementos flotantes
+% (etiquetas de figuras)
+\usepackage{enumerate} % enumerados
+\usepackage{sidecap} % Para poner el texto de las imágenes al lado
+	\sidecaptionvpos{figure}{c} % Para que el texto se alinie al centro vertical
+\usepackage{caption} % Para poder quitar numeracion de figuras
+\usepackage{commath} % funcionalidades extras para diferenciales, integrales,
+% etc (\od, \dif, etc)
+\usepackage{cancel} % para cancelar expresiones (\cancelto{0}{x})
+ 
+\usepackage{anysize} 					% Para personalizar el ancho de  los márgenes
+\marginsize{2cm}{2cm}{2cm}{2cm} % Izquierda, derecha, arriba, abajo
+
+\usepackage{appendix}
+
+%Para la creación de tablas
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage{makecell}
+
+
+
+%Para la creacion de cuadros de colores
+\usepackage{tcolorbox}
+\tcbuselibrary{listingsutf8}
+% Cuadro numerado para ejemplos de cuadros de colores
+\newtcolorbox[auto counter, number within=section]{example}[2][]
+{colback=red!5!white,colframe=red!75!black,
+fonttitle=\bfseries, title=Example~\thetcbcounter: #2,#1}
+
+\newtcolorbox[auto counter, number within=section]{tip}[2][]
+{colback=green!5!white,colframe=green!75!black,
+fonttitle=\bfseries, title=Tip~\thetcbcounter: #2,#1}
+
+% Para que las referencias sean hipervínculos a las figuras o ecuaciones y
+% aparezcan en color
+\usepackage[colorlinks=true,plainpages=true,citecolor=blue,linkcolor=blue]{hyperref}
+%\usepackage{hyperref} 
+% Para agregar encabezado y pie de página
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize VPLWVST} %encabezado izquierda
+\fancyhead[R]{\footnotesize VP-TA}   % dereecha
+\fancyfoot[R]{\footnotesize Tutorial A}  % Pie derecha
+\fancyfoot[C]{\thepage}  % centro
+\fancyfoot[L]{\footnotesize VisualPro: A Lightweight; Visual Scripting Tool}  %izquierda
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+\usepackage{listings} % Para usar código fuente
+\definecolor{dkgreen}{rgb}{0,0.6,0} % Definimos colores para usar en el código
+\definecolor{gray}{rgb}{0.5,0.5,0.5} 
+% configuración para el lenguaje que queramos utilizar
+\lstset{language=Matlab,
+   keywords={break,case,catch,continue,else,elseif,end,for,function,
+      global,if,otherwise,persistent,return,switch,try,while},
+   basicstyle=\ttfamily,
+   keywordstyle=\color{blue},
+   commentstyle=\color{red},
+   stringstyle=\color{dkgreen},
+   numberstyle=\tiny\color{gray},
+   stepnumber=1,
+   numbersep=10pt,
+   backgroundcolor=\color{white},
+   tabsize=4,
+   showspaces=false,
+   breaklines=true,
+   showstringspaces=false}
+
+\newcommand{\sen}{\operatorname{\sen}}	% Definimos el comando \sen para el seno
+%en español
+%%%%%%%% TERMINA PREÁMBULO %%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+																					%%%
+\begin{center}																		%%%
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}									%%%\left
+ 																					%%%
+\begin{minipage}{0.48\textwidth} \begin{flushleft}
+\includegraphics[scale = 0.15]{Figures/Logo/UWTSD-Logo}
+\end{flushleft}\end{minipage}
+\begin{minipage}{0.48\textwidth} \begin{flushright}
+\includegraphics[scale = 0.4]{Figures/Logo/VP-Logo-Large}
+\end{flushright}\end{minipage}
+
+													 								%%%
+\vspace*{-1.5cm}								%%%
+																					%%%	
+\textsc{\huge Visual Pro\\ \vspace{5px} Tutorial A}\\[1.5cm]	
+
+\textsc{\LARGE A beginners guide to Visual Scripting}\\[1.5cm]													%%%
+
+\textsc{\Large VisualPro: A Lightweight; Visual Scripting Tool}\\[0.5cm]
+
+    																				%%%
+ 			\vspace*{1cm}																		%%%
+																					%%%
+\HRule \\[0.4cm]																	%%%
+{ \huge \bfseries Tutorial: Classes and Objects}\\[0.4cm]	%%%
+ 																					%%%
+\HRule \\[1.5cm]																	%%%
+ 																				%%%
+																					%%%
+\begin{minipage}{0.4\textwidth}													%%%
+\begin{flushleft} \large															
+\textit{Authors:}\\
+Edward Patch\\
+Student Number: 1801492\\
+\end{flushleft}																		%%%
+\end{minipage}		
+																%%%
+\begin{minipage}{0.5\textwidth}		
+\vspace{-0.6cm}											%%%
+\begin{flushright} \large															%%%
+\textit{Supervisor:} \\
+Mike Dacey														%%%									
+\end{flushright}																	%%%
+\end{minipage}	
+\vspace*{1cm}
+
+\vspace{2cm} 																				
+\begin{center}																					
+{\large 16 February 2022}																	%%%
+ 			\end{center}												  						
+\end{center}							 											
+																					
+\newpage																		
+%%%%%%%%%%%%%%%%%%%% TERMINA PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\thispagestyle{fancy}
+
+\newpage
+\section{Learning Objectives}
+The following learning objectives are as follows:
+\begin{enumerate}
+    \item Understanding the VisualPro application.
+    \item Understanding the terminologies of classes, objects and methods.
+    \item Writing several classes in a Visual Scripting environment.
+\end{enumerate}
+
+
+\newpage
+\section{Introduction}
+    \subsection{What is VisualPro?}
+        VisualPro aims to create a lightweight Visual Scripting tool that encourages individuals to the development field. VisualPro enables users to create code structures to help develop ideas into reality. \\\textbf{Note:} VisualPro does not have logical programming tools in its current implementation.
+
+    \subsection{What will the tutorial cover?}
+        The tutorial covers VisualPro Environment of how to use the software, found in section~\ref{sec:vp-env}, page~\pageref{sec:vp-env} and terminology found in section~\ref{sec:terminology}, page~\pageref{sec:terminology}.
+        The tutorial teaches the basics of Object-Oriented and how to implement the structure within VisualPro, found in section~\ref{sec:object-orientation}, page~\pageref{sec:object-orientation}.
+        
+        \begin{example}{Object-Oriented Languages (or) Languages with Object-Oriented Features}
+            C++, C\# and Java. To view other object-oriented languages,\\~\href{https://worddisk.com/wiki/List_of_object-oriented_programming_languages/}{WordDisk - Languages with object-oriented features}~\cite{word_disk_list_2018}.
+        \end{example}
+
+\section{VisualPro Environment}
+\label{sec:vp-env}
+    \subsection{Features}
+        VisualPro offers a few features such as:
+        \begin{itemize}
+            \item Classes, Functions and Arguments, and Variables.
+            \item Saving in Multiple Languages.
+            \item Drag and Drop Elements and Text Areas.
+            \item Property Windows to Control Arguments and Relationships.
+        \end{itemize}
+
+    \subsection{Known Bugs}
+        A couple of bugs include:-
+        \begin{itemize}
+            \item Arguments for functions are not currently available.
+            \item Deleting containers does not mathematically reset the following location or move existing containers backwards.
+        \end{itemize}
+
+    \subsection{Saving Progress}
+        After completing a tutorial, select the language and press save.
+
+        \begin{tip}{Compatibility}
+            As mentioned previously, not all languages support object-orientation. If a language is not compatible with a particular keyword, the code generator will ignore the selected syntax object.
+
+            \textbf{Example Language:} C is not supported.
+        \end{tip}
+
+\section{Terminology}
+\label{sec:terminology}
+    \subsection{What terminologies exist within Object-Orintation programming?}
+
+    \subsection{What is a class?}
+
+    \subsection{What is a method?}
+
+    \subsection{What is a object?}
+
+
+\section{Object-Orientation}
+\label{sec:object-orientation}
+
+    \subsection{Exercise: Understanding the basics}
+
+    \subsection{Exercise: Trying out a Class}
+
+    \subsection{Exercise: Animal Types}
+
+    \subsection{Exercise: Vehicle Components}
+
+%%%%%%% References %%%%%%%%
+\clearpage
+\nocite{*}
+\small{\bibliographystyle{IEEEtran}
+\bibliography{ref}}
+%%%%%%% References %%%%%%%%      
+\end{document}
