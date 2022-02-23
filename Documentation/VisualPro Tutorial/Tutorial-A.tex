@@ -18,7 +18,7 @@
 \DeclareCaptionFormat{listing}{%
   \parbox{\textwidth}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}\vskip-4pt}}
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
-\lstset{frame=lrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep}
+\lstset{frame=ltrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep}
 %%%%%%%%%%%%%CODIGO%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float} %Podemos usar el especificador [H] en las figuras para que se
 % queden donde queramos
@@ -77,9 +77,7 @@ fonttitle=\bfseries, title=Tip~\thetcbcounter: #2,#1}
 \definecolor{dkgreen}{rgb}{0,0.6,0} % Definimos colores para usar en el código
 \definecolor{gray}{rgb}{0.5,0.5,0.5} 
 % configuración para el lenguaje que queramos utilizar
-\lstset{language=Matlab,
-   keywords={break,case,catch,continue,else,elseif,end,for,function,
-      global,if,otherwise,persistent,return,switch,try,while},
+\lstset{basicstyle=\ttfamily,
    basicstyle=\ttfamily,
    keywordstyle=\color{blue},
    commentstyle=\color{red},
@@ -213,12 +211,41 @@ The following learning objectives are as follows:
     \subsection{What terminologies exist within Object-Orintation programming?}
 
     \subsection{What is a class?}
-        
+        A class enables developers to containerise code that is referenced later as objects. Java language enables the demonstration of a typical Class declaration in an Object-Oriented Programming (OOP) environment.
+
+        \begin{example}{Code Example - C\# and Java}
+            An example syntax of declaring a class in C\# and Java languages:-
+            \begin{lstlisting}[language=java]
+                public class Name { 
+                    protected void Method_A() {}
+                    public void Method_B() {}
+                    private void Method_C() {}
+                }
+            \end{lstlisting}
+
+            Within languages similar to C\# and Java, member tags enable scope-protection to classes, methods and variables with different purposes. The code snippet displays that the declaration of members, public, private, and protected members align with the class or method declaration. To understand classes and modifiers within C\#, look at~\href{https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/classes}{Classes in the C\# Language}-~\cite{bill_wagner_classes_2021}.
+        \end{example} 
+
+        \begin{example}{Code Example - C++}
+            \begin{lstlisting}[language=c++]
+                class Name { 
+                    protected:
+                        void Method() {}
+                    public:
+                        void Method() {}
+                    private: 
+                        void Method() {}
+                };
+            \end{lstlisting}
+            C++ language uses member colon style with a new line. To understand C++ classes and modifers, look at~\href{https://www.cplusplus.com/doc/tutorial/classes/}{Classes in C++ Language}~\cite{cpluspluscom_classes_nodate}\\
+            \textbf{Note:} - the modifiers of protected, public and private members mean the same as the previous example.
+        \end{example}
+
     \subsection{What is a method?}
-
+        A method is found within a class that provides functionality to interact with neighbor methods and variables, child class methods and variables or object methods and variables (dependent on the access modifier).
+        
     \subsection{What is a object?}
-
-
+        
 \section{Object-Orientation}
 \label{sec:object-orientation}
 
@@ -229,6 +256,12 @@ The following learning objectives are as follows:
     \subsection{Exercise: Animal Types}
 
     \subsection{Exercise: Vehicle Components}
+
+\section{Keywords}
+\label{sec:keywords}
+    \begin{itemize}
+        \item OOP - Object-Orinted Programming.
+    \end{itemize}
 
 %%%%%%% References %%%%%%%%
 \clearpage
