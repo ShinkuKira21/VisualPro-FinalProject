@@ -210,7 +210,7 @@ The following learning objectives are as follows:
 \label{sec:terminology}
     \subsection{What terminologies exist within Object-Orintation programming?}
 
-    \subsection{What is a class?}
+    \subsection{What is a Class?}
         A class enables developers to containerise code that is referenced later as objects. Java language enables the demonstration of a typical Class declaration in an Object-Oriented Programming (OOP) environment.
 
         \begin{example}{Code Example - C\# and Java}
@@ -241,11 +241,38 @@ The following learning objectives are as follows:
             \textbf{Note:} - the modifiers of protected, public and private members mean the same as the previous example.
         \end{example}
 
-    \subsection{What is a method?}
-        A method is found within a class that provides functionality to interact with neighbor methods and variables, child class methods and variables or object methods and variables (dependent on the access modifier).
+    \subsection{What is a Method?}
+        Methods belong within a class that interacts with neighbour methods and variables, child class methods and variables or object methods and variables (dependent on the access modifier).
         
-    \subsection{What is a object?}
-        
+        Unlike Class containers, Methods execute a `script' that \textbf{can} communicate with inherited Variables and Members, usually using the \textit{this} or \textit{self} keyword dependent on the programming language.
+
+        \begin{tip}{Documentation Tip}
+            When using a programming language, it is important not to remember every language's syntax. As programming languages are the same, `not all size fits the one' tool, sometimes it is beneficial to try different languages to fix the same problem to see many different methods available. After learning the generic tools, progressing from one language to another becomes a relaxed and speedy experience. Refer to the programming language documentation for any uncertainties.
+        \end{tip}
+
+    \subsection{What is a Object?}
+        When referencing a Class in another instance, it is important to remember that this is called an Object. Two examples of objects demonstrates the meaning, with a reference of what an Object is to enable further study on this terminology.
+
+        \begin{example}{Object Demonstration (C\# and Java Language)}
+
+            \textbf{Java:}
+            \begin{lstlisting}[language=java]
+                public class Program { 
+                    public static void Main(String[] args) {
+
+                    }
+                }
+            \end{lstlisting}
+
+            \textbf{C\#:}
+            \begin{lstlisting}[language=java]
+                class Program { 
+                    static void Main(string[] args) {
+
+                    }
+                }
+            \end{lstlisting}
+        \end{example}
 \section{Object-Orientation}
 \label{sec:object-orientation}
 
