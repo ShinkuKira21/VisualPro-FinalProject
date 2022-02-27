@@ -208,10 +208,8 @@ The following learning objectives are as follows:
 
 \section{Terminology}
 \label{sec:terminology}
-    \subsection{What terminologies exist within Object-Orintation programming?}
-
     \subsection{What is a Class?}
-        A class enables developers to containerise code that is referenced later as objects. Java language enables the demonstration of a typical Class declaration in an Object-Oriented Programming (OOP) environment.
+        A class enables developers to containerise code that is referenced later as objects. Java language enables the demonstration of a typical Class declaration in an Object-Oriented Programming (OOP) environment. \textbf{Note:} The default access modifier of a Class is \textit{private}.
 
         \begin{example}{Code Example - C\# and Java}
             An example syntax of declaring a class in C\# and Java languages:-
@@ -223,7 +221,7 @@ The following learning objectives are as follows:
                 }
             \end{lstlisting}
 
-            Within languages similar to C\# and Java, member tags enable scope-protection to classes, methods and variables with different purposes. The code snippet displays that the declaration of members, public, private, and protected members align with the class or method declaration. To understand classes and modifiers within C\#, look at~\href{https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/classes}{Classes in the C\# Language}-~\cite{bill_wagner_classes_2021}.
+            Within languages similar to C\# and Java, member tags enable scope-protection to classes, methods and variables with different purposes. The code snippet displays that the declaration of members, public, private, and protected members align with the class or method declaration. However, only one \textit{public} Class can exist within the Java language if the file name and extension is \textbf{ClassName.java}. Whereas in C\#, multiple \textit{public} Classes can exist. To understand classes and modifiers within C\#, look at~\href{https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/classes}{Classes in the C\# Language}-~\cite{bill_wagner_classes_2021}. 
         \end{example} 
 
         \begin{example}{Code Example - C++}
@@ -257,19 +255,68 @@ The following learning objectives are as follows:
 
             \textbf{Java:}
             \begin{lstlisting}[language=java]
-                public class Program { 
-                    public static void Main(String[] args) {
+                class Car {
+                    public int x;
+                    public void AddToX(int x) {
+                        this.x += x;
+                    }
+                }
 
+                class Program { 
+                    public static void Main(String[] args) {
+                        // Object Car 
+                        Car mustang = new Car();
+
+                        mustang.x = 1;
+                        mustang.AddToX(10);
+                        System.out.println(mustang.x);
                     }
                 }
             \end{lstlisting}
 
             \textbf{C\#:}
             \begin{lstlisting}[language=java]
+                class Car {
+                    public int x;
+                    public void AddToX(int x) {
+                        this.x += x;
+                    }
+                }
+
                 class Program { 
                     static void Main(string[] args) {
-
+                        // Object Car 
+                        Car mustang = new Car();
+                
+                        mustang.x = 1;
+                        mustang.AddToX(10);
+                        Console.WriteLine(mustang.x);
                     }
+                }
+            \end{lstlisting}
+        \end{example}
+
+        \newpage
+        An example of an object within C++:-
+        \begin{example}{C++ Object}
+            \begin{lstlisting}[language=c++]
+                class Car {
+                    public:
+                        int x;
+                        void AddToX(int x)
+                        { this->x += x; }                   }
+                };
+
+                void main(int argc, char* argv)
+                {
+                    Car mustang;
+                    
+                    mustang.x = 1;
+                    mustang.AddToX(10);
+                    
+                    std::cout << mustang.x;
+
+                    return 0;
                 }
             \end{lstlisting}
         \end{example}
@@ -277,12 +324,32 @@ The following learning objectives are as follows:
 \label{sec:object-orientation}
 
     \subsection{Exercise: Understanding the basics}
+        VisualPro offers three structures, Class, Functions and Variables. This tutorial focuses on the Class structure, and the following exercises aim to provide knowledge of how Classes work in two different OOP languages.
 
-    \subsection{Exercise: Trying out a Class}
+        On the left of VisualPro is the selection of structure tools. These are draggable objects only. These tools can drop onto the WorkArea panel on the right side of the VisualPro window. The containers that appear within the workplace enable three text areas, Properties and Child Work Area, to configure the Class, Function or Variables for more advanced setup. Example images may help draw a picture of the sections mentioned.
+
+        \begin{tip}{Evidencing}
+            \textbf{Important:} Make sure to save each exercise and email the generated code to\\~\href{mailto:1801492@student.uwtsd.ac.uk}{1801492@student.uwtsd.ac.uk}.
+        \end{tip}
+
+    \newpage
+    \subsection{Exercise: Creating a Class}
+        To create a Class inside of VisualPro, drag and drop the Class selection tool inside the WorkArea panel. As mentioned previously, this will create a container inside the WorkArea panel.
+
+        \textbf{Tasks:-}
+        \begin{enumerate}
+            \item Name the Class, `World'. A class does not require a Member, and Data-Type should remain empty.
+            \item After creating the Class, save the file with the language C++.
+        \end{enumerate}
+        Name the Class, `World'. A class does not require a Member and Data-Type should remain empty.
+
+        Once the Class is created, save the file with the language C++ and copy the file content.
 
     \subsection{Exercise: Animal Types}
 
     \subsection{Exercise: Vehicle Components}
+
+    \subsection{Exercise: Try It Yourself (TIY)}
 
 \section{Keywords}
 \label{sec:keywords}
