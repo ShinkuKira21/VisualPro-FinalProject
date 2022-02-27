@@ -24,6 +24,13 @@ const char* List::Add(const char* name, const char* parent)
     return list[sizeID - 1][0].c_str();
 }
 
+void List::Edit(int id, const char* name)
+{
+	if(--id < sizeID)
+		// Hex to Ascii: [edit] (edit)
+        list[id][1] = name;
+}
+
 void List::Remove(int id)
 {
     if (sizeID != 0)

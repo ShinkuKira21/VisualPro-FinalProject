@@ -15,10 +15,11 @@ namespace Decoder_Tools
 			static std::string FindSubStr(const char* str, const char* strToTest, char separator, int pos = -1);
 			static std::string FindSubStr(const char* str, char start, char end, int pos);
 			static std::string FindSubStr(const char* str, int pos, char separator);
+			static int FindStrIndex(const char* str, char charToTest);
 
 			static std::string ReplaceWord(const char* str, const char* strToTest, const char* replaceStr);
-		
-			static int FindStrIndex(const char* str, char charToTest);
+			static std::string ReplaceWord(const char* str, int depth, char start, char end, const char* replaceStr);
+			
 	};
 }
 
@@ -58,8 +59,6 @@ namespace Cache
 		void ClearCString() { delete[] cString; cString = nullptr; }
 
 		~TemporaryStorage()
-		{
-			if (list != nullptr) delete[] list;
-		}
+		{ if (list != nullptr) delete[] list; }
 	};
 }

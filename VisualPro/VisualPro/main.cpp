@@ -68,5 +68,6 @@ void TestDLL()
 	CallFunction(pp, "Add", "private", "class", "Mercedes", "1", 1);
 	std::cout << "DLL List:\n" << CallStringFunction(pp, ts, "List") << "\n\n"; std::cout << "Local List:\n" << pp->ParseList();
 	DisposeClass(pp);
+
 	pp = nullptr;
 }

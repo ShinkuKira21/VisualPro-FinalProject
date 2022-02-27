@@ -1,10 +1,6 @@
 #include "../Public/Decoder.h"
 
-
-
-void Decoder_Tools::Decoder::Decipher()
-{ }
-
+void Decoder_Tools::Decoder::Decipher() { }
 
 // FIRST MADE IN C#
 std::string Decoder_Tools::Decoder::FindSubStr(const char* str, const char* strToTest, char separator, int pos)
@@ -16,7 +12,6 @@ std::string Decoder_Tools::Decoder::FindSubStr(const char* str, const char* strT
 	//string:string
 	std::string substr;
 	bool bEnablePos = false;
-	
 	for(size_t i = 0, j = 0; i < std::string(str).length(); i++)
 	{
 		if (str[i] != separator)
@@ -103,4 +98,16 @@ std::string Decoder_Tools::Decoder::ReplaceWord(const char* str, const char* str
 	if(start != std::string::npos) substr.replace(start, end, replaceStr);
 
 	return substr;
+}
+
+std::string Decoder_Tools::Decoder::ReplaceWord(const char* str, int depth, char start, char end, const char* replaceStr)
+{
+	size_t first = 0, last = 0;
+	for(int i = 0; i < depth; i++)
+	{
+		first = std::string(str).find(start, last);
+		last = std::string(str).find(end, first);
+	}
+
+	return std::string(str).replace(first+1, last-2, replaceStr);
 }

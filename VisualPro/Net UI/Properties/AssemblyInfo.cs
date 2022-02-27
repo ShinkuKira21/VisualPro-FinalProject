@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Visual Pro")]
-[assembly: AssemblyCopyright("Copyright CrazyGaming © 2021")]
+[assembly: AssemblyCopyright("Copyright Edward Patch © 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

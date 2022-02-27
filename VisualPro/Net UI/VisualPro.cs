@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace VP_UI
 {
@@ -18,7 +19,11 @@ namespace VP_UI
         {
             InitializeComponent();
 
-            /* How far off? 3 more calls */
+            /* How far off? 3 more calls
+             * Update: 1 more call :)
+             * Managed to load the languages and LanguageCompiler is now ready to function.
+             * File Explorer and Libraries are required.
+             */
             /* Todo Next: Wire up plan */
             xml = VP_Comms.Decoder.InitialiseXMLClass("conf-xml", "conf.xml"); // Initialises XML
             memory = VP_Comms.Decoder.InitialisePlannerClass(); //Initialises Planner
@@ -68,12 +73,40 @@ namespace VP_UI
             VP_Comms.Decoder.DisposePlannerClass(memory);
         }
 
+        private void btnSaveCode_Click(object sender, EventArgs e)
+        {
+            if (bxALanguages.SelectedItem != null)
+            {
+                IntPtr ts = VP_Comms.Libraries.InitialiseTS();
+                string libraries = Marshal.PtrToStringAnsi(VP_Comms.Decoder.SendCommand(ts, xml, "4c4150", (string)bxALanguages.SelectedItem));
+                string syntaxes =
+                    Marshal.PtrToStringAnsi(VP_Comms.Decoder.SendCommand(ts, xml, "4c4153",
+                        (string)bxALanguages.SelectedItem));
+
+                string library;
+                for(int i = 0; (library = Marshal.PtrToStringAnsi(VP_Comms.Libraries.FindSubStr(ts, libraries, i, '\x1f'))) != null; i++) VP_Configuration.General.AddLanguageHeader(library);
+
+                string syntax;
+                for(int i = 0; (syntax = Marshal.PtrToStringAnsi(VP_Comms.Libraries.FindSubStr(ts, syntaxes, i, '\x1f'))) != null; i++) VP_Configuration.General.AddLanguageSyntax(syntax);
+
+                VP_Comms.Libraries.DisposeTS(ts);
+
+                string data = man.CompileCode(xml, (string)bxALanguages.SelectedItem);
+
+                if (dialog_saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    string path = System.IO.Path.GetFullPath(dialog_saveFile.FileName);
+                    VP_Comms.Libraries.FileController("707574", data, path);
+                }
+            }
+        }
+
         private void LoadLanguages()
         {
             /* Configure Available Languages Available within the Application */
             IntPtr ts = VP_Comms.Libraries.InitialiseTS(); //Temporary storage
 
-            string availableLanguages = Marshal.PtrToStringAnsi(VP_Comms.Decoder.SendCommand(ts, xml, "LAL"));
+            string availableLanguages = Marshal.PtrToStringAnsi(VP_Comms.Decoder.SendCommand(ts, xml, "4c414c"));
 
             if (availableLanguages == null)
             {
@@ -82,7 +115,6 @@ namespace VP_UI
                 Form errDialog = new Error_Dialog();
                 errDialog.Show();
             }
-
             /* End of Configuration */
 
             if (availableLanguages != null)
@@ -93,7 +125,6 @@ namespace VP_UI
             }
 
             VP_Comms.Libraries.DisposeTS(ts);
-            
         }
     }
 }

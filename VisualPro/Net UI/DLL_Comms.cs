@@ -60,7 +60,7 @@ namespace VP_Comms
         static public extern IntPtr CompileLanguage(IntPtr memory, IntPtr ts, IntPtr xmlDoc, [MarshalAs(UnmanagedType.AnsiBStr)] string language, [MarshalAs(UnmanagedType.AnsiBStr)] string libraries, [MarshalAs(UnmanagedType.AnsiBStr)] string syntax);
 
         [DllImport("Decoder.dll", CallingConvention = CallingConvention.Cdecl)]
-        static public extern IntPtr SendCommand(IntPtr ts, IntPtr xmlDoc, [MarshalAs(UnmanagedType.AnsiBStr)] string command);
+        static public extern IntPtr SendCommand(IntPtr ts, IntPtr xmlDoc, [MarshalAs(UnmanagedType.AnsiBStr)] string command, [MarshalAs(UnmanagedType.AnsiBStr)] string language = "");
 
     }
 
@@ -74,5 +74,9 @@ namespace VP_Comms
 
         [DllImport("Libraries.dll", CallingConvention = CallingConvention.Cdecl)]
         static public extern IntPtr FindSubStr(IntPtr ts, [MarshalAs(UnmanagedType.AnsiBStr)] string str, int pos, char seperator);
+
+        [DllImport("Libraries.dll", CallingConvention = CallingConvention.Cdecl)]
+        static public extern IntPtr FileController([MarshalAs(UnmanagedType.AnsiBStr)] string command, [MarshalAs(UnmanagedType.AnsiBStr)] string data,
+            [MarshalAs(UnmanagedType.AnsiBStr)] string fileDirectory);
     }
 }

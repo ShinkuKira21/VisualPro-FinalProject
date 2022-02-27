@@ -20,7 +20,7 @@ extern "C" _declspec(dllexport) Decoder_Tools::XMLTools* InitialiseXMLClass(cons
 extern "C" _declspec(dllexport) void DisposeXMLClass(Decoder_Tools::XMLTools* xml); 
 
 // Calls the Language Compiler
-extern "C" _declspec(dllexport) char* CompileLanguage(Memory* memory, Cache::TemporaryStorage* ts, Decoder_Tools::XMLTools * xmlDoc, const char* language, const char* libraries, const char* syntax);
+extern "C" _declspec(dllexport) const char* CompileLanguage(Memory* memory, Cache::TemporaryStorage* ts, Decoder_Tools::XMLTools * xmlDoc, const char* language, const char* libraries, const char* syntax);
 
 // Misc Commands
-extern "C" _declspec(dllexport) const char* SendCommand(Cache::TemporaryStorage* ts, Decoder_Tools::XMLTools* xmlDoc, const char* command);
+extern "C" _declspec(dllexport) const char* SendCommand(Cache::TemporaryStorage* ts, Decoder_Tools::XMLTools* xmlDoc, const char* command, const char* language = "");

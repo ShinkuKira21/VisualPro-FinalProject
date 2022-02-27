@@ -1,6 +1,5 @@
 #pragma once
 #include "../../Manager/Public/programmingPlanner.h"
-#include <fstream>
 // RapidXML was picked to parse in XML files
 #include "../../packages/rapidxml.1.13/build/native/include/rapidxml/rapidxml.hpp"
 #include "../../packages/rapidxml.1.13/build/native/include/rapidxml/rapidxml_utils.hpp"
@@ -9,7 +8,6 @@ namespace Decoder_Tools
 {
 	class _declspec(dllimport) XMLTools;
 	class _declspec(dllimport) Decoder;
-	//class _declspec(dllimport) FileStream;
 	
 	class _declspec(dllexport) SupportedLanguages
 	{
@@ -28,15 +26,18 @@ namespace Decoder_Tools
 			SupportedLanguages(XMLTools* xmlTools, const char* language = "");
 
 			const char* ListAvailableLanguages();
+			std::string ListAvailableLibraries(const char* language);
+			std::string ListAvailableSyntaxes(const char* language);
 			int GetLanguageIndex(const char* language);
 		
 			void ParseLanguage(int languageSelector);
 
-			std::string DecodeLibrary(int i);
-			std::string DecodeSyntax(int i, int j);
-			std::vector<std::string> DecodeSyntax(int i);
+			std::string DecodeLibrary(size_t i);
+			std::string DecodeSyntax(size_t i, size_t j);
+			std::vector<std::string> DecodeSyntax(size_t i);
 		
 		private:
+			void LoadXMLFile(const char* language);
 			void StartFindLanguages(); // Binds both FindDefaultLanguages and FindUserDefinedLanguages functions.
 			void FindDefaultLanguages();
 			void FindUserDefinedLanguages();
@@ -47,20 +48,24 @@ namespace Decoder_Tools
 
 	class _declspec(dllexport) LanguageCompiler
 	{
-		SupportedLanguages* sl;
-		std::string language, data;
-		int zIndex = 0; const char* member, *seperator; bool bTagsEnabled;
-		std::vector<ProgrammingPlanner*> pPlanner;
+		protected:
+			SupportedLanguages* sl;
+			std::string language, data;
+			int zIndex = 0; const char* member, *seperator; bool bTagsEnabled;
+			std::vector<ProgrammingPlanner*> pPlanner;
 
-		//								Memory will only get used in SyntaxCompilation Part 2:)
-		// MemoryName:Value
-		std::vector<std::string>  libs, tags;
-		std::vector<std::vector<std::string>> syntax;
-		std::vector<std::vector<std::vector<std::string>>> plannerSyntax;
+			//								Memory will only get used in SyntaxCompilation Part 2:)
+			// MemoryName:Value
+			std::vector<std::string>  libs, tags;
+			std::vector<std::vector<std::string>> syntax;
+			std::vector<std::vector<std::vector<std::string>>> plannerSyntax;
 
 		public:
 			LanguageCompiler(SupportedLanguages* sl, std::vector<ProgrammingPlanner*> pPlanner, const char* libraries, const char* syntax);
 
+			const std::string FetchCompiledData();
+
+		private:
 			void Compilation();
 			std::string LibraryCompilation();
 
@@ -116,30 +121,6 @@ namespace Decoder_Tools
 			rapidxml::xml_node<>* SelectNode(rapidxml::xml_node<>* parent, int depth);
 			rapidxml::xml_attribute<>* SelectAttribute(rapidxml::xml_node<>* parent, int depth);
 	};
-
-	
-	/* Depreciated for now - Considering saving files via C++ or C#
-	 * I'll check performance for both and decide if it's worth calling
-	 * the class in the already loaded file. (I am considering to writing C
-	 * file writing and reading methods.)
-	 */
-
-	/*
-	class _declspec(dllexport) FileStream
-	{
-		std::ifstream inFileStream;
-		std::string line;
-		std::string fileContent;
-		
-		public:
-			FileStream(const char* dir, const char* filename);
-
-			// Returns file content
-			const char* GetFileContent();
-
-		private:
-			void FileStreamToConstChar();
-	};*/
 }
 
 

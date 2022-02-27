@@ -26,6 +26,14 @@ void Manager::Add(const char* member, const char* dt, const char* name, const ch
 	id = int(TextToNumber(strID));
 }
 
+void Manager::Edit(int id, int idToEdit, const char* newValue)
+{
+	std::string listStr = managedList->Find(id, false, false);
+	listStr = Decoder_Tools::Decoder::ReplaceWord(listStr.c_str() , idToEdit, ':', ';', newValue);
+
+	managedList->Edit(id, listStr.c_str());
+}
+
 void Manager::Remove(int id)
 { managedList->Remove(id); }
 

@@ -17,7 +17,8 @@ class _declspec(dllexport) List : Functions
         ~List();
 
         const char* Add(const char* name, const char* parent = "");
-	
+        void Edit(int id, const char* name);
+
         void Remove(int id);
         void Clear();
 	

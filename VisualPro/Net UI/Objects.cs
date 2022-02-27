@@ -239,12 +239,12 @@ namespace VP_Objects
             // tb_name - 0
             subTextBoxes[0].ForeColor = System.Drawing.SystemColors.ControlDark;
             subTextBoxes[0].Location = new System.Drawing.Point(points[6, 0], points[6, 1]);
-            subTextBoxes[0].Name = "tbDC-Name" + size;
+            subTextBoxes[0].Name = "tbDC-Name;3;-" + tool[0] + "-" + size;
             subTextBoxes[0].Size = new System.Drawing.Size(sizes[5, 0], sizes[5, 1]);
             subTextBoxes[0].TabIndex = 0;
             subTextBoxes[0].Text = tool + " Name...";
             subTextBoxes[0].Click += actions.ClearTextBox;
-            subTextBoxes[0].TextChanged += actions.ClearTextBox;
+            subTextBoxes[0].TextChanged += actions.EditPlan;
 
             // Property Button (controls properties)
             subButtons[0].Enabled = false;
@@ -268,20 +268,21 @@ namespace VP_Objects
             subButtons[1].Size = new System.Drawing.Size(sizes[10, 0], sizes[10, 1]);
             subButtons[1].TabIndex = 3;
             subButtons[1].UseVisualStyleBackColor = true;
-
             subButtons[1].Click += actions.RemoveContainer;
 
             // tb_member - 1
             subTextBoxes[1].Location = new System.Drawing.Point(points[3, 0], points[3, 1]);
-            subTextBoxes[1].Name = "tbDC-Member-" + size;
+            subTextBoxes[1].Name = "tbDC-Member;1;-" + tool[0] + "-" + size;
             subTextBoxes[1].Size = new System.Drawing.Size(sizes[2, 0], sizes[2, 1]);
             subTextBoxes[1].TabIndex = 2;
+            subTextBoxes[1].TextChanged += actions.EditPlan;
 
             // tb_datatype - 2
             subTextBoxes[2].Location = new System.Drawing.Point(points[2, 0], points[2, 1]);
-            subTextBoxes[2].Name = "tbDC-DataType-" + size;
+            subTextBoxes[2].Name = "tbDC-DataType;2;-" + tool[0] + "-" + size;
             subTextBoxes[2].Size = new System.Drawing.Size(sizes[2, 0], sizes[2, 1]);
             subTextBoxes[2].TabIndex = 3;
+            subTextBoxes[2].TextChanged += actions.EditPlan;
 
             // lblMember - 0
             subLabels[0].AutoSize = true;
@@ -385,22 +386,25 @@ namespace VP_Objects
             // TextBox: Name - 0
             subTextBoxes[0].ForeColor = System.Drawing.SystemColors.ControlDark;
             subTextBoxes[0].Location = new System.Drawing.Point(points[6, 0], points[6, 1]);
-            subTextBoxes[0].Name = "tbCS-Name-" + size;
+            subTextBoxes[0].Name = "tbCS-Name;3;-" + tool[0] + "-" + size;
             subTextBoxes[0].Size = new System.Drawing.Size(sizes[5, 0], sizes[5, 1]);
             subTextBoxes[0].TabIndex = 0;
             subTextBoxes[0].Name = tool + " Name";
+            subTextBoxes[0].TextChanged += actions.EditPlan;
 
             // TextBox: DataType - 1
             subTextBoxes[1].Location = new System.Drawing.Point(points[2, 0], points[2, 1]);
-            subTextBoxes[1].Name = "tbCS-DataType-" + size;
+            subTextBoxes[1].Name = "tbCS-DataType;2;-" + tool[0] + "-" + size;
             subTextBoxes[1].Size = new System.Drawing.Size(sizes[2, 0], sizes[2, 1]);
             subTextBoxes[1].TabIndex = 2;
+            subTextBoxes[1].TextChanged += actions.EditPlan;
 
             // TextBox: Member - 2
             subTextBoxes[2].Location = new System.Drawing.Point(points[3, 0], points[3, 1]);
-            subTextBoxes[2].Name = "tbCS-Member-" + size;
+            subTextBoxes[2].Name = "tbCS-Member;1;-" + tool[0] + "-" + size;
             subTextBoxes[2].Size = new System.Drawing.Size(sizes[2, 0], sizes[2, 1]);
             subTextBoxes[2].TabIndex = 2;
+            subTextBoxes[2].TextChanged += actions.EditPlan;
 
             // Label: DataType - 0
             subLabels[0].AutoSize = true;
@@ -449,24 +453,27 @@ namespace VP_Objects
             // Textbox - Name - 0
             
             subTextBoxes[0].Location = new System.Drawing.Point(points[1, 0], points[1, 1]);
-            subTextBoxes[0].Name = "tbCC-Name-" + size;
+            subTextBoxes[0].Name = "tbCC-Name;3;-" + size;
             subTextBoxes[0].TabIndex = 0;
             subTextBoxes[0].Text = tool + " Name";
-            subTextBoxes[0].Click += actions.ClearTextBox;
+            subTextBoxes[0].Click += actions.ClearTextBox; 
+            // subTextBoxes[0].TextChanged += actions.EditPlan;
 
             // Textbox - Member - 1
             subTextBoxes[1].Location = new System.Drawing.Point(points[2, 0], points[2, 1]);
-            subTextBoxes[1].Name = "tbCC-Member-" + size;
+            subTextBoxes[1].Name = "tbCC-Member;1;-" + size;
             subTextBoxes[1].TabIndex = 2;
             subTextBoxes[1].Text = "Member";
             subTextBoxes[1].Click += actions.ClearTextBox;
+            // subTextBoxes[1].TextChanged += actions.EditPlan;
 
             // Textbox - DataType - 2
             subTextBoxes[2].Location = new System.Drawing.Point(points[3, 0], points[3, 1]);
-            subTextBoxes[2].Name = "tbCC-DataType-" + size;
+            subTextBoxes[2].Name = "tbCC-DataType;2;-" + size;
             subTextBoxes[2].TabIndex = 3;
             subTextBoxes[2].Text = "Data Type";
             subTextBoxes[2].Click += actions.ClearTextBox;
+            // subTextBoxes[2].TextChanged += actions.EditPlan;
 
             return panel;
         }
@@ -474,7 +481,7 @@ namespace VP_Objects
 
     public static class LocSize
     {
-        private static bool bStart = false;
+        private static bool bStart;
         private static VP_Tools.Cache cacheX, cacheY;
 
         private static readonly int[,] defaultContainerPoints = new int[12, 2]

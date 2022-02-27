@@ -89,9 +89,15 @@ namespace VP_UI
 
         public void EditPlan(object sender, EventArgs e)
         { 
-            if(((TextBox)sender).Text != null)
+            if(((TextBox)sender).Text != "")
             {
                 // logic enters here
+                Tools tool = new Tools();
+                string signature = tool.FindSubStr('-', '-', 1, ((TextBox)sender).Name);
+                string id = tool.FindSubStr('-', '\0', 2, ((TextBox)sender).Name);
+                string idToEdit = tool.FindSubStr(';', ';', 0, ((TextBox)sender).Name);
+                
+                actions.man.Edit(actions.man.FindSignature(signature), Int32.Parse(id), Int32.Parse(idToEdit), ((TextBox)sender).Text);
             }
         }
 

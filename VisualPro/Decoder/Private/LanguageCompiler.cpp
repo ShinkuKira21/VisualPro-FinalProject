@@ -19,8 +19,11 @@ Decoder_Tools::LanguageCompiler::LanguageCompiler(SupportedLanguages* sl, std::v
 	SyntaxConstructor(syntax);
 	
 	Compilation();
-	
 }
+
+const std::string Decoder_Tools::LanguageCompiler::FetchCompiledData()
+{ return data; }
+
 
 void Decoder_Tools::LanguageCompiler::Compilation()
 {
@@ -88,8 +91,6 @@ void Decoder_Tools::LanguageCompiler::Compilation()
 		for (size_t j = 0; j < libs[i].size(); j++)
 			for (size_t k = 0; k < libs[i][j].size(); k++)
 				data += SyntaxCompilation(libs[i], argIDs, ids[j], j, k, libs[i][j][1].c_str(), (bool)i);
-
-	std::cout << data;
 }
 
 std::string Decoder_Tools::LanguageCompiler::LibraryCompilation()
@@ -290,7 +291,7 @@ void Decoder_Tools::LanguageCompiler::Parse_ProgrammingPlanner()
 	// VECTOR 3D LOGIC (BEST FIT IN THIS SCENARIO) -
 	// Without this method I could have used single vectors, pointers or I could have rerun another substr test
 	// Substr tests are slow! but because each logic is ran at different times it doesn't impact the software.
-	// This demonstrates a 3D Vector. This could also be` done with pointers.
+	// This demonstrates a 3D Vector. This could also be done with pointers.
 	std::string jStr, kStr;
 
 	for (size_t i = 0; i < pPlanner.size(); i++)

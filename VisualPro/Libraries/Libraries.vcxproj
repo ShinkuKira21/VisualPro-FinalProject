@@ -82,6 +82,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -142,11 +143,13 @@
   <ItemGroup>
     <ClCompile Include="Private\coms.cpp" />
     <ClCompile Include="Private\Decoder.cpp" />
+    <ClCompile Include="Private\FileManager.cpp" />
     <ClCompile Include="Private\Functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\coms.h" />
     <ClInclude Include="Public\Decoder.h" />
+    <ClInclude Include="Public\FileManager.h" />
     <ClInclude Include="Public\Functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -15,30 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Private\Functions.cpp">
+    <ClCompile Include="Programming Planner Library.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Private\Decoder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Private\coms.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Private\FileManager.cpp">
+    <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Public\Functions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Public\Decoder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Public\coms.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Public\FileManager.h">
+    <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

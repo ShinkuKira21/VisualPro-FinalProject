@@ -7,8 +7,6 @@ namespace VP_Tools
     {
         protected int[] length;
 
-        public Tools() { }
-
         public void Increment(int i)
         { length[i]++; }
 
@@ -132,11 +130,59 @@ namespace VP_Tools
             Increment(sel);
         }
 
+        public void Edit(int sel, int id, int idToEdit, string newValue)
+        {
+            // Hex to Ascii: [rw] (edit)@"
+            VP_Comms.ProgrammingPlanner.CallFunction(proPlan[sel], "7277", idToEdit.ToString(), newValue, null, null, id);
+        }
+
         public void Remove(int sel, int id)
         {
             //Hex to Ascii: [rm] (remove)
             VP_Comms.ProgrammingPlanner.CallFunction(proPlan[sel], "726d", null, null, null, null, id);
             Decrement(sel);
+        }
+
+        public string CompileCode(IntPtr xmlDoc, string language)
+        {
+            // Uses std::vector in C++
+            IntPtr memory = VP_Comms.Decoder.InitialisePlannerClass(), ts = VP_Comms.Libraries.InitialiseTS();
+
+            string libraries = "";
+            for (int i = 0; i < VP_Configuration.General.languageHeader.Count; i++)
+            {
+                libraries += VP_Configuration.General.GetLanguageHeader(i);
+                if (i + 1 != VP_Configuration.General.languageHeader.Count) libraries += '\x1f';
+            }
+
+            string syntax = "header\x1f";
+            // Add each proPlan to the memory, which enables the compilation step.
+            for (int i = 0; i < proPlan.Length; i++)
+            {
+                // check if plan is empty or not
+                string list = GetList(VP_Configuration.General.signatures[i]);
+                if (list != "\n")
+                {
+                    VP_Comms.Decoder.AddPlan(memory, proPlan[i]);
+                    int j = VP_Configuration.General.CompareLanguageSyntax(i);
+                    syntax += VP_Configuration.General.GetLanguageSyntax(j);
+
+                    if (i + 1 == VP_Configuration.General.signatures.Length ||
+                        GetList(VP_Configuration.General.signatures[i + 1]) != "\n" || j != -1)
+                        syntax += "\x1f";
+                }
+            }
+
+            string compilation = "";
+            if (syntax != String.Empty)
+                compilation = Marshal.PtrToStringAnsi(VP_Comms.Decoder.CompileLanguage(memory, ts, xmlDoc, language, libraries, syntax));
+
+            Console.WriteLine(compilation);
+
+            VP_Comms.Decoder.DisposePlannerClass(memory);
+            VP_Comms.Libraries.DisposeTS(ts);
+
+            return compilation;
         }
 
         public string GetList(string text)
@@ -146,18 +192,15 @@ namespace VP_Tools
             ts = VP_Comms.Libraries.InitialiseTS();
             string list = Marshal.PtrToStringAnsi(VP_Comms.ProgrammingPlanner.CallStringFunction(proPlan[sel], ts, "List"));
 
-            Console.WriteLine("List:\n");
-            Console.WriteLine(list);
-
             VP_Comms.Libraries.DisposeTS(ts);
 
-           return null;
+            return list;
         }
 
         public int FindSignature(string text)
         {
             for (int i = 0; i < signatures.Length; i++)
-                if (text[0] == signatures[i][0])
+                if (text[0] ==  signatures[i][0])
                     return i;
 
             return -1; // error

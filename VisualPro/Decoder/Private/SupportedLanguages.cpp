@@ -9,6 +9,11 @@ Decoder_Tools::SupportedLanguages::SupportedLanguages(XMLTools* xmlTools, const 
 	this->xmlTools = xmlTools;
 
 	// Opens main language XML file.
+	LoadXMLFile(language);
+}
+
+void Decoder_Tools::SupportedLanguages::LoadXMLFile(const char* language)
+{
 	if (this->xmlTools->GetFileStatus("VisualPro.xml") != false)
 	{
 		rapidxml::file<> file = this->xmlTools->OpenXML("VisualPro.xml");
@@ -18,6 +23,7 @@ Decoder_Tools::SupportedLanguages::SupportedLanguages(XMLTools* xmlTools, const 
 	}
 	else languages = "";
 }
+
 
 void Decoder_Tools::SupportedLanguages::StartFindLanguages()
 {
@@ -143,19 +149,19 @@ void Decoder_Tools::SupportedLanguages::ParseSyntax(rapidxml::xml_node<>* baseNo
 	}
 }
 
-std::string Decoder_Tools::SupportedLanguages::DecodeLibrary(int i)
+std::string Decoder_Tools::SupportedLanguages::DecodeLibrary(size_t i)
 {
 	if (i < libs.size()) return libs[i];
 	return "";
 }
 
-std::vector<std::string> Decoder_Tools::SupportedLanguages::DecodeSyntax(int i)
+std::vector<std::string> Decoder_Tools::SupportedLanguages::DecodeSyntax(size_t i)
 { 
 	if (i < syntax.size()) return syntax[i];
 	return std::vector<std::string>(); // empty vector
 }
 
-std::string Decoder_Tools::SupportedLanguages::DecodeSyntax(int i, int j)
+std::string Decoder_Tools::SupportedLanguages::DecodeSyntax(size_t i, size_t j)
 {
 	if (i < syntax.size()) 
 		if(j < syntax[i].size())
@@ -166,6 +172,26 @@ std::string Decoder_Tools::SupportedLanguages::DecodeSyntax(int i, int j)
 
 const char* Decoder_Tools::SupportedLanguages::ListAvailableLanguages()
 { return languages.c_str(); }
+
+std::string Decoder_Tools::SupportedLanguages::ListAvailableLibraries(const char* language)
+{
+	LoadXMLFile(language);
+
+	std::string libraries;
+	for (size_t i = 0; i < libs.size(); i++)
+		i + 1 != libs.size() ? libraries += Decoder::FindSubStr(DecodeLibrary(i).c_str(), 0, '\x1f') + '\x1f' : libraries += Decoder::FindSubStr(DecodeLibrary(i).c_str(), 0, '\x1f');
+
+	return libraries;
+}
+
+std::string Decoder_Tools::SupportedLanguages::ListAvailableSyntaxes(const char* language)
+{
+	LoadXMLFile(language);
+	std::string syntaxes;
+	for (size_t i = 0; i < syntax.size(); i++)
+		i + 1 != syntax.size() ? syntaxes += Decoder::FindSubStr(DecodeSyntax(i, 0).c_str(), 0, '\x1f') += '\x1f' : syntaxes += Decoder::FindSubStr(DecodeSyntax(i, 0).c_str(), 0, '\x1f');
+	return syntaxes;
+}
 
 int Decoder_Tools::SupportedLanguages::GetLanguageIndex(const char* language)
 {

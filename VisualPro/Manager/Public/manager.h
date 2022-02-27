@@ -25,6 +25,7 @@ class _declspec(dllexport) Manager : Functions
 		virtual ~Manager();
 
 		virtual void Add(const char* member, const char* dt, const char* name, const char* parent = "");
+		virtual void Edit(int id, int idToEdit, const char* newValue);
 		virtual void Remove(int id);
 		virtual std::string Find(int id, bool bFindID = false);
 		virtual std::string ParseList();

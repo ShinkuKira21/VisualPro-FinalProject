@@ -29,6 +29,7 @@ namespace VP_UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisualPro));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.gbTools_SaveOptions = new System.Windows.Forms.GroupBox();
             this.btnSaveCode = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@ namespace VP_UI
             this.btn_functions = new System.Windows.Forms.Button();
             this.gbWorkArea = new System.Windows.Forms.GroupBox();
             this.pnlWorkArea = new System.Windows.Forms.Panel();
+            this.dialog_saveFile = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -86,6 +88,7 @@ namespace VP_UI
             this.btnSaveCode.TabIndex = 1;
             this.btnSaveCode.Text = "Save Code";
             this.btnSaveCode.UseVisualStyleBackColor = true;
+            this.btnSaveCode.Click += new System.EventHandler(this.btnSaveCode_Click);
             // 
             // bxALanguages
             // 
@@ -94,6 +97,7 @@ namespace VP_UI
             this.bxALanguages.Name = "bxALanguages";
             this.bxALanguages.Size = new System.Drawing.Size(121, 21);
             this.bxALanguages.TabIndex = 0;
+            this.bxALanguages.Text = "Select Language...";
             // 
             // gbTools_Outline
             // 
@@ -164,6 +168,11 @@ namespace VP_UI
             this.pnlWorkArea.DragDrop += new System.Windows.Forms.DragEventHandler(this.WorkareaDragEnd);
             this.pnlWorkArea.DragEnter += new System.Windows.Forms.DragEventHandler(this.WorkareaDragEnter);
             // 
+            // dialog_saveFile
+            // 
+            this.dialog_saveFile.DefaultExt = "vp";
+            this.dialog_saveFile.Filter = "VisualPro Compilation|*.vp|All Files|*.*";
+            // 
             // VisualPro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +180,7 @@ namespace VP_UI
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(809, 506);
             this.Controls.Add(this.splitContainer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(825, 545);
             this.MinimumSize = new System.Drawing.Size(825, 545);
@@ -200,6 +210,7 @@ namespace VP_UI
         private System.Windows.Forms.GroupBox gbTools_SaveOptions;
         private System.Windows.Forms.Button btnSaveCode;
         private System.Windows.Forms.ComboBox bxALanguages;
+        private System.Windows.Forms.SaveFileDialog dialog_saveFile;
     }
 }
 

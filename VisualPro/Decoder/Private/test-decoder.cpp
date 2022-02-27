@@ -2,12 +2,11 @@
 
 namespace Test_Decoder
 {
-	/* Convert this into a Unit Test */
 	void StartProgram()
 	{
 		// Creation (Temporary)
 		std::string inp, syntax;
-		inp = "io\x1f\string"; syntax += "header"; /*syntax += '\x1f'; syntax += "class"; syntax += '\x1f'; syntax += "function";*/
+		inp = "io\x1f\string"; syntax += "header"; syntax += '\x1f'; syntax += "class"; syntax += '\x1f'; syntax += "function";
 		
 		std::vector<std::string> str;
 		std::vector<ProgrammingPlanner*> progPlanner;
@@ -72,6 +71,7 @@ namespace Test_Decoder
 
 		// Finds configuration file
 		Decoder_Tools::XMLTools xml("conf-xml", "conf.xml", true);
+
 		std::cout << "Available Languages: " << Decoder_Tools::SupportedLanguages(&xml).ListAvailableLanguages() << std::endl;
 
 		Decoder_Tools::SupportedLanguages supportedLanguages(&xml, Functions().TextInput("Enter a Language: ").c_str());
@@ -79,6 +79,8 @@ namespace Test_Decoder
 		
 		Functions().PauseSystem();
 		Functions().ClearSystem();
+
+		std::cout << lc.FetchCompiledData();
 
 	//	std::vector<ProgrammingPlanner*> test;
 
@@ -102,14 +104,15 @@ namespace Test_Decoder
 	//	
 	//	Decoder_Tools::XMLTools xml("conf-xml", "conf.xml", true);
 
+	//	std::cout << Decoder_Tools::SupportedLanguages(&xml).ListAvailableLibraries("C++") << std::endl;
+	//	std::cout << Decoder_Tools::SupportedLanguages(&xml).ListAvailableSyntaxes("C++") << std::endl;
+
 	//	// It works!:)
 	//	std::cout << Decoder_Tools::SupportedLanguages(&xml).ListAvailableLanguages() << std::endl;
 
-
-
 	//	Functions().PauseSystem();
-	//	
+
 	//	Decoder_Tools::SupportedLanguages supportedLanguages(&xml, "C++");
-	//	Decoder_Tools::LanguageCompiler lc(&supportedLanguages, test, inp.c_str(), syntax.c_str());		
+	//	Decoder_Tools::LanguageCompiler lc(&supportedLanguages, test, inp.c_str(), syntax.c_str());
 	}
 }

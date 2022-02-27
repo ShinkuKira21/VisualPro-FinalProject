@@ -29,6 +29,7 @@ namespace VP_UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Error_Dialog));
             this.lbl_error = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@ namespace VP_UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(207, 32);
             this.Controls.Add(this.lbl_error);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Error_Dialog";
             this.Text = "Error Dialog";
             this.ResumeLayout(false);
