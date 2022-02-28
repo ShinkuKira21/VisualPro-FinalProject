@@ -326,31 +326,122 @@ The following learning objectives are as follows:
     \subsection{Exercise: Understanding the basics}
         VisualPro offers three structures, Class, Functions and Variables. This tutorial focuses on the Class structure, and the following exercises aim to provide knowledge of how Classes work in two different OOP languages.
 
-        On the left of VisualPro is the selection of structure tools. These are draggable objects only. These tools can drop onto the WorkArea panel on the right side of the VisualPro window. The containers that appear within the workplace enable three text areas, Properties and Child Work Area, to configure the Class, Function or Variables for more advanced setup. Example images may help draw a picture of the sections mentioned.
+        On the left of VisualPro is the selection of structure tools. These are draggable objects only. These tools can drop onto the Work Area panel on the right side of the VisualPro window. The containers that appear within the workplace enable three text areas, Properties and Child Work Area, to configure the Class, Function or Variables for more advanced setup. Example images may help draw a picture of the sections mentioned.
 
         \begin{tip}{Evidencing}
-            \textbf{Important:} Make sure to save each exercise and email the generated code to\\~\href{mailto:1801492@student.uwtsd.ac.uk}{1801492@student.uwtsd.ac.uk}.
+            \textbf{Necessary:} Make sure to copy each exercise code to the survey when asked. A reference of the survey question helps find the corresponding survey question to paste the final code.
         \end{tip}
 
     \newpage
     \subsection{Exercise: Creating a Class}
-        To create a Class inside of VisualPro, drag and drop the Class selection tool inside the WorkArea panel. As mentioned previously, this will create a container inside the WorkArea panel.
+        To create a Class inside of VisualPro, drag and drop the \textit{Class} within the \textit{Outline Tool} area inside the \textit{Work Area} panel. As mentioned previously, this will create a container inside the Work Area panel.
 
         \textbf{Tasks:-}
         \begin{enumerate}
             \item Name the Class, `World'. A class does not require a Member, and Data-Type should remain empty.
             \item After creating the Class, save the file with the language C++.
         \end{enumerate}
-        Name the Class, `World'. A class does not require a Member and Data-Type should remain empty.
+        Name the Class, `World'. A class does not require a Member and Data-Type should remain empty. Once the Class is created, save the file with the language C++ and copy the file content.
 
-        Once the Class is created, save the file with the language C++ and copy the file content.
+        \textbf{Did it look like this visually?:-}
+            \begin{figure}[h]
+                \centering
+                {\includegraphics[scale=0.75]{Figures/Exercises/SecB-1.png}}
+                \caption{VisualPro - Exercise A}
+                \label{fig:vp-eA}
+            \end{figure}
 
+        \textbf{Expected Code Generation:-}\\
+        The code should look similar to this.
+        \begin{example}{C++ Class}
+            \begin{lstlisting}[language=c++]
+                class World {
+
+                };
+            \end{lstlisting}
+        \end{example}
+
+        \begin{example}{C\# Class}
+            \begin{lstlisting}[language=java]
+                public class World {
+
+                }
+            \end{lstlisting}
+        \end{example}
+    \newpage
     \subsection{Exercise: Animal Types}
+        Remember that a Class is a template containing variables and methods related to how to shape the functionality and data of what the object can carry? For this example, the Class will contain three types of animals: Reptiles, Mammals and Amphibians.
+        
+        % Cold Blooded, Warm Blooded and Aqua
+        \textbf{Survey Question:-} What main methods variables separate Reptiles, Mammals and Amphibians from one another?
 
+        Now, create three classes of the mentioned types. After creating the classes, save the file with C\# or C++, as C does not support OOP. Submit your code to:-
+
+        \textbf{Did it look like this visually?:-} 
+        \begin{figure}[h]
+            \centering
+            {\includegraphics[scale=0.75]{Figures/Exercises/SecC-1.png}}
+            \caption{VisualPro - Exercise B}
+            \label{fig:vp-eB}
+        \end{figure}
+
+        \textbf{Expected Code Generation:-}\\
+        The code should look similar to this.
+        \begin{example}{C++ Classes}
+            \begin{lstlisting}[language=c++]
+                class Reptile {
+
+                };
+
+                class Mammals {
+
+                };
+
+                class Amphibian {
+
+                };
+            \end{lstlisting}
+        \end{example}
+
+        \begin{example}{C\# Classes}
+            \begin{lstlisting}[language=java]
+                public class Reptile {
+
+                }
+
+                public class Mammal {
+
+                }
+
+                public class Amphibian {
+
+                }
+            \end{lstlisting}
+        \end{example}
+
+    \newpage
     \subsection{Exercise: Vehicle Components}
+    Well done! Classes are now a tool that is no longer scary. However, learning requires do-overs. However, adding methods or variables is vital to learning how to declare variables and methods in a class. \textit{(VisualPro only supports one method or variable at the present moment)}. Now let us try this example.
+
+    A car has a various components such as body, engine and wheels to help the car work correctly. \textbf{Challenge:} Create two components of a car and give a descriptive method or variable (to do this drag a function/variable on the child work area.)
+
+    \textbf{An example is given:-}
+    \begin{figure}[h]
+        \centering
+        {\includegraphics[scale=0.75]{Figures/Exercises/SecD-1.png}}
+        \caption{VisualPro - Exercise C}
+        \label{fig:vp-eC}
+    \end{figure}
+
+    \begin{tip}{Data-Types}
+        A datatype on a function/method acts as a return type. A function can return data to get the required data—more on this in Tutorial B. For now, type (void) as the datatype.
+
+        However, if it is a variable, try thinking about the variable's type of data. For example, if it holds a whole number, use an int (for integer); if it is text, then type string or if a decimal value comes to mind, try float—more on this on Tutorial B. 
+    \end{tip}
 
     \subsection{Exercise: Try It Yourself (TIY)}
-
+        Feel free to explore the classes with methods and variables, and submit your code.\\
+        \textbf{Some examples:-} A computer class, a planet class or a calculator class.
 \section{Keywords}
 \label{sec:keywords}
     \begin{itemize}
