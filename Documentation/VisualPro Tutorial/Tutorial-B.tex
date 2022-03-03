@@ -1,0 +1,227 @@
+\documentclass[10pt]{article}  
+
+%%%%%%%% PREÁMBULO %%%%%%%%%%%%
+\usepackage[english]{babel} %Indica que escribiermos en español
+\usepackage[utf8]{inputenc} %Indica qué codificación se está usando ISO-8859-1(latin1)  o utf8  
+\usepackage{amsmath} % Comandos extras para matemáticas (cajas para ecuaciones,
+% etc)
+\usepackage{amssymb} % Simbolos matematicos (por lo tanto)
+\usepackage{graphicx} % Incluir imágenes en LaTeX
+\usepackage{color} % Para colorear texto
+\usepackage{subfigure} % subfiguras
+\usepackage{ulem}
+\usepackage{amsmath}%%Usar ecuaciones
+%%%%%%%%%%%%%CODIGO%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings} %Sirve para pegar codigo fuente de programas
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{%
+  \parbox{\textwidth}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}\vskip-4pt}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\lstset{frame=ltrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep}
+%%%%%%%%%%%%%CODIGO%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{float} %Podemos usar el especificador [H] en las figuras para que se
+% queden donde queramos
+\usepackage{capt-of} % Permite usar etiquetas fuera de elementos flotantes
+% (etiquetas de figuras)
+\usepackage{enumerate} % enumerados
+\usepackage{sidecap} % Para poner el texto de las imágenes al lado
+	\sidecaptionvpos{figure}{c} % Para que el texto se alinie al centro vertical
+\usepackage{caption} % Para poder quitar numeracion de figuras
+\usepackage{commath} % funcionalidades extras para diferenciales, integrales,
+% etc (\od, \dif, etc)
+\usepackage{cancel} % para cancelar expresiones (\cancelto{0}{x})
+ 
+\usepackage{anysize} 					% Para personalizar el ancho de  los márgenes
+\marginsize{2cm}{2cm}{2cm}{2cm} % Izquierda, derecha, arriba, abajo
+
+\usepackage{appendix}
+
+%Para la creación de tablas
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage{makecell}
+
+
+
+%Para la creacion de cuadros de colores
+\usepackage{tcolorbox}
+\tcbuselibrary{listingsutf8}
+% Cuadro numerado para ejemplos de cuadros de colores
+\newtcolorbox[auto counter, number within=section]{example}[2][]
+{colback=red!5!white,colframe=red!75!black,
+fonttitle=\bfseries, title=Example~\thetcbcounter: #2,#1}
+
+\newtcolorbox[auto counter, number within=section]{tip}[2][]
+{colback=green!5!white,colframe=green!75!black,
+fonttitle=\bfseries, title=Tip~\thetcbcounter: #2,#1}
+
+% Para que las referencias sean hipervínculos a las figuras o ecuaciones y
+% aparezcan en color
+\usepackage[colorlinks=true,plainpages=true,citecolor=blue,linkcolor=blue]{hyperref}
+%\usepackage{hyperref} 
+% Para agregar encabezado y pie de página
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize VPLWVST} %encabezado izquierda
+\fancyhead[R]{\footnotesize VP-TB}   % dereecha
+\fancyfoot[R]{\footnotesize Tutorial A}  % Pie derecha
+\fancyfoot[C]{\thepage}  % centro
+\fancyfoot[L]{\footnotesize VisualPro: A Lightweight; Visual Scripting Tool}  %izquierda
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+\usepackage{listings} % Para usar código fuente
+\definecolor{dkgreen}{rgb}{0,0.6,0} % Definimos colores para usar en el código
+\definecolor{gray}{rgb}{0.5,0.5,0.5} 
+% configuración para el lenguaje que queramos utilizar
+\lstset{basicstyle=\ttfamily,
+   basicstyle=\ttfamily,
+   keywordstyle=\color{blue},
+   commentstyle=\color{red},
+   stringstyle=\color{dkgreen},
+   numberstyle=\tiny\color{gray},
+   stepnumber=1,
+   numbersep=10pt,
+   backgroundcolor=\color{white},
+   tabsize=4,
+   showspaces=false,
+   breaklines=true,
+   showstringspaces=false}
+
+\newcommand{\sen}{\operatorname{\sen}}	% Definimos el comando \sen para el seno
+%en español
+%%%%%%%% TERMINA PREÁMBULO %%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+																					%%%
+\begin{center}																		%%%
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}									%%%\left
+ 																					%%%
+\begin{minipage}{0.48\textwidth} \begin{flushleft}
+\includegraphics[scale = 0.15]{Figures/Logo/UWTSD-Logo}
+\end{flushleft}\end{minipage}
+\begin{minipage}{0.48\textwidth} \begin{flushright}
+\includegraphics[scale = 0.4]{Figures/Logo/VP-Logo-Large}
+\end{flushright}\end{minipage}
+
+													 								%%%
+\vspace*{-1.5cm}								%%%
+																					%%%	
+\textsc{\huge Visual Pro\\ \vspace{5px} Tutorial B}\\[1.5cm]	
+
+\textsc{\LARGE A beginners guide to Visual Scripting}\\[1.5cm]													%%%
+
+\textsc{\Large VisualPro: A Lightweight; Visual Scripting Tool}\\[0.5cm]
+
+    																				%%%
+ 			\vspace*{1cm}																		%%%
+																					%%%
+\HRule \\[0.4cm]																	%%%
+{ \huge \bfseries Tutorial: Functions and Variables}\\[0.4cm]	%%%
+ 																					%%%
+\HRule \\[1.5cm]																	%%%
+ 																				%%%
+																					%%%
+\begin{minipage}{0.4\textwidth}													%%%
+\begin{flushleft} \large															
+\textit{Authors:}\\
+Edward Patch\\
+Student Number: 1801492\\
+\end{flushleft}																		%%%
+\end{minipage}		
+																%%%
+\begin{minipage}{0.5\textwidth}		
+\vspace{-0.6cm}											%%%
+\begin{flushright} \large															%%%
+\textit{Supervisor:} \\
+Mike Dacey														%%%									
+\end{flushright}																	%%%
+\end{minipage}	
+\vspace*{1cm}
+
+\vspace{2cm} 																				
+\begin{center}																					
+{\large 16 February 2022}																	%%%
+ 			\end{center}												  						
+\end{center}							 											
+																					
+\newpage																		
+%%%%%%%%%%%%%%%%%%%% TERMINA PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\thispagestyle{fancy}
+
+\newpage
+\section{Learning Objectives}
+The following learning objectives are as follows:
+\begin{enumerate}
+    \item To declare functions in a Functional Programming (FP) style rather than an OOP style.
+    \item To declare variables in both global scope \textbf{(considered bad practice)} and function scope.
+\end{enumerate}
+
+
+\newpage
+\section{Introduction}
+  Focus on the FP style, which gives the chance to increase existing skill level to explore both OOP and FP style languages. Supported languages in VisualPro are C and C++.
+
+  \begin{tip}{Fun Fact:}
+    C++ is an extension of C that offers both FP and OOP style language, making the language a powerful language.
+  \end{tip}
+
+  \subsection{What is the Differences?}
+    OOP style enables the creation of objects, whereas FP style contains functional structure. However, C does allow the creation of a `struct' that is similar to a class, however, it only allows variables. It is great for creating reusable data structures but do not Constructors or Deconstructors that play a big part in memory management.
+    
+    An example of C\# (OOP Style) vs. C (FP Style):
+    \begin{example}{OOP Style}
+      \begin{lstlisting}[language=java]
+        using System; // Provides the Console.WriteLine function from the `System' library.
+
+        class Program { 
+          static void Main(string[] args) {
+            int x = 6, y = 45;
+            Console.WriteLine("x + y = " + (x * y).ToString()); 
+            // result: 270 (The ToString method converts the x * y calculation to a string and appends to the string).
+          }
+        }
+      \end{lstlisting}
+    \end{example}
+
+    \begin{example}{FP Style}
+      \begin{lstlisting}[language=c]
+        #include <stdio.h> /* Provides the printf function from the 
+        `stdio' library. */
+
+        int main(int argc, char** argv) {
+            int x = 6, y = 45;
+            printf("x + y = %i", x * y); // result: 270 (%i means first parameter is an integer and includes it to the string).
+            
+            return 0;
+        }
+      \end{lstlisting}
+    \end{example}
+
+    Note that the OOP style relies on encapsulation, whereas the C language or any other language is FP.
+
+\section{Functional Structure}
+    \subsection{Exercise: Understanding the Basics}
+      A function exists outside of a class, and within the global scope.
+      
+\section{Keywords}
+\label{sec:keywords}
+    \begin{itemize}
+      \item FP - Functional Programming.
+      \item OOP - Object-Oriented Programming.
+    \end{itemize}
+
+%%%%%%% References %%%%%%%%
+\clearpage
+\nocite{*}
+\small{\bibliographystyle{IEEEtran}
+\bibliography{ref}}
+%%%%%%% References %%%%%%%%      
+\end{document}
