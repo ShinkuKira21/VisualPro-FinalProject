@@ -207,10 +207,206 @@ The following learning objectives are as follows:
 
     Note that the OOP style relies on encapsulation, whereas the C language or any other language is FP.
 
+\newpage
+\section{VisualPro Environment}
+\label{sec:vp-env}
+    \subsection{Features}
+        VisualPro offers a few features such as:
+        \begin{itemize}
+            \item Classes, Functions and Arguments, and Variables.
+            \item Saving in Multiple Languages.
+            \item Drag and Drop Elements and Text Areas.
+            \item Property Windows to Control Arguments and Relationships.
+        \end{itemize}
+
+    \subsection{Known Bugs}
+        A couple of bugs include:-
+        \begin{itemize}
+            \item Arguments for functions are not currently available.
+            \item Deleting containers does not mathematically reset the following location or move existing containers backwards.
+        \end{itemize}
+
+    \subsection{Saving Progress}
+        After completing a tutorial, select the language and press save.
+
+        \begin{tip}{Compatibility}
+            As mentioned previously, not all languages support object-orientation. If a language is not compatible with a particular keyword, the code generator will ignore the selected syntax object.
+
+            \textbf{Example Language:} C is not supported.
+        \end{tip}
+
+\newpage
+\section{Terminology}
+\label{sec:terminology}
+    \subsection{What is a function?}
+      Like a method, a function exists in the global scope of an FP style language, such as the C language. A function can return data like an integer or a string or a `void' data type that returns nothing. It is also important to note that arguments are the function's inputs that enable data to pass through the function scope.
+
+      Three examples of different functions and their purposes:
+      \begin{example}{Function: \textbf{VOID} Return Type}
+        \begin{lstlisting}[language=c]
+          #include <stdio.h>
+
+          // The function returns nothing.
+          // The function accepts no arguments.
+          void PrintHelloWorld()
+          { printf("Hello World"); }
+
+          int main(int argc, char** argv)
+          {
+            // The call to the function.
+            PrintHelloWorld();
+            return 0;
+          }
+        \end{lstlisting}
+      \end{example}
+
+      \begin{example}{Function: \textbf{VOID} Return Type | \textbf{Integer} Argument}
+        \begin{lstlisting}[language=c]
+          #include <stdio.h>
+
+          // The function returns nothing.
+          // The function accepts one argument (integer).
+          void PrintX4(int x)
+          { printf("%i * 4 = %i", x, x*4); }
+
+          int main(int argc, char** argv)
+          {
+            PrintX4(10); // Result: 10 * 4 = 40
+            return 0;
+          }
+        \end{lstlisting}
+      \end{example}
+
+      \begin{example}{Function: \textbf{Integer} Return Type | \textbf{Integer} Argument}
+        \begin{lstlisting}[language=c]
+          #include <stdio.h>
+
+          // The function returns an integer.
+          // The function accepts two arguments (integer and integer).
+          int PrintXY(int x, int y)
+          { return x * y; }
+
+          int main(int argc, char** argv)
+          {
+            int x = PrintXY(2, 7);
+            printf("2 * 7 = %i", x); // result: 2 * 7 = 14
+
+            return 0;
+          }
+        \end{lstlisting}
+      \end{example}
+
+\newpage
 \section{Functional Structure}
+\label{sec:functional-structure}
     \subsection{Exercise: Understanding the Basics}
-      A function exists outside of a class, and within the global scope.
+      A function exists outside of a class and within the global scope. When declaring and defining a function, the location of the declaration must be above the definition of the function.
       
+      A couple of examples are on display below:
+
+      \begin{example}{Declaration of a Function (A):}
+        \begin{lstlisting}[language=c]
+          #include <stdio.h>
+
+          // Declaration and Definition
+          float XMultiplyY(double x, double y) {
+              return x * y;
+          }
+
+          int main(int argc, char** argv) {
+            printf("8.87 * 2.65 = %f", XMultiplyY(8.87, 2.65)); 
+            // result: 23.505501
+            return 0;
+          }
+        \end{lstlisting}
+      \end{example}
+
+      Alternatively, defining a function is to declare above the `main' function and defining the function below the `main` function. For example:
+
+      \begin{example}{Declaration of a Function (B):}
+        \begin{lstlisting}[language=c]
+          #include <stdio.h>
+
+          // Declaration
+          float XMultiplyY(double x, double y);
+
+          int main(int argc, char** argv) {
+            printf("8.87 * 2.65 = %f", XMultiplyY(8.87, 2.65)); 
+            // result: 23.505501
+            return 0;
+          }
+
+          // Definition
+          float XMultiplyY(double x, double y) {
+              return x * y;
+          }
+        \end{lstlisting}
+
+        Also, the declaration could belong to a header file, including the definition with the header tag.
+      \end{example}
+
+      \begin{tip}{Evidencing}
+        \textbf{Necessary:} Make sure to copy each exercise code to the survey when asked. A reference of the survey question helps find the corresponding survey question to paste the final code.
+      \end{tip}
+
+    \subsection{Exercise: Toaster Functionality}
+      A toaster has three primary functions, heat up, cool down and timer. First, let us drag a function onto the Work Area panel within VisualPro. Name this function, `HeatUp'. A functional structure does not have Access Modifiers, so leave this field blank. Now, set the return value (datatype) as void. Drag another function onto the Work Area panel, naming the function `CoolDown' and set the return value as void. Finally, drag the last function onto the Work Area panel, naming the function `Timer' and set the return value as bool (for Boolean (true/false)).
+
+      \textbf{Make sure to save the file in the C language and upload the file's contents to the relevant section of the survey.} 
+
+      \textbf{Did it look like this visually?}
+        \begin{figure}[h]
+          \centering
+          {\includegraphics[scale=0.75]{Figures/Exercises/TutB-SecA-1.png}}
+          \caption{VisualPro - Exercise A}
+          \label{fig:vp-eA}
+        \end{figure}
+
+      \textbf{Expected Code Generation:-}\\
+        This code should look similar to this:
+        \begin{example}{Toaster Functionality}
+          \begin{lstlisting}
+            void HeatUp()
+            {
+
+            }
+
+            void CoolDown()
+            {
+
+            }
+
+            bool Timer()
+            {
+
+            }
+          \end{lstlisting}
+        \end{example}
+
+    \subsection{Excercise: Toaster Variables}
+        When thinking about a toaster, think of a few variables. There is no right or wrong answer to this question. Create the variables on a blank VisualPro pad, by dragging and dropping the variables on the Work Area panel. Again, there is no need for a member.
+
+        \textbf{Note:} This way, the variables are within the global scope and is not good practice. \textbf{Make sure to save the file in the C language and upload the file's contents to the relevant section of the survey.}
+
+        \textbf{Did it look like this visually?}
+          \begin{figure}[h]
+            \centering
+            {\includegraphics[scale=0.75]{Figures/Exercises/TutB-SecB-1.png}}
+            \caption{VisualPro - Exercise B}
+            \label{fig:vp-eB}
+          \end{figure}
+
+        \textbf{Expected Code Generation:-}\\
+          \begin{example}{Toaster Variables}
+            \begin{lstlisting}[language=c]
+              float temperature;
+              int timer;
+            \end{lstlisting}
+          \end{example}
+    \subsection{Excercise: Functions and Variables}
+
+    \subsection{Exercise: Try It Yourself (TIY)}
+
 \section{Keywords}
 \label{sec:keywords}
     \begin{itemize}
