@@ -39,6 +39,7 @@ hmargin=3cm
 % LINKS
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,
+	citecolor=black,
 	linkcolor=black, % links to parts of the document (e.g. index) in black
 	urlcolor=blue} % links to resources outside the document in blue
 
@@ -517,16 +518,27 @@ hmargin=3cm
 	% \cite{hentati_fuzzy-logic_2016} - has information about how to set up the User Usability experiment
 	This chapter describes the different methodologies available, methods of analysing the results and constructs an experiment that would provide insight on how User Usability should commence. After extensive research, four techniques closely reflect on VisualPro's testing. Quantitative Research, Qualitative Research, Descriptive Research, and Fundamental Research help justify the techniques VisualPro intends to help novice programmers.
 
-	\textbf{Quantitative Research} enables calculations to provide answers to complex questions. This research method can measure productivity and User Usability to ensure the software is beginner-friendly. It is crucial to reflect on the calculations mentioned in the Literature Review to evaluate the data throughout the design period. \textbf{Qualitative Research} focuses on satisfaction experience, behaviours and intellect. A requirement of a complete analysis to check credibility. A survey inviting a mixed background of participants would support the research. \textbf{Descriptive Research} uses statistical data to analyse any design flaws within a project using official data. For accurate data that is relevant, the most up-to-date information dependent upon the scenario is suitable. \textbf{Fundamental Research} allows multiple research methods to correlate the information in a design plan.
-
-	To justify the best research methodologies suitable for VisualPro's, Quantitative, Qualitative and Descriptive Research will support the design and development research of VisualPro. These methodologies help limit design flaws using up-to-date statistics, calculations to understand complications of comparing data to the gathered statistics, and any current design flaws within prototypes and VisualPro end implementation.
+	\textbf{Quantitative Research} enables calculations to provide answers to complex questions. This research method can measure productivity and User Usability to ensure the software is beginner-friendly. It is crucial to reflect on the calculations mentioned in the Literature Review to evaluate the data throughout the design period. \textbf{Qualitative Research} focuses on satisfaction experience, behaviours and intellect. A requirement of a complete analysis to check credibility. A survey inviting a mixed background of participants would support the research. \textbf{Descriptive Research} uses statistical data to analyse any design flaws within a project using official data. For accurate data that is relevant, the most up-to-date information dependent upon the scenario is suitable. \textbf{Fundamental Research} allows multiple research methods to correlate the information in a design plan. To justify the best research methodologies suitable for VisualPro's, Quantitative, Qualitative and Descriptive Research will support the design and development research of VisualPro. These methodologies help limit design flaws using up-to-date statistics, calculations to understand complications of comparing data to the gathered statistics, and any current design flaws within prototypes and VisualPro end implementation.
 
 	The data collection requires a survey, screen recording and microphone data of applicants. This extra data will coincide with the Preference side of the test to understand if the software enables beginners to learn quickly with excellent user experience and usability. 
-
 	
-\chapter{Prototype}\
+\chapter{Prototype}
 \label{chap:prototype}
-	To access the prototype of the .NET Fram
+	To access the prototype that demonstrates communication from a .NET Framework 4.7.2 to a C++ backend library, go to~\href{https://github.com/ShinkuKira21/VisualPro-FinalProject/tree/main/Prototypes/GUI%20Concept%20.NET-C%2B%2B/Package}{Prototypes/GUI Prototype .NET-C++}~\cite{patch_visualpro_2022}. Even though this prototype is not related to the current project, it demonstrates how the frontend can interact with the backend and provides insight into how this is possible. The purpose of the application is not to measure the application's performance merely to provide insight and experience on how the application communicates to the backend.
+
+	The source code, found in~\href{https://github.com/ShinkuKira21/VisualPro-FinalProject/tree/main/Prototypes/GUI%20Concept%20.NET-C%2B%2B/Source%20Code}{Prototypes/GUI Prototype .NET-C++}~\cite{patch_visualpro_2022}, demonstrates the functionality to load the DLLs within the application. Implementation of two techniques follows:-
+	\begin{itemize}
+		\item \textit{DllImportAttribute} (Enables the ability to import Native DLLs into the application).
+		\item \textit{\_declspec(dllexport)} (C communication files use this to create entry points.)
+	\end{itemize}
+
+	\begin{figure}[H]
+		\ffigbox[\FBwidth] {
+			\caption[GUI Prototype]{GUI Prototype Communication C\# to C++}
+			\label{fig:guiPrototype}
+		}
+		{\includegraphics[scale=1]{Figures/applications/prototype.png}}
+	\end{figure}
 
 \chapter{Design and Feedback}
 \label{chap:designAndFeedback}
@@ -908,65 +920,67 @@ hmargin=3cm
 				\end{figure}
 			
 		\section{Evaluation of Feedback}
-			
-		\section{Designs}
-			\subsection{Main Layout}
-				\begin{figure}[H]
-					\ffigbox[\FBwidth] {
-					\caption[GUI Design ML-1]{Design Planning - Stage 1}
-					\label{fig:guiDesignML-1}
-					}
-					{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-1.jpg}}
-				\end{figure}
 
-				\begin{figure}[H]
-					\ffigbox[\FBwidth] {
-					\caption[GUI Design ML-2]{Design Planning - Stage 2}
-					\label{fig:guiDesignML-2}
-					}
-					{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-2-1.jpg}}
-				\end{figure}
-
-				A flaw of Classes', Functions and Variables' can be declared during development under the parent class. This problem meant that the class would be declared inside another class programmatically if the problem occurred under the current logic when the compilation happened. An example could be an \textit{`int variable = int variable;'}. The code syntax makes no sense, resulting in a compilation error.
-				\begin{figure}[H]
-					\ffigbox[\FBwidth] {
-					\caption[GUI Design ML-3]{Design Planning - Stage 3}
-					\label{fig:guiDesignML-3}
-					}
-					{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-4.jpg}}
-				\end{figure}
-
-				Figure~\ref{fig:guiDesignML-4} shows the implementation of the design using the designs shown beforehand. Rather than shortcutting relationships between each class, function and variables by nesting them, the final implementation prevents the user from dragging and dropping the same type of container onto another container. A property button appears on each container to control function arguments and relationships between classes, functions, and variables, opening up a dialogue containing a property sheet.
-				\begin{figure}[H]
-					\ffigbox[\FBwidth] {
-					\caption[GUI Design ML-4]{Design Planning - Stage 4}
-					\label{fig:guiDesignML-4}
-					}
-					{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-Latest.jpg}}
-				\end{figure}
-			
-			\subsection{Error Handling}
-				\begin{figure}[H]
-					\ffigbox[\FBwidth] {
-					\caption[GUI Design EH-1]{Error Handling}
-					\label{fig:guiDesignEH-1}
-					}
-					{\includegraphics[scale=0.75]{Figures/vp-designs/NET_Framework-GUI-ErrorDialog.jpg}}
-				\end{figure}
-			\subsection{Structure Containers}
-				\begin{figure}[H]
-					\ffigbox[\FBwidth] {
-					\caption[GUI Design SC-1]{Design Planning - Stage 1}
-					\label{fig:guiDesignSC-1}
-					}
-					{\includegraphics[scale=0.75]{Figures/vp-designs/NET_Framework-GUI-2.jpg}}
-				\end{figure}
 	\chapter{Development Methodology}
 
 	\chapter{Implementation}
-	
-	\chapter{Evaluation}
+		\section{Main Layout}
+			\begin{figure}[H]
+				\ffigbox[\FBwidth] {
+				\caption[GUI Design ML-1]{Design Planning - Stage 1}
+				\label{fig:guiDesignML-1}
+				}
+				{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-1.jpg}}
+			\end{figure}
 
+			\begin{figure}[H]
+				\ffigbox[\FBwidth] {
+				\caption[GUI Design ML-2]{Design Planning - Stage 2}
+				\label{fig:guiDesignML-2}
+				}
+				{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-2-1.jpg}}
+			\end{figure}
+
+			A flaw of Classes', Functions and Variables' can be declared during development under the parent class. This problem meant that the class would be declared inside another class programmatically if the problem occurred under the current logic when the compilation happened. An example could be an \textit{`int variable = int variable;'}. The code syntax makes no sense, resulting in a compilation error.
+			\begin{figure}[H]
+				\ffigbox[\FBwidth] {
+				\caption[GUI Design ML-3]{Design Planning - Stage 3}
+				\label{fig:guiDesignML-3}
+				}
+				{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-4.jpg}}
+			\end{figure}
+
+			Figure~\ref{fig:guiDesignML-4} shows the implementation of the design using the designs shown beforehand. Rather than shortcutting relationships between each class, function and variables by nesting them, the final implementation prevents the user from dragging and dropping the same type of container onto another container. A property button appears on each container to control function arguments and relationships between classes, functions, and variables, opening up a dialogue containing a property sheet.
+			\begin{figure}[H]
+				\ffigbox[\FBwidth] {
+				\caption[GUI Design ML-4]{Design Planning - Stage 4}
+				\label{fig:guiDesignML-4}
+				}
+				{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-Latest.jpg}}
+			\end{figure}
+		
+		\section{Error Handling}
+			
+			\begin{figure}[H]
+				\ffigbox[\FBwidth] {
+				\caption[GUI Design EH-1]{Error Handling}
+				\label{fig:guiDesignEH-1}
+				}
+				{\includegraphics[scale=0.75]{Figures/vp-designs/NET_Framework-GUI-ErrorDialog.jpg}}
+			\end{figure}
+		\section{Structure Containers}
+			\begin{figure}[H]
+				\ffigbox[\FBwidth] {
+				\caption[GUI Design SC-1]{Design Planning - Stage 1}
+				\label{fig:guiDesignSC-1}
+				}
+				{\includegraphics[scale=0.75]{Figures/vp-designs/NET_Framework-GUI-2.jpg}}
+			\end{figure}
+		
+	\chapter{Evaluation of Functionality}
+
+	\chapter{Evaluation of Feedback}
+		
 	\chapter{Conclusion}
 
 	\chapter{Reflection}
