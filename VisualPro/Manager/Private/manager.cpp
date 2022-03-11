@@ -29,7 +29,19 @@ void Manager::Add(const char* member, const char* dt, const char* name, const ch
 void Manager::Edit(int id, int idToEdit, const char* newValue)
 {
 	std::string listStr = managedList->Find(id, false, false);
-	listStr = Decoder_Tools::Decoder::ReplaceWord(listStr.c_str() , idToEdit, ':', ';', newValue);
+
+	// Temporary redirect, ReplaceWord Function needs fixing
+	if (idToEdit != 2)
+		listStr = Decoder_Tools::Decoder::ReplaceWord(listStr.c_str(), idToEdit, ':', ';', newValue);
+
+	else
+	{
+		std::string value = "D:" + std::string(newValue) + ";";
+		std::string partOfName = "N:" + Decoder_Tools::Decoder::FindSubStr(listStr.c_str(), ':', ';', 2);
+		listStr = Decoder_Tools::Decoder::ReplaceWord(listStr.c_str(), "D:;", value.c_str());
+		listStr += partOfName;
+	}
+		
 
 	managedList->Edit(id, listStr.c_str());
 }

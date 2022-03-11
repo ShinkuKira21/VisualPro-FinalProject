@@ -174,7 +174,7 @@ The following learning objectives are as follows:
   \end{tip}
 
   \subsection{What is the Differences?}
-    OOP style enables the creation of objects, whereas FP style contains functional structure. However, C does allow the creation of a `struct' that is similar to a class, however, it only allows variables. It is great for creating reusable data structures but do not Constructors or Deconstructors that play a big part in memory management.
+    OOP style enables the creation of objects, whereas FP style contains functional structure. However, C does allow the creation of a `struct' that is similar to a class, however, it only allows variables. It is great for creating reusable data structures but do not contain Constructors or Deconstructors that play a big part in memory management.
     
     An example of C\# (OOP Style) vs. C (FP Style):
     \begin{example}{OOP Style}
@@ -225,6 +225,7 @@ The following learning objectives are as follows:
             \item Arguments for functions are not currently available.
             \item Deleting containers does not mathematically reset the following location or move existing containers backwards.
             \item A recent bug found from a unit test shows that sometimes the ReplaceString function within the backend fails. This problem causes the code to render without details.
+            \item \textbf{Update:} A workaround for the ReplaceString bug is in place. However, any empty text fields (even if the language does not require the text box) will cause the code to not render in full detail.
         \end{itemize}
 
     \subsection{Saving Progress}
@@ -301,7 +302,7 @@ The following learning objectives are as follows:
 \section{Functional Structure}
 \label{sec:functional-structure}
     \subsection{Exercise: Understanding the Basics}
-      A function exists outside of a class and within the global scope. When declaring and defining a function, the location of the declaration must be above the definition of the function.
+      When declaring and defining a function, the location of the declaration must be above the definition of the function.
       
       A couple of examples are on display below:
 
