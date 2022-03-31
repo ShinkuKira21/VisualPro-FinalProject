@@ -645,8 +645,9 @@ hmargin=3cm
 		%recheck-$41%
 		\newpage
 		\section{Results of Feedback}
-			\subsection{Survey Question 1} 
-				According to the chart~\ref{fig:q-1}, \textit{87.5\%} chose `Programming Planner Improved', and \textit{12.5\%} chose `None of the Above' to the question, `As a developer, which program worked for you?'. This data suggests that most of the responses preferred `Programming Planner Improved' out of eight.
+			\subsection{Survey Question 1}
+			\label{subsec:rof-sq1}
+				According to the chart~\ref{fig:q-1}, \textit{87.5\%} chose `Programming Planner Improved', and \textit{12.5\%} chose `None of the Above' to the question, `As a developer, which program worked for you?'. This data suggests that most of the responses preferred `Programming Planner Improved' out of eight. The response may suggest that participants enjoyed the interface as it offers more than the Programming Planner. However, the \textit{12.5\%} of the `None of the Above' option displays that the application may prove tedious for some.
 				\begin{figure}[H]
 					\ffigbox[\FBwidth] {
 					\caption[Survey Q-1]{Survey Question 1 - Found at: \href{https://github.com/ShinkuKira21/VisualPro-FinalProject/blob/main/Showcase-Work_Completed/Surveying/q1.png}{Original Image}}
@@ -726,6 +727,7 @@ hmargin=3cm
 				\end{figure}
 		
 			\subsection{Survey Question 6}
+			\label{subsec:rof-sq6}
 				Figure~\ref{fig:q-6} asks the Surveyee, `How would you rate the User Experience (overall)?'. The question tries to aim for an idea of how the UX of the two products. On a scale of one (Stressful) to ten (Relaxing), 62.5\% of the responses went with option eight, 37.5\% of the responses went with option seven. These figures show that the UX has room for improvement. When designing and implementing the GUI product, it is important to think about the UI and UX.
 
 				\begin{figure}[H]
@@ -754,6 +756,7 @@ hmargin=3cm
 				\end{figure}
 				
 			\subsection{Survey Question 8}
+			\label{subsec:rof-sq8}
 				Question~\ref{fig:q-8} `Did this help create a structure of your favourite language faster than standard methods?'. 75\% of responses said Yes, 12.5\% of responses said `Would not recommend to new programmer as they will not learn the basics' and 12.5\% said `I have not used other methods'. This chart suggests that the majority found this software to be faster than their standard methods.
 				\begin{figure}[h]
 					\centering
@@ -783,6 +786,7 @@ hmargin=3cm
 				\end{figure}
 		
 			\subsection{Survey Question 10}
+			\label{subsec:rof-sq10}
 				Figure~\ref{fig:q-10} ask `Would a Graphical User Interface uplift the User Experience?' as a multiple-choice question. The 100\% chose the yes choice. This feedback implies that they would like a GUI to work with over a console application out of the eight responses.
 				\begin{figure}[H]
 					\ffigbox[\FBwidth] {
@@ -919,7 +923,12 @@ hmargin=3cm
 					{\includegraphics[scale=0.45]{{"../../Showcase-Work_Completed/Surveying/q19"}.png}}
 				\end{figure}
 			
-		\section{Evaluation of Feedback}
+		\chapter{Evaluation of Design Survey Feedback}
+			By evaluating the findings of the VisualPro's initial design survey, a common understanding is that if the Visual Scripting program provides plenty of features for customisation in an `easy to use' fashion, it will attract more attention. This conclusion comes up a few times, for instance regarding Sub-Section~\ref{subsec:rof-sq1}, Survey Question 1, page~\pageref{subsec:rof-sq1}, the results states that \textit{one out of eight responses} did not agree that either console application helps them. Previously, as mentioned, this could be an issue trying to provide the VisualPro market to a broader audience. Nonetheless, further on the survey, looking at Sub-Section~\ref{subsec:rof-sq6}, Survey Question 6, page~\pageref{subsec:rof-sq6} to Sub-Section~\ref{subsec:rof-sq8}, Survey Question 8, page~\pageref{subsec:rof-sq8}, a strong indication shows that the software satisfied all participants when it comes to the UX and swiftness of creating the demanded structure that proves to execute faster than they can type it. There is a chance that the addition of GUI could create an easier-to-use environment, especially for beginners who do not enjoy the console environment. Referring directly to Sub-Section~\ref{subsec:rof-sq10}, Survey Question 10, page~\pageref{subsec:rof-sq10}, all respondents agreed that a GUI would uplift the UX. This element would strongly suggest that VisualPro would likely attract beginners and existing developers if VisualPro offers a great GUI with superb User Usability with easy to access features rather than anything complicated.
+
+			Furthermore, the feedback gathers crucial information on how the eight respondents would like to see the VisualPro UI. A series of questions allows a qualitative way of seeing VisualPro's design. Data includes how the structure elements, logical elements, select languages, and saving options and sub-elements should work. After brainstorming, a node tree design approach seems to create a system that corresponds to the respondents' demands and should create an ideal visual scripting environment.
+
+			It is essential to keep quality control of VisualPro during development and get statistics from potential testers to provide significant insight on whether VisualPro is keeping things like UX, UI and User Usability on track. Any quantitative information from this survey will compare with VisualPro's final product to see if VisualPro is on track and would help VisualPro stay on track. Another thing to mention is that comparing the design survey (Mostly Qualitative Data) with the implementation survey (Mostly Quantitative Data) helps determine if VisualPro meets requirements. A method for this to work is by adding a section in both the Tutorial's and VisualPro's Implementation Survey that asks \textit{a select} questions identically, then comparing the two Qualitative data for results.
 
 	\chapter{Development Methodology}
 
