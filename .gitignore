@@ -395,3 +395,7 @@ FodyWeavers.xsd
 *.bbl
 Documentation/Proposal/cleanup.bat
 *.synctex(busy)
+
+# Videos
+*.mp4
+*.zip
