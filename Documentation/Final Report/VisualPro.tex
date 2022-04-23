@@ -984,9 +984,72 @@ hmargin=3cm
 
 	\chapter{Development Methodology}
 	% Need Something Here
+		According to `Choice of Software Development Methodologies: Do Organizational, Project, and Team Characteristics Matter?' written by Leo R. Vijayasarathy, a selection of development methodologies are compared:-
+		\begin{itemize}
+			\item Agile Development Methodology.
+			\item Traditional Development Methodology.
+			\item Iterative Development Methodology.
+			\item Hybrid Development Methodology.
+		\end{itemize}
+			
+		Figure~\ref{fig:dm-1} by Leo R. Vijayasarathy~\cite{vijayasarathy_choice_2016} shows a comparison of projects that use what development methodology. This pie chart should help determine the best development methodology for this project.
+
+		\begin{figure}[H]
+			\ffigbox[\FBwidth] {
+				\caption[Development Methodology]{Comparison of projects by development methodology. Leo R. Vijayasarathy~\cite{vijayasarathy_choice_2016}}
+				\label{fig:dm-1}
+			}
+			{\includegraphics[scale=0.45]{Figures/dm/dm-1.png}}
+		\end{figure}
+
+		Figure~\ref{fig:dm-2} by Leo R. Vijayasarathy~\cite{vijayasarathy_choice_2016} shows a comparison of the annual revenue and employee count of each development methodologies by the percentage of companies. This stacked bar chart should help indicate each development methodology's an employee count by company usage; annual fees will not impact the decision to make the development methodology choice as the author states that `The annual revenue wasnâ€™t statistically significant; the number of employees was.'~\cite{vijayasarathy_choice_2016}
+
+		\begin{figure}[H]
+			\ffigbox[\FBwidth] {
+				\caption[Development Methodology]{Comparison of the annual revenue and employee count of each development methodology (percentage of companies). Leo R. Vijayasarathy~\cite{vijayasarathy_choice_2016}}
+				\label{fig:dm-2}
+			}
+			{\includegraphics[scale=0.45]{Figures/dm/dm-2.png}}
+		\end{figure}
+
+		Figure~\ref{fig:dm-3} by Leo R. Vijayasarathy~\cite{vijayasarathy_choice_2016} shows a comparison of the budget and criticality of each development methodologies by the percentage of projects. This stacked bar chart should help indicate each development methodology's budget and criticality by project usage.
+		
+		\begin{figure}[H]
+			\ffigbox[\FBwidth] {
+				\caption[Development Methodology]{Comparison of the budget and criticality of each development methodology (percentage of projects). Leo R. Vijayasarathy~\cite{vijayasarathy_choice_2016}}
+				\label{fig:dm-3}
+			}
+			{\includegraphics[scale=0.45]{Figures/dm/dm-3.png}}
+		\end{figure}
+
+		After observing Figure~\ref{fig:dm-1}, the Hybrid development methodology is the most used for project usage. Agile development methodology comes second, Traditional development methodology comes third, and Iterative development methodology comes fourth. Figure~\ref{fig:dm-2} indicates that the Traditional development methodology requires the most employees to develop projects. The Iterative development methodology requires the least amount of employees to develop projects. Figure~\ref{fig:dm-3} indicates that the Agile development methodology requires less budget and is the most critical. Traditional development methodology requires the highest budget and is the least critical.
+
+		The Iterative development methodology seems to benefit this project for the following reasons:-
+		\begin{itemize}
+			\item Fewer employees (Fits a individual ran project).
+			\item 60\% criticality and 40\% budget (Great balance).
+			\item Well-structured development model.
+		\end{itemize}
+
+		This development methodology follows the following development steps:-
+
+		\begin{center}
+			\scriptsize
+			\textbf{Mathematical Key:}\\
+			$\mathcal{IP}$: Initial Planning, $\mathcal{C}$: Continue?, $\mathcal{T}$: True, $\mathcal{PL}$: Planning, $\mathcal{RQ}$: Requirements\\$\mathcal{AD}$: Analysis and Design, $\mathcal{IM}$: Implementation, $\mathcal{TT}$: Testing, $\mathcal{EV}$: Evaluation\\$\mathcal{DP}$: Deployment\\
+			\textbf{Step 1:}\\
+			$\mathcal{IP}$\\
+			\textbf{Step 2:}\\ 
+			$\mathcal{\sum_{n = 1}^{\mathcal{C\neq}\mathcal{T}}(\mathcal{PL}(\mathcal{RQ} -> \mathcal{AD}) -> \mathcal{IM}_{\mathcal{C}} (\mathcal{TT} -> \mathcal{EV}))}$\\
+			\textbf{Step 3:}\\
+			$\mathcal{DP}$
+		\end{center}
+
+		The Iterative development model will start the Initial Planning, then starts the procedure by going to the Planning stage. The planning stage involves the Requirements and Analysis and Design stage. The implementation stage consists in checking if the project is ready for deployment. If this is not true, this stage involves the Testing and Evaluation stages. The deployment stage is the deployment of the product and the completion state of the project. This stage proceeds on the completion of the implementation. This process is easy to follow, and the repetition of conducting tests and reevaluating the product provides a well-tested end product. However, this process is impractical in a large team environment and can delay the product development time due to the process.
 
 	\chapter{Implementation}
 		\section{Main Layout}
+			Figure~\ref{fig:guiDesignML-1} is the design implementation of the VisualPro software using Visual Studio. The design starts with two panels, one containing the software's functionality and the other enabling the work area within the software. After examining the design implementation, the software lacked class, function and variable containers to create a code structure.
 			\begin{figure}[H]
 				\ffigbox[\FBwidth] {
 				\caption[GUI Design ML-1]{Design Planning - Stage 1}
@@ -995,48 +1058,50 @@ hmargin=3cm
 				{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-1.jpg}}
 			\end{figure}
 
+			After looking at the issues within the first stage, creating a simple class container is now available within the design implementation. However, this time the container seems too basic, and contains zero positioning ideas.
 			\begin{figure}[H]
 				\ffigbox[\FBwidth] {
-				\caption[GUI Design ML-2]{Design Planning - Stage 2}
+				\caption[GUI Design SC-1]{Design Planning - Stage 2}
+				\label{fig:guiDesignSC-1}
+				}
+				{\includegraphics[scale=0.75]{Figures/vp-designs/NET_Framework-GUI-2.jpg}}
+			\end{figure}
+
+			From the previous implementation, a design of the container positions provides an idea of how the VisualPro software should enable users to drag containers on the work area. However, the design the positioning of the containers does not generate a good UI and UX design. Another design problem, the software has no options to save the code when the user creates a new project. An extra point to make is that the containers should have access for children and any additional properties.
+			\begin{figure}[H]
+				\ffigbox[\FBwidth] {
+				\caption[GUI Design ML-2]{Design Planning - Stage 3}
 				\label{fig:guiDesignML-2}
 				}
 				{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-2-1.jpg}}
 			\end{figure}
 
-			A flaw of Classes', Functions and Variables' can be declared during development under the parent class. This problem meant that the class would be declared inside another class programmatically if the problem occurred under the current logic when the compilation happened. An example could be an \textit{`int variable = int variable;'}. The code syntax makes no sense, resulting in a compilation error.
+			The previous problem of the last implementation design contains no option to save is now available. The parent and child containers need remaking with a new position scheme for the next iteration. A foreseeable design flaw of Classes, Functions and Variables is that children cannot be higher than their inheritance type during development under the parent container. This problem meant, for example, that the class would be declared inside another class programmatically if the problem occurred under the current logic when the compilation happened. The code syntax makes no sense, resulting in a compilation error. An example of this error within this software could be an \textit{`int variable = int variable;'}. 
 			\begin{figure}[H]
 				\ffigbox[\FBwidth] {
-				\caption[GUI Design ML-3]{Design Planning - Stage 3}
+				\caption[GUI Design ML-3]{Design Planning - Stage 4}
 				\label{fig:guiDesignML-3}
 				}
 				{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-4.jpg}}
 			\end{figure}
 
-			Figure~\ref{fig:guiDesignML-4} shows the implementation of the design using the designs shown beforehand. Rather than shortcutting relationships between each class, function and variables by nesting them, the final implementation prevents the user from dragging and dropping the same type of container onto another container. A property button appears on each container to control function arguments and relationships between classes, functions, and variables, opening up a dialogue containing a property sheet.
+			Figure~\ref{fig:guiDesignML-4} shows the implementation of the design using the designs shown beforehand. Rather than shortcutting relationships between each class, function and variable by nesting them, the final implementation design prevents the user from dragging and dropping the same type of container onto another container. A property button appears on each container to control function arguments and relationships between classes, functions, and variables, opening up a dialogue containing a property sheet. If any error occurs, there are no error messages or dialogue box designs to alert the user if something is not working as it should be.
 			\begin{figure}[H]
 				\ffigbox[\FBwidth] {
-				\caption[GUI Design ML-4]{Design Planning - Stage 4}
+				\caption[GUI Design ML-4]{Design Planning - Stage 5}
 				\label{fig:guiDesignML-4}
 				}
 				{\includegraphics[scale=0.45]{Figures/vp-designs/NET_Framework-GUI-Latest.jpg}}
 			\end{figure}
 		
 		\section{Error Handling}
-			
+			The previous iteration implementation design problem, `Error Dialogue,' is now available. This dialogue design helps inform the user if the software fails. The dialogue only activates if there is a syntax language error within the `VisualPro.xml' language configuration file. This design should expand to include other errors that occur within the software.
 			\begin{figure}[H]
 				\ffigbox[\FBwidth] {
 				\caption[GUI Design EH-1]{Error Handling}
 				\label{fig:guiDesignEH-1}
 				}
 				{\includegraphics[scale=0.75]{Figures/vp-designs/NET_Framework-GUI-ErrorDialog.jpg}}
-			\end{figure}
-		\section{Structure Containers}
-			\begin{figure}[H]
-				\ffigbox[\FBwidth] {
-				\caption[GUI Design SC-1]{Design Planning - Stage 1}
-				\label{fig:guiDesignSC-1}
-				}
-				{\includegraphics[scale=0.75]{Figures/vp-designs/NET_Framework-GUI-2.jpg}}
 			\end{figure}
 		
 	\chapter{Evaluation of Functionality}
@@ -2017,8 +2082,25 @@ hmargin=3cm
 			% Effectiveness %
 			To work out the effectiveness is to ensure that the respondents can complete tasks with remarkable results each time. Any known bugs will not distinguish the final result. After examining both respondents, they both executed the lessons well and tried to experiment with the software, keeping on the lines of the tutorial tasks. The data indicates that the software effectively produces and generates the desired code.
 
+			% Learnability %
+			To establish the learnability of the VisualPro software, the following points are looked into:-
+			\begin{itemize}
+				\item \textbf{Proficiency}: How well the respondents' perform as the tutorial progresses?
+				\item \textbf{Cognitive Ability}: Observation of the respondents' ability to problem solve in a restricted environment.
+				\item \textbf{Creativity and Innovation}: The respondents' ability to create new ideas and solutions.
+			\end{itemize}
 
+			Respondent A shows perseverance by not exiting the software or giving up on conducting the tasks. The respondent tried different ways to solve a problem caused by the software to work out why the software was playing up. Another encounter of respondent A is that their proficiency increased the overall use of the software. The respondent was creative and showed innovation by creating their code during the video footage. Respondent B increases their speed and accuracy when navigating through the tutorial exercises. The software enabled them to work out programming terms by their own cognitive ability to make sure they understood what was happening. The respondent adopted a good understanding of classes, functions and variables through the tutorial and self-research. They demonstrated creativity and innovation by suggesting new features to create a better work environment and stated, `...get this saving working, it could actually be beneficial.'
 
+			% Satisfaction %
+			The following points work out VisualPro's software satisfaction:-
+			\begin{itemize}
+				\item \textbf{Reusability}: Anything to suggest that the respondent reuses the software may signify the respondents' satisfaction with VisualPro.
+				\item \textbf{Feedback}: Feedback is always a great sign of the respondents' satisfaction.
+			\end{itemize}
+
+			Reviewing the satisfaction from Respondent A proves tricky. Reiterating points like the respondent's reiteration may indicate low satisfaction with the software. This result is shown towards the code generation not yet working as expected, where the respondent was swiftly resetting the software, trying new techniques and was confident using the software. Perhaps, the software proved more useful if desired results were available with less hassle. Respondent B voices his satisfaction with the software with similar concerns. If the code generation were accurate, the respondent would perhaps use it again as they hinted it was an incredible Visual Scripting tool to use in a development environment and less intimidating than traditional programming methods. This respondent, as mentioned previously, pinned the program to the taskbar to show that they would use it again.
+			
 	\chapter{Conclusion}
 
 	\chapter{Reflection}
