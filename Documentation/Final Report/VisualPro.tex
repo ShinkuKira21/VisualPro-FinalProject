@@ -666,7 +666,7 @@ hmargin=3cm
 			\end{figure}
 	
 		\subsection{Notebook Page 11} 
-			Figure~\ref{fig:nb-6} displays how the function node should work. This miniature theory is to help the developer understand how the XML document should work in a programmatical sense. This again helped when it comes to the prototypes further in this document.
+			Figure~\ref{fig:nb-6} displays how the function node should work. This miniature theory is to help the developer understand how the XML document should work in a progr ammatical sense. This again helped when it comes to the prototypes further in this document.
 	
 			\begin{figure}[H]
 				\ffigbox[\FBwidth] {
@@ -1105,6 +1105,201 @@ hmargin=3cm
 			\end{figure}
 		
 	\chapter{Evaluation of Functionality}
+		During the development of VisualPro, a few unit tests to test mainly the backend would give some idea of evaluation of the functionality. These tests will cross-reference with the front-end implementation to establish whether the lack of functionality comes down to the front-end or the backend implementation. Any bugs found should list within the tutorial to help any new developers navigate VisualPro without hitting the same known bugs.
+
+		\section{Decoder Tools}
+			Tools to parse encrypted strings of characters full of information to decipher particular information help the communication between the front-end and the backend. In some cases, tool functionality developed within C\# for the VisualPro software seems to slow down the software, so in extreme cases, redevelopment with the C++ language of these tools to use in the VisualPro software increased the performance of the software.
+
+			`FindSubStrA' is a test that searches for a word between two characters. The function (originally in C\#) asks for a start \textbf{(character)}, end \textbf{(character)}, position \textbf{(integer)}, and a string \textbf{(std::string)} to make this search possible. All the tests within `FindSubStrA' are successful.
+
+			\begin{lstlisting}[language=c++]
+				TEST_METHOD(FindSubStrA)
+				{
+					/* Error Log:
+					* All tests passed.
+					* Purpose of tool is to find a word between two characters.
+					*/
+					// Seperators: | |
+					Assert::AreEqual("H", CSFindSubStr('|', '|', 0, "|H|E-L-LxO").c_str());
+
+					// Seperators: | -
+					Assert::AreEqual("E", CSFindSubStr('|', '|', 1, "|H|E|L-LxO").c_str());
+
+					// Seperators: - -
+					Assert::AreEqual("L", CSFindSubStr('-', '-', 0, "|H|E-L-LxO").c_str());
+
+					// Seperators: - -
+					Assert::AreEqual("L", CSFindSubStr('-', 'x', 1, "|H|E-L-LxO").c_str());
+
+					// Seperators: - \0
+					Assert::AreEqual("O", CSFindSubStr('x', '\0', 0, "|H|E-L-LxO").c_str());
+				}
+			\end{lstlisting}
+
+			`FindSubStrB' tests the C++ version of the previous function. This time it checks for a separator and position. The arguments to find a separated substring, string \textbf{(const char*)}, string to test \textbf{(const char*)}, separator \textbf{(char)} and position \textbf{(integer)}. One test passed, and the other two failed. This test problem is one of the reasons why the code generation does not generate properly. Without this test, it would have been hard to decipher the survey code submitted further down.
+
+			\begin{lstlisting}[language=c++]
+				TEST_METHOD(FindSubStrB)
+				{
+					/* Error Log:
+					* Test A - Failed -> Test Written Wrongly | Passed
+					* Test B - Passed
+					* Test C - Failed -> Selects Each Word | Temporary Solution: Read Below.
+					*/
+
+					// Seperator |
+					// Checks all words. - Test A
+					for (size_t i = 0; i < 3; i++)
+						Assert::AreEqual(("Word " + std::to_string(i + 1)).c_str(), CPPFindSubStr("Word 1|Word 2|Word 3", "Word", '|', i).c_str());
+
+					// Finds First Word - Test B
+					// Seperator x
+					Assert::AreEqual("A", CPPFindSubStr("AxYZxQRxAxB", "A", 'x', 0).c_str());
+
+					// Finds First Word in Each Position - Test C
+					// Seperator x
+
+					// current status: Fail (selects each word) - Temporary solution:
+					// if(word == "A") or further rework
+					std::string word = std::string();
+					for (size_t i = 0; !(word = CPPFindSubStr("AxYZxQRxAxB", "A", 'x', (int)i)).empty(); i++)
+						if (word == "A")
+							Assert::AreEqual("A", word.c_str());
+				}
+			\end{lstlisting}
+
+			`FindStrIndexA' test will observe the substring index from a set of arguments. The functionality enables the developer to find a index of a substring of the a string. All parts of the test passed.
+			\begin{lstlisting}[language=c++]
+				TEST_METHOD(FindStrIndexA)
+				{
+					/* Error Log:
+					* Test A - Passed
+					* Test B - Passed
+					* Test C - Passed
+					*/
+
+					//Expectation: 6 | Test A
+					Assert::AreEqual(6, FindStrIndex("!)2pAL@sSwS", '@'));
+					//Expectation: Not -1 && is 8 | Test B
+					Assert::AreNotEqual(-1, FindStrIndex("!)2pAL!sSwS", 'S'));
+					Assert::AreEqual(8, FindStrIndex("!)2pAL!sSwS", 'S'));
+
+
+					// Expectation: -1 | Test C
+					Assert::AreEqual(-1, FindStrIndex("!)2pAL!sSwS", '~'));
+					Assert::AreEqual(-1, FindStrIndex("!)2pAL!sSwS", '1'));
+					Assert::AreEqual(-1, FindStrIndex("!)2pAL!sSwS", 'M'));
+				}
+			\end{lstlisting}
+
+			
+			\begin{lstlisting}[language=c++]
+				TEST_METHOD(ReplaceWordA)
+				{
+					/* Error Log
+					* 
+					*/
+					const std::string aMistake = "A:Banana\x1f\B:Pineapple\x1f\C:Grapefruit",
+						testA = ReplaceWord(aMistake.c_str(), 1, ':', '\x1f', "Apple"),
+						testB = ReplaceWord(testA.c_str(), 3, ':', '\x1f', "Banana");
+					const char* expected = "A:Apple\x1f\B:Pineapple\x1f\C:Grapefruit",
+								*secExpected = "A:Apple\x1f\B:Pineapple\x1f\C:Banana";
+
+					Assert::AreNotEqual(expected, aMistake.c_str());
+					Assert::AreEqual(expected, testA.c_str());
+					Assert::AreEqual(secExpected, testB.c_str());
+				}
+			\end{lstlisting}
+		\section{Lists}
+			VisualPro communicates to the Programming Planner library using C++ `Lists' class. Without the `List' class functionality testing, many errors that could be down to the `Lists' class or front-end implementation would make this project impossible to create. Three important functionality of `Lists' class are the `GetSignature', `Addition' and `Deletion' functions. The signature signifies whether an item is a Class, Function, Argument or Variable to the Programming Planner.
+            
+            The `List\_Addition' enables the addition of Lists. The test examines the addition of an item and passes the first try. When creating the VisualPro software, any communication issues would lay on the front-end side.
+
+			\begin{lstlisting}[language=c++]
+				TEST_METHOD(List_Addition)
+				{
+					/* Error Log:
+						First Try: Pass - (A, B, C, D, E, F, G, H)
+					*/
+
+					// Creation of a new list with X, on addition the ID's should follow as X-1, X-2 etc.
+					List* xList = new List("X");
+					List* yList = new List("Y"); // Same but Y-1, Y-2 etc.
+					List* xyList = new List("XY"); // XY-1, XY-2 etc.
+
+					// Should return X - Test | A
+					Assert::AreEqual("X", xList->GetSignature().c_str());
+
+					// Should return Y - Test | B
+					Assert::AreEqual("Y", yList->GetSignature().c_str());
+
+					// Should return XY - Test | C
+					Assert::AreEqual("XY", xyList->GetSignature().c_str());
+
+					// Should return X-1 - Test | D
+					Assert::AreEqual("X-1", xList->Add("parentItem"));
+
+					// Should return Y-1\x1fP-X-1 - Test | E
+					Assert::AreEqual("Y-1\x1fP-X-1", yList->Add("childItem", "X-1"));
+
+					// Should return Y-2 - Test | F
+					Assert::AreEqual("Y-2", yList->Add("parentItem"));
+
+					// Should return X-2 - Test | G
+					Assert::AreEqual("X-2", xList->Add("parentItem"));
+
+					// Should return XY-1 - Test | H
+					Assert::AreEqual("XY-1\x1fP-X-2", xyList->Add("parentItem", "X-2"));
+
+					// Garbage collection for the test.
+					delete xList; delete yList; delete xyList;
+				}
+			\end{lstlisting}
+
+			VisualPro tries to offer as much functionality as possible, including container removal. This functionality will not work if the code generator generates the same items, where `List\_Deletion' comes into play. The `List\_Deletion' tests the list deletion. The test passes the first try.
+
+			\begin{lstlisting}[language=c++]
+				TEST_METHOD(List_Deletion)
+				{
+					/* Error Log:
+					* First Try: Pass
+					*/
+
+					// Creation of X
+					List* list = new List("X");
+					list->Add("Function 1"); // ID: X-1
+					list->Add("Function 2"); // ID: X-2
+					list->Add("Function 3"); // ID: X-3
+
+					// Both work but top is more tidy and saves some memory
+					// History: Design of List was originally for displaying on Console and therefore saves any extra logic after calling ListAll method.
+					// Ideal - Test | A-I:
+					Assert::AreNotEqual("X-1  Function 1\nX-2  Function 2\nX-3  Function 3", list->ListAll().c_str());
+					// Actual - Test | A-A: 
+					Assert::AreEqual("X-1  Function 1  \nX-2  Function 2  \nX-3  Function 3  \n\n", list->ListAll().c_str());
+
+					list->Remove(2); // Expectation: Function 2 goes disappears
+
+					// To test if removal of List works - Test | B
+					Assert::AreEqual("X-1  Function 1  \nX-3  Function 3  \n\n", list->ListAll().c_str());
+
+					// Performance Improvement 
+					// Ideal - It would be ideal to replace a empty ID (X-2 is non-existent, though X-4 is next) - Test | C-I
+					Assert::AreNotEqual("X-2", list->Add("Method 2")); // The list should fill in the empty ID to save data.
+
+					Assert::AreEqual("X-1  Function 1  \nX-3  Function 3  \nX-4  Method 2  \n\n", list->ListAll().c_str());
+
+					// However, if the last element is non existence, the ID will rollback to any previously unique ID's that are not taken by the last element.)
+					// Which, in theory provides short IDs that are suitable for Programming Planner's solution.
+					// Actual - Test | D-A
+					list->Remove(2);
+					list->Remove(3);
+					list->Remove(4);
+					Assert::AreEqual("X-2", list->Add("Method 2"));
+
+					delete list;
+				}
+			\end{lstlisting}
 
 	\chapter{Evaluation of Feedback}
 		\section{Programmer Planner vs. VisualPro}
