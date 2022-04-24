@@ -1110,7 +1110,7 @@ hmargin=3cm
 		\section{Decoder Tools}
 			Tools to parse encrypted strings of characters full of information to decipher particular information help the communication between the front-end and the backend. In some cases, tool functionality developed within C\# for the VisualPro software seems to slow down the software, so in extreme cases, redevelopment with the C++ language of these tools to use in the VisualPro software increased the performance of the software.
 
-			`FindSubStrA' is a test that searches for a word between two characters. The function (originally in C\#) asks for a start \textbf{(character)}, end \textbf{(character)}, position \textbf{(integer)}, and a string \textbf{(std::string)} to make this search possible. All the tests within `FindSubStrA' are successful.
+			`FindSubStrA' is a test that searches for a word between two characters. The function (originally in C\#) asks for a start \textbf{(char)}, end \textbf{(char)}, position \textbf{(int)}, and a string \textbf{(std::string)} to make this search possible. All the tests within `FindSubStrA' are successful.
 
 			\begin{lstlisting}[language=c++]
 				TEST_METHOD(FindSubStrA)
@@ -1136,7 +1136,7 @@ hmargin=3cm
 				}
 			\end{lstlisting}
 
-			`FindSubStrB' tests the C++ version of the previous function. This time it checks for a separator and position. The arguments to find a separated substring, string \textbf{(const char*)}, string to test \textbf{(const char*)}, separator \textbf{(char)} and position \textbf{(integer)}. One test passed, and the other two failed. This test problem is one of the reasons why the code generation does not generate properly. Without this test, it would have been hard to decipher the survey code submitted further down.
+			`FindSubStrB' tests the C++ version of the previous function. This time it checks for a separator and position. The arguments to find a separated substring, string \textbf{(const char*)}, string to test \textbf{(const char*)}, separator \textbf{(char)} and position \textbf{(int)}. One test passed, and the other two failed. This test problem is one of the reasons why the code generation does not generate properly. Without this test, it would have been hard to decipher the survey code submitted further down.
 
 			\begin{lstlisting}[language=c++]
 				TEST_METHOD(FindSubStrB)
@@ -1168,7 +1168,7 @@ hmargin=3cm
 				}
 			\end{lstlisting}
 
-			`FindStrIndexA' test will observe the substring index from a set of arguments. The functionality enables the developer to find a index of a substring of the a string. All parts of the test passed.
+			`FindStrIndexA' test will observe the substring index from a set of arguments. The functionality enables the developer to find an index of a string's character. The function requires two arguments, string \textbf{(const char*)} and test subject \textbf{(char)}. All parts of the test passed.
 			\begin{lstlisting}[language=c++]
 				TEST_METHOD(FindStrIndexA)
 				{
@@ -1192,7 +1192,7 @@ hmargin=3cm
 				}
 			\end{lstlisting}
 
-			
+			`ReplaceWordA' tests the replace string by a substring. The function requires five arguments, string \textbf{(const char*)}, depth \textbf{(int)}, start \textbf{(char)}, end \textbf{(char)} and replaceString \textbf{(const char*)}. All tests passed.
 			\begin{lstlisting}[language=c++]
 				TEST_METHOD(ReplaceWordA)
 				{
@@ -1825,7 +1825,7 @@ hmargin=3cm
 					}
 
 					dt namedt name
-				\end{lstlisting} - This respondent followed this task correctly.
+				\end{lstlisting} - This respondent seems to have followed this task correctly.
 
 			\subsection{Functional Programming - Tutorial B | Exercise: Toaster Functionality}
 				`Toaster Functionality' exercise is to establish the functionality of a toaster to get grips of FP style programming. The initial question, `What is the difference between OOP and FP styles?' helps understand if the respondents' have learnt the complexity of the two styles. Responses of the respondents:
@@ -2250,7 +2250,7 @@ hmargin=3cm
 					}
 
 					dt namedt namedt name
-				\end{lstlisting}
+				\end{lstlisting} - This respondent seems to have followed this task correctly.
 
 				\textit{Fifth Response:}
 				\begin{lstlisting}[language=c++]
