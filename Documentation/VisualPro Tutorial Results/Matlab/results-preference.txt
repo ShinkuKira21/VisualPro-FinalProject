@@ -127,3 +127,22 @@ Operating System (Mobile Devices):
 	
 
 Overall Mean Average: 70%
+
+Hard Usability:
+    I, II, III, IV = 0%
+
+Moderate Usability:
+    I - 1
+    II - 0.78
+    III - 0
+    IV - 0
+
+    Mean = 44.5%
+
+Easy Usability
+    I - 0.3
+    II - 0
+    III - 1
+    IV - 1
+
+    Mean = 57.5%

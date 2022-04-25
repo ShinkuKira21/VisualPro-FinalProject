@@ -35,3 +35,26 @@ Respondent 6:
 25% - 1
 
 Mean Average: 59.38%
+
+Hard Usability:
+    I, II, III, IV, V, VI = 0%
+
+Moderate Usability:
+    I - 1
+    II - 1
+    III - 1
+    IV - 1
+    V - 0.76
+    VI - 0
+
+    Mean = 79.33%
+
+Easy Usability
+    I - 0
+    II - 0
+    III - 0.18
+    IV - 0.4
+    V - 0.76
+    VI - 1
+
+    Mean = 39%
