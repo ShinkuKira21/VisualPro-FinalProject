@@ -1,0 +1,129 @@
+Structure:
+	Clickable
+		Preference: 3 (37.5%)
+		Actual: false
+
+	Drag and Drop
+		Preference: 5 (62.5%)
+		Actual: true
+		
+	Drop Down Menu
+		Preference: 3 (37.5%)
+		Actual: false
+		
+	Text Filled
+		Preference: 3 (37.5%)
+		Actual: false
+		
+	Mean Average: 62.5%
+		
+Logic Elements (Variables):
+	Clickable
+		Preference: 3 (37.5%)
+		Actual: false
+		
+	Drag and Drop
+		Preference: 5 (62.5%)
+		Actual: true
+		
+	Drop Down Menu
+		Preference: 2 (25%)
+		Actual: false
+		
+	Text Filled
+		Preference: 4 (50%)
+		Actual: true
+		
+	Mean Average: 56.25%
+	
+Select Language and Save:
+	Clickable
+		Preference: 4 (50%)
+		Actual: false
+		
+	Drag and Drop
+		Preference: 1 (12.5%)
+		Actual: false
+		
+	Drop Down Menu
+		Preference: 6 (75%)
+		Actual: true
+		
+	Text Filled
+		Preference: 2 (25%)
+		Actual: false
+		
+	Mean Average: 75%
+		
+Sub Elements:
+	Clickable
+		Preference: 4 (50%)
+		Actual: false
+		
+	Drag and Drop
+		Preference: 4 (50%)
+		Actual: true
+		
+	Drop Down Menu
+		Preference: 3 (37.5%)
+		Actual: false
+		
+	Text Filled
+		Preference: 5 (62.5%)
+		Actual: true
+	
+	Mean Average: 56.25
+
+
+Operating System (PC):
+	Windows OS: 
+		Preference: 8 (100%)
+		Actual: true 
+	Linux: 
+		Preference: 4 (50%)
+		Actual: false
+		
+	ChromeOS/Android OS: 
+		Preference: 3 (37.5%)
+		Actual: false
+		
+	macOS/iOS:
+		Preference: 2 (25%)
+		Actual: false
+	
+	Mean Average: 100%
+	
+Operating System (Web Application):
+	Windows OS:
+		Preference: 8 (100%)
+		Actual: false
+	Linux:
+		Preference: 4 (50%)
+		Actual: false
+	ChromeOS/Android OS:
+		Preference: 2 (25%)
+		Actual: false
+	macOS/iOS:
+		Preference: 1 (12.5%)
+		Actual: false
+		
+	Mean Average: 0%
+
+Operating System (Mobile Devices):
+	Windows OS:
+		Preference: 1 (12.5%)
+		Actual: false
+	Linux:
+		Preference: 1 (12.5%)
+		Actual: false
+	ChromeOS/Android OS:
+		Preference: 6 (75%)
+		Actual: false
+	macOS/iOS:
+		Preference: 4 (50%)
+		Actual: false
+		
+	Mean Average: 0%
+	
+
+Overall Mean Average: 70%

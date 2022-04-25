@@ -553,27 +553,45 @@ hmargin=3cm
 	Unfortunately, the authors could not conclude whether they did or not. This analysis aims to determine methods to create a Visual Scripting language that helps novices' with little-to-none experience whilst increasing the overall performance of computing projects. Video content of users' using the VisualPro software provides insight into how the user navigates the software and whether they try any features that are non-existent that show preferences that could lead to feature ideas. A Fuzzy Expert Logic system can help decipher whether the user was using the software effectively.
 
 	% Evaluate Data with Fuzzy Logic %
-	\begin{center}
-		\textbf{Analysis Environment}\\
-		$\mathcal{P}$ stands for Productivity and takes in three factors of $\mathcal{X}$, $\mathcal{Y}$ and $\mathcal{Z}$.
-		\[ \mathcal{Q} = \left\{
-			\begin{array}{cc}
-				\mathcal{A} & \mathcal{B}
-			\end{array}\right\}
-		\]
-	\end{center}
+	Fuzzy Expert logic will help identify the performance level to a User Usability category, `Hard Usability', `Moderate Usability' and `Easy Usability'. After converting the performance responses, it is time to use Fuzzy Expert logic to convert the preference from the initial survey into the mentioned categories. The following information could help indicate whether performance and preference contradict each other and may help determine if the initial survey did help create a better UX and User Usability result.
 
-	For this Fuzzy Expert Logic system to work effectively, it is important to select a source of data to compare with for an ideal User Usability result. 
+	% Performance Fuzzy Expert Logic %
+	% 100% / 3
+	\textbf{Performance Fuzzy Logic Setup:-}
+	\begin{center}
+		\textbf{Mathematical Key: }\\
+		$\mathcal{U}$ = Usability Categories: `Hard Usability', `Moderate Usability' and `Easy Usability'.\\
+		$\mathcal{P}$ = Performance Categories: `Very Low', `Low', `High' and `Very High'.\\
+		$\mathcal{VL}$ = Performance Category: `Very Low (0\%)'. - $\mathcal{L}$ = `Low (25\%).'\\
+		$\mathcal{H}$ = Performance Category: `High (75\%)'. - $\mathcal{VH}$ = `Very High (100\%)'.\\
+		$\mathcal{R}$ = Responses with Performance Categories. - $\mathcal{T}$ = An array of responses.\\
+
+		\[\mathcal{U} = \sum_{n = 0}^{3} \frac{100}{3} - (n = n + 5) \rightarrow \left|
+			\begin{array}{ccc}
+				\mathcal{HU} & \mathcal{MU} & \mathcal{EU}
+			\end{array} \right|
+		\]
+		\[\mathcal{P} = \frac{100}{4} \rightarrow \left|
+			\begin{array}{cccc}
+				\mathcal{VL} & \mathcal{L} & \mathcal{H} & \mathcal{VH}
+			\end{array} \right|
+		\]
+		\[ \mathcal{R}_{P} = \left| 
+			\begin{array}{c}
+				T_{n}
+			\end{array}
+		 \right|
+		\]
+
+		$\sum_{n = 1}^{n < R_{n}} \mathcal{M_{n}} = \frac{R_{i}}{R_{T}}$
+	\end{center}
 		
 	% Mathematical Sign %
-	Evaluation process of the survey data will measure the \textit{Qualitative Research} and convert the weightings to measurable data. After this stage, the data is going to be tested in two major ways.
+	Essentially to work out the Performance figures, calculation of the code submissions within the survey to generate a percentage. Four statements measured by $\mathcal{P}$, `The respondent followed the task correctly', `The respondent seems to have followed the task correctly', `The respondent seems to have followed the task incorrectly' and `The respondent followed the task incorrectly' helps to determine the performance level. Each respondent's results are tallied up and positioned in the $\mathcal{R_{P}}$ array, which provides a performance level of each respondent. Sum of $\mathcal{P}$ of each $\mathcal{R}$ element and then divided by the $\mathcal{T_{n}}$ provides an average percentage. The $\mathcal{U}$ identifies the Fuzzy Expert categories percentage with added weights. The weighing strategy should enable the analysis to be unbiased.
 
 	% Mathematical Sign %
-	Evaluation process of the survey data will measure the \textit{Qualitative Research} and convert the weightings to measurable data. After this stage, the data is going to be tested in two major ways.
-
-	% Mathematical Sign %
-	Evaluation process of the survey data will measure the \textit{Qualitative Research} and convert the weightings to measurable data. After this stage, the data is going to be tested in two major ways.
-
+	From the initial survey, a selection of two preference questions including Figure~\ref{fig:q-11} - `According to you, how should the features of the Graphical User Interface have to work?' and Figure~\ref{fig:q-12} - `How would you prefer to access the software?' helps work out the preference level. A calculation to sort out each categories with the responses and whether or not the preference is within the VisualPro design implementation. To filter the preference down, only the preferences within the VisualPro design implementation are taken into account. The mean of the preference of each category is then calculated and then inserted into the Fuzzy Expert logic. The preference and performance levels are then compared to determine the overall User Usability and analyse whether preference affects performance.
+	
 \chapter{Prototype}
 \label{chap:prototype}
 	To access the prototype that demonstrates communication from a .NET Framework 4.7.2 to a C++ backend library, go to~\href{https://github.com/ShinkuKira21/VisualPro-FinalProject/tree/main/Prototypes/GUI%20Concept%20.NET-C%2B%2B/Package}{Prototypes/GUI Prototype .NET-C++}~\cite{patch_visualpro_2022}. Even though this prototype is not related to the current project, it demonstrates how the frontend can interact with the backend and provides insight into how this is possible. The purpose of the application is not to measure the application's performance merely to provide insight and experience on how the application communicates to the backend.
@@ -2297,7 +2315,24 @@ hmargin=3cm
 			Reviewing the satisfaction from Respondent A proves tricky. Reiterating points like the respondent's reiteration may indicate low satisfaction with the software. This result is shown towards the code generation not yet working as expected, where the respondent was swiftly resetting the software, trying new techniques and was confident using the software. Perhaps, the software proved more useful if desired results were available with less hassle. Respondent B voices his satisfaction with the software with similar concerns. If the code generation were accurate, the respondent would perhaps use it again as they hinted it was an incredible Visual Scripting tool to use in a development environment and less intimidating than traditional programming methods. This respondent, as mentioned previously, pinned the program to the taskbar to show that they would use it again.
 			
 	\chapter{Conclusion}
+		The VisualPro is still in early stages of the development process. This iteration of the software can successfully generate readable code, however, there is no doubt that the functionality, UX and User Usability. By looking at figure~\ref{fig:fuzlogPerformance} and figure~\ref{fig:fuzlogPreference}
 
+		\begin{figure}[H]
+			\ffigbox[\FBwidth] {
+			\caption[Fuzzy Expert Logic - Performance]{Fuzzy Expert Logic - Performance}
+			\label{fig:fuzlogPerformance}
+			}
+			{\includegraphics[scale=0.6]{Figures/VisualPro-Survey-FuzzyLogic/RespondentsPerformance.jpg}}
+		\end{figure}
+
+		\begin{figure}[H]
+			\ffigbox[\FBwidth]{
+			\caption[Fuzzy Expert Logic - Preference]{Fuzzy Expert Logic - Preference}
+			\label{fig:fuzlogPreference}
+			}
+			{\includegraphics[scale=0.6]{Figures/VisualPro-Survey-FuzzyLogic/RespondentsPreference.jpg}}
+		\end{figure}
+		
 	\chapter{Reflection}
 
 	\chapter{Terminology}
