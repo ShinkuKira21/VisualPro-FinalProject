@@ -270,6 +270,7 @@ hmargin=3cm
 \setcounter{page}{3}
 	
 	% Write your abstract
+	This thesis aims to engineer a tool for beginners to adapt to programming by Visual Scripting methods. To accomplish this, a study to gather the best practices of teaching novices and improve the quality of the learning process of software engineering students. This study reflects on the VisualPro concept and its implementation in the software development process. The main objective is to establish the best approach to the learning environment and design a learning tool.
 
 	\textbf{Keywords:} % add the keywords
 		Visual Programming, Visual Scripting, Development
@@ -284,7 +285,8 @@ hmargin=3cm
 %	Dedication
 %----------	
 \chapter*{Dedication}
-
+	Appreciation goes out to the survey participants, which helped better understand how VisualPro may impact consumers in the future. Having the support from these participants helped advance the UI and UX progress of VisualPro.
+	
 \setcounter{page}{5}
 	
 	% Write here	
@@ -337,7 +339,7 @@ hmargin=3cm
 \pagenumbering{arabic} % numbering with Arabic numerals for the rest of the document.	
 
 \chapter{Introduction}
-	VisualPro is a lightweight, high-performance Visual Scripting client that enables users to create high-end software, whether the logic is for, not limited to, web, software, Artificial Intelligence. VisualPro would extend the Programming Planner library to show off the potential of the usage and potential of the library, in turn, bringing a different design of Visual Scripting to the table. The software aims to increase workflow without discriminating cognitive ability, whether it is struggling to adapt to a different language or acquiring new skills that impact how the software works. 
+	VisualPro is a lightweight, high-performance Visual Scripting client concept that enables users to create high-end software, whether the logic is for, not limited to, web, software and Artificial Intelligence. VisualPro would extend the Programming Planner library to show off the potential of the usage and potential of the library, in turn, bringing a different design of Visual Scripting to the table. The software aims to increase workflow without discriminating cognitive ability, whether it is struggling to adapt to a different language or acquiring new skills that impact how the software works. 
 
 	VisualPro aims to unify languages to achieve, not only for users to adapt to complicated languages but also guide the user to learn what languages have in common and therefore increase the drive to learning new languages without feeling `there is only one tool for the job' condition.
 
@@ -1113,13 +1115,35 @@ hmargin=3cm
 			\end{figure}
 		
 		\section{Error Handling}
-			The previous iteration implementation design problem, `Error Dialogue,' is now available. This dialogue design helps inform the user if the software fails. The dialogue only activates if there is a syntax language error within the `VisualPro.xml' language configuration file. This design should expand to include other errors that occur within the software.
+			The previous iteration implementation design problem, `Error Dialogue,' is now available. This dialogue design helps inform the user if the software fails. The dialogue only activates if there is a syntax language error within the `VisualPro.xml' language configuration file. This design should expand to include other errors that occur within the software. Further observations suggest that the program is missing branding and this would create a User Usability problem.
 			\begin{figure}[H]
 				\ffigbox[\FBwidth] {
 				\caption[GUI Design EH-1]{Error Handling}
 				\label{fig:guiDesignEH-1}
 				}
 				{\includegraphics[scale=0.75]{Figures/vp-designs/NET_Framework-GUI-ErrorDialog.jpg}}
+			\end{figure}
+
+		\section{Logo}
+			As the previous iteration lacked branding, adding a VisualPro logo helps brand the software and tutorial documents. This design uplifted the software to a professional look. Figure~\ref{fig:guiDesignLogo-1} visualises the logo design.
+
+			\begin{figure}[H]
+				\ffigbox[\FBwidth] {
+				\caption[GUI Design Logo-1]{Logo Design}
+				\label{fig:guiDesignLogo-1}
+				}
+				{\includegraphics[scale=0.55]{Figures/logo/VP-Logo-Large.png}}
+			\end{figure}
+
+		\section{Final Implementation}
+			Figure~\ref{fig:guiDesignFI-1} displays the final implementation of the software.
+
+			\begin{figure}[H]
+				\ffigbox[\FBwidth] {
+				\caption[GUI Design FI-1]{Final Implementation}
+				\label{fig:guiDesignFI-1}
+				}
+				{\includegraphics[scale=0.65]{Figures/vp-designs/Final.jpg}}
 			\end{figure}
 		
 	\chapter{Evaluation of Functionality}
@@ -2348,25 +2372,7 @@ hmargin=3cm
 			{\includegraphics[scale=0.6]{Figures/VisualPro-Survey-FuzzyLogic/RespondentsPreference.jpg}}
 		\end{figure}
 
-	\chapter{Reflection}
-
-	\chapter{Terminology}
-		List of terminologies used in this document:-
-		\begin{itemize}
-		\item UI - User Interface.
-		\item UX - User Experience.
-		\item UML - Unified Modeling Languages.
-		\item OOP - Object-Oriented Programming.
-		\item FP - Functional Programming.
-		\item RAISE - Remote Asynchronous Instruction in Science and Engineering.
-		\item DLL - Dynamic-link Library.
-		\item HTML - HyperText Markup Language.
-		\item AI - Artificial Intelligence.
-		\item XML - Extensible Markup Language.
-		\item GUI - Graphical User Interface.
-		\end{itemize}
-
-	\chapter{Appendices}
+	\chapter{Mathematical Workings}
 		\section*{Results - Performance}
 			\begin{lstlisting}
 				Respondent 1:
@@ -2581,9 +2587,39 @@ hmargin=3cm
 
 					Mean = 57.5%
 			\end{lstlisting}
-	\chapter*{Acknowledgement}
-		%Many thanks to the Supervisor, Mike Dacey, for guiding the VisualPro project with possibilities and for pointing out any discrepancies through the research, planning and implementation.
-		Appreciation goes out to the survey participants, which helped better understand how VisualPro may impact consumers in the future. Having the support from these participants helped advance the UI and UX progress of VisualPro.
+
+	\chapter{Reflection}
+		The creation process of the VisualPro Visual Scripting software in detail\\
+		time-management, research and development methodologies, providing insight into how users interact with the VisualPro software. During the research stage, an existing C++ library, `Programming Planner Improved' programmed by Edward Patch, is looked into make VisualPro possible. The challenging part of this stage was figuring out technologies to create a dynamic-language saving capability. For example, XML uses nodes and attributes, so extensive research within Artificial Intelligence and Machine Learning helped overcome problems using existing C++ XML tools. Other issues arose for backend testing, which Unit Testing provided insight on potential bugs. The comprehensive study would have been slower and more costly without additional research. Another difficulty was working out how to measure User Usability. It realised that a tool called `Fuzzy Expert Logic' provides a categorisation system that converts float figures into boolean logic. Without this research, it would not have been possible to measure User Usability in this way.
+
+		As a Software Engineer, designing a front-end proves to be tricky. It was surprising to see good User Usability feedback that also suggests ways to improve the design skills in the future and the overall project. VisualPro currently has minor bugs, given more time and resources to allow the improvement of the software. Only after then the software could see the addition of new functionality.
+
+		The future of the `Programming Planner Improved' library is foreseeable on digital notebooks and visual scripting (available on smartphones, tablets and PC). The library is robust and offers an AI development opportunity for AI to create any language code without understanding different languages. As the library contains dynamic languages, the potential future target audience of VisualPro:-
+		\begin{itemize}
+			\item Data Analytic Tools.
+			\item Web Development.
+			\item Game Development.
+			\item Software Engineering.
+			\item Artificial Intelligence and Machine Learning.
+		\end{itemize}
+	
+	\chapter{Terminology}
+		List of terminologies used in this document:-
+		\begin{itemize}
+		\item UI - User Interface.
+		\item UX - User Experience.
+		\item UML - Unified Modeling Languages.
+		\item OOP - Object-Oriented Programming.
+		\item FP - Functional Programming.
+		\item RAISE - Remote Asynchronous Instruction in Science and Engineering.
+		\item DLL - Dynamic-link Library.
+		\item HTML - HyperText Markup Language.
+		\item AI - Artificial Intelligence.
+		\item XML - Extensible Markup Language.
+		\item GUI - Graphical User Interface.
+		\item IDE - Integrated Development Environment.
+		\end{itemize}
+	
 %----------
 %	Bibliography
 %----------	
